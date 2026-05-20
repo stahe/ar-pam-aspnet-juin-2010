@@ -789,7 +789,7 @@
 <ul>
   <li>يتكون الخادم من طبقتي [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. ونظرًا لكونه خدمة ويب، فإنه يتطلب خادم الويب رقم 2 للتشغيل.
   </li>
-  <li>يتكون العميل من طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]. للتشغيل، يتطلب خادم الويب رقم 1.
+  <li>يتكون العميل من طبقة [web]. للتشغيل، يتطلب خادم الويب رقم 1.
   </li>
   <li>يتواصل العميل والخادم عبر شبكة <bdi dir="ltr" class="odt-ltr-term">TCP/IP</bdi> باستخدام بروتوكول <bdi dir="ltr" class="odt-ltr-term">HTTP/SOAP.</bdi> للقيام بذلك، يجب إضافة طبقتين جديدتين إلى البنية:
     <ul>
@@ -811,7 +811,7 @@
 <ul>
   <li>تظل الطبقتان [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] دون تغيير
   </li>
-  <li>تتطور الطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] قليلاً، وذلك بشكل أساسي للإشارة إلى كيانات مثل <i><bdi dir="ltr" class="odt-ltr-term">Employee</bdi> </i>و <bdi dir="ltr" class="odt-ltr-term">Payroll</bdi>، التي أصبحت كيانات تابعة لطبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>]. هذه الكيانات مشابهة لتلك الموجودة في طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] ولكنها تنتمي إلى مساحات أسماء مختلفة. 
+  <li>تتطور الطبقة [web] قليلاً، وذلك بشكل أساسي للإشارة إلى كيانات مثل <i><bdi dir="ltr" class="odt-ltr-term">Employee</bdi> </i>و <bdi dir="ltr" class="odt-ltr-term">Payroll</bdi>، التي أصبحت كيانات تابعة لطبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>]. هذه الكيانات مشابهة لتلك الموجودة في طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] ولكنها تنتمي إلى مساحات أسماء مختلفة. 
   </li>
   <li>طبقة الخادم [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] هي فئة تنفذ واجهة <i><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi> </i>لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. هذا التنفيذ يستدعي ببساطة الطرق المقابلة لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. الطرق التي تنفذها طبقة الخادم [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] ستكون &quot;معروضة&quot; للعملاء البعيدين، الذين سيتمكنون من استدعائها.
   </li>
@@ -821,7 +821,7 @@
 
 <p>فيما يلي مبادئ البنية الجديدة:</p>
 <ul>
-  <li>تستمر طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] في التواصل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] كما لو كانت محلية. لتحقيق ذلك، تنفذ طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] واجهة <i><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi> </i>لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] الفعلية وتقدم نفسها لطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] كطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محلية. وبصرف النظر عن مشكلة مساحة الاسم المذكورة سابقًا، تظل طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] دون تغيير. هذه هي ميزة العمل في طبقات. لو كنا قد أنشأنا تطبيقًا من طبقة واحدة، لكان ذلك يتطلب إجراء تعديل جذري.
+  <li>تستمر طبقة [web] في التواصل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] كما لو كانت محلية. لتحقيق ذلك، تنفذ طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] واجهة <i><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi> </i>لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] الفعلية وتقدم نفسها لطبقة [web] كطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محلية. وبصرف النظر عن مشكلة مساحة الاسم المذكورة سابقًا، تظل طبقة [web] دون تغيير. هذه هي ميزة العمل في طبقات. لو كنا قد أنشأنا تطبيقًا من طبقة واحدة، لكان ذلك يتطلب إجراء تعديل جذري.
   </li>
   <li>تقوم طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] بإعادة توجيه طلبات طبقة [الويب] بشكل شفاف إلى خدمة الويب البعيدة [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]. وهي تتولى جميع جوانب &quot;الاتصال الشبكي&quot;. تتلقى استجابة من خدمة الويب البعيدة، وتقوم بتنسيقها لإعادتها إلى طبقة [الويب] بالشكل الذي تتوقعه هذه الأخيرة.
   </li>
@@ -995,7 +995,7 @@
   </li>
   <li>الطبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] هي عميل <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> لخدمة الويب. هذه هي الطبقة التي يمكن لبيئات تطوير التطبيقات (<bdi dir="ltr" class="odt-ltr-term">IDE</bdi>) إنشاؤها تلقائيًا.
   </li>
-  <li>تتعامل طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] مع طبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] كطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محلية إذا تأكدنا من أن طبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] تنفذ واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] البعيدة.
+  <li>تتعامل طبقة [web] مع طبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] كطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محلية إذا تأكدنا من أن طبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] تنفذ واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] البعيدة.
   </li>
 </ul>
 
@@ -1013,7 +1013,7 @@
 <ul>
   <li>في [1]، نضيف مراجع إلى المشروع
   </li>
-  <li>في [2]، نختار مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المعتادة من مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]. وسنتأكد من ضبط خاصية &quot;<bdi dir="ltr" class="odt-ltr-term">Copy to Local</bdi>&quot; الخاصة بها على <i><bdi dir="ltr" class="odt-ltr-term">True</bdi></i>. مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المختارة هي تلك التي تنفذ طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] بدعم <bdi dir="ltr" class="odt-ltr-term">NHibernate.</bdi>
+  <li>في [2]، نختار مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المعتادة من مجلد [lib]. وسنتأكد من ضبط خاصية &quot;<bdi dir="ltr" class="odt-ltr-term">Copy to Local</bdi>&quot; الخاصة بها على <i><bdi dir="ltr" class="odt-ltr-term">True</bdi></i>. مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المختارة هي تلك التي تنفذ طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] بدعم <bdi dir="ltr" class="odt-ltr-term">NHibernate.</bdi>
   </li>
 </ul>
 
@@ -1321,7 +1321,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000068500000177114EA989.png" width="680" height="153" style="display:inline-block; margin:4px;width:17.997cm;height:4.045cm;" class="odt-zoomable" data-zoom-src="images/100000000000068500000177114EA989.png" /></td></tr></table>
 
 <p>يمكن إضافة الإشارة إلى ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الخاص بـ <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بنفس الطريقة المتبعة مع إطار عمل <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> إذا كانت ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> مسجلة بالفعل على الجهاز (<bdi dir="ltr" class="odt-ltr-term">http://www.springframework.net/download.html</bdi>).</p>
-<p>نحن نتبع طريقة مختلفة. نستخدم المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] من المشاريع السابقة، الذي يحتوي على ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المطلوبة من قبل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، ونضيف مرجع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إلى المشروع:</p>
+<p>نحن نتبع طريقة مختلفة. نستخدم المجلد [lib] من المشاريع السابقة، الذي يحتوي على ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المطلوبة من قبل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، ونضيف مرجع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إلى المشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D5000000EDBF9AEB8A.png" width="235" height="119" style="display:inline-block; margin:4px;width:6.205cm;height:3.136cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D5000000EDBF9AEB8A.png" /></td></tr></table>
 
 <p>دعونا نعيد النظر في بنية العميل قيد التطوير حاليًا:</p>

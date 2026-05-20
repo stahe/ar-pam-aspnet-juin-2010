@@ -1050,11 +1050,11 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052D00000184C047F79F.png" width="663" height="194" style="display:inline-block; margin:4px;width:17.53cm;height:5.133cm;" class="odt-zoomable" data-zoom-src="images/100000000000052D00000184C047F79F.png" /></td></tr></table>
 
 <ul>
-  <li>ستتولى طبقة [1-<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] (<bdi dir="ltr" class="odt-ltr-term">dao</bdi> = كائن الوصول إلى البيانات) الوصول إلى البيانات.
+  <li>ستتولى طبقة [1-dao] (dao = كائن الوصول إلى البيانات) الوصول إلى البيانات.
   </li>
   <li>ستتولى طبقة [2-<bdi dir="ltr" class="odt-ltr-term">business</bdi>] منطق الأعمال للتطبيق، وتحديدًا حسابات الرواتب.
   </li>
-  <li>ستتولى الطبقة [3-<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] (<bdi dir="ltr" class="odt-ltr-term">ui</bdi> = واجهة المستخدم) عرض البيانات للمستخدم وتنفيذ طلبات المستخدم. نشير إلى مجموعة الوحدات النمطية التي تؤدي هذه الوظيفة باسم [التطبيق]. وهي تعمل كواجهة المستخدم.
+  <li>ستتولى الطبقة [3-ui] (ui = واجهة المستخدم) عرض البيانات للمستخدم وتنفيذ طلبات المستخدم. نشير إلى مجموعة الوحدات النمطية التي تؤدي هذه الوظيفة باسم [التطبيق]. وهي تعمل كواجهة المستخدم.
   </li>
   <li>ستصبح الطبقات الثلاث مستقلة عن بعضها البعض من خلال استخدام واجهات .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>
   </li>
@@ -1089,11 +1089,11 @@
 </ol>
 
 <ol>
-  <li>للقيام بذلك، سيتعين عليها عرض قائمة بالأشخاص (اللقب، الاسم الأول، رقم الضمان الاجتماعي) من الجدول [<bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi>] على المستخدم حتى يتمكن من اختيار أحدهم. ستستخدم طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] المسار [2، 3، 4، 5، 6، 7] لاسترداد هذه المعلومات. العملية [2] هي طلب قائمة الموظفين؛ والعملية [7] هي الاستجابة لهذا الطلب. بمجرد الانتهاء من ذلك، يمكن لطبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] عرض قائمة الموظفين للمستخدم عبر [8].
+  <li>للقيام بذلك، سيتعين عليها عرض قائمة بالأشخاص (اللقب، الاسم الأول، رقم الضمان الاجتماعي) من الجدول [<bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi>] على المستخدم حتى يتمكن من اختيار أحدهم. ستستخدم طبقة [ui] المسار [2، 3، 4، 5، 6، 7] لاسترداد هذه المعلومات. العملية [2] هي طلب قائمة الموظفين؛ والعملية [7] هي الاستجابة لهذا الطلب. بمجرد الانتهاء من ذلك، يمكن لطبقة [ui] عرض قائمة الموظفين للمستخدم عبر [8].
   </li>
-  <li>سيقوم المستخدم بإرسال عدد أيام العمل وعدد ساعات العمل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. هذه هي العملية [1] أعلاه. خلال هذه الخطوة، يتفاعل المستخدم فقط مع طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]. وهذه الطبقة هي التي ستتحقق من صحة البيانات المدخلة. بمجرد الانتهاء من ذلك، سيطلب المستخدم حساب الرواتب.
+  <li>سيقوم المستخدم بإرسال عدد أيام العمل وعدد ساعات العمل إلى طبقة [ui]. هذه هي العملية [1] أعلاه. خلال هذه الخطوة، يتفاعل المستخدم فقط مع طبقة [ui]. وهذه الطبقة هي التي ستتحقق من صحة البيانات المدخلة. بمجرد الانتهاء من ذلك، سيطلب المستخدم حساب الرواتب.
   </li>
-  <li>ستطلب طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] من طبقة الأعمال إجراء هذا الحساب. للقيام بذلك، سترسل البيانات التي تلقتها من المستخدم إلى طبقة الأعمال. هذه هي العملية [2].
+  <li>ستطلب طبقة [ui] من طبقة الأعمال إجراء هذا الحساب. للقيام بذلك، سترسل البيانات التي تلقتها من المستخدم إلى طبقة الأعمال. هذه هي العملية [2].
   </li>
   <li>تحتاج طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] إلى معلومات معينة لأداء مهمتها:
     <ul>
@@ -1111,9 +1111,9 @@
 <ol>
   <li>بعد الحصول على جميع البيانات المطلوبة، تقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] بحساب راتب الشخص الذي اختاره المستخدم.
   </li>
-  <li>يمكن لطبقة [الأعمال] الآن الرد على الطلب المقدم من طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] في (د). هذا هو المسار [7].
+  <li>يمكن لطبقة [الأعمال] الآن الرد على الطلب المقدم من طبقة [ui] في (د). هذا هو المسار [7].
   </li>
-  <li>ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] بتنسيق هذه النتائج لتقديمها للمستخدم في شكل مناسب ثم عرضها. هذا هو المسار [8].
+  <li>ستقوم طبقة [ui] بتنسيق هذه النتائج لتقديمها للمستخدم في شكل مناسب ثم عرضها. هذا هو المسار [8].
   </li>
   <li>يمكن للمرء أن يتخيل أن هذه النتائج تحتاج إلى تخزينها في ملف أو قاعدة بيانات. ويمكن القيام بذلك تلقائيًا. في هذه الحالة، بعد العملية (و)، ستطلب طبقة [الأعمال] من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] حفظ النتائج. سيكون هذا المسار [3، 4، 5، 6]. يمكن أيضًا القيام بذلك بناءً على طلب المستخدم. سيتم استخدام المسار [1-8] في دورة الطلب والاستجابة.
   </li>
@@ -1124,7 +1124,7 @@
 <ul>
   <li>سيتم تنفيذ طبقتي [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">business</bdi>] بواسطة مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi>
   </li>
-  <li>وسيتم تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] بواسطة نموذج الويب من الإصدار 1 (انظر القسم<a href="#formulaire-v1"><u><span style="color: #0563c1"> 4.2.1</span></u></a>).
+  <li>وسيتم تنفيذ طبقة [ui] بواسطة نموذج الويب من الإصدار 1 (انظر القسم<a href="#formulaire-v1"><u><span style="color: #0563c1"> 4.2.1</span></u></a>).
   </li>
 </ul>
 
@@ -1134,7 +1134,7 @@
 
 <p><a id="vsdaoibatis1"></a></p>
 <h3 id="721-visual-studio-c-dao">7.2.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio C#</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h3>
-<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هو كما يلي:</p>
+<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> لطبقة [dao] هو كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000617000001E94DBA0DBD.png" width="680" height="213" style="display:inline-block; margin:4px;width:17.997cm;height:5.644cm;" class="odt-zoomable" data-zoom-src="images/1000000000000617000001E94DBA0DBD.png" /></td></tr></table>
 
 <ul>
@@ -1144,7 +1144,7 @@
   </li>
   <li>في [3]، مراجع المشروع.
   </li>
-  <li>في [4]، مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] يحتوي على ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المطلوبة للمشاريع المختلفة التالية
+  <li>في [4]، مجلد [lib] يحتوي على ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المطلوبة للمشاريع المختلفة التالية
   </li>
 </ul>
 
@@ -1162,13 +1162,13 @@
   </li>
 </ul>
 
-<p>تم أخذ هذه المراجع من المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] [4]. تأكد من تعيين الخاصية &quot;<bdi dir="ltr" class="odt-ltr-term">Local Copy</bdi>&quot; لجميع هذه المراجع على &quot;<bdi dir="ltr" class="odt-ltr-term">True</bdi>&quot; [5]:</p>
+<p>تم أخذ هذه المراجع من المجلد [lib] [4]. تأكد من تعيين الخاصية &quot;<bdi dir="ltr" class="odt-ltr-term">Local Copy</bdi>&quot; لجميع هذه المراجع على &quot;<bdi dir="ltr" class="odt-ltr-term">True</bdi>&quot; [5]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C30000014774760AA5.png" width="226" height="164" style="display:inline-block; margin:4px;width:5.967cm;height:4.327cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C30000014774760AA5.png" /></td></tr></table>
 
-<h3 id="722-dao">7.2.2. <span style="color: #4f81bd">الكيانات في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h3>
+<h3 id="722-dao">7.2.2. <span style="color: #4f81bd">الكيانات في طبقة [dao]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E1000000A310D6653D.png" width="158" height="114" style="display:inline-block; margin:4px;width:4.17cm;height:3.022cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E1000000A310D6653D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>تم تجميع الكيانات (الكائنات) المطلوبة لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في مجلد [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>] الخاص بالمشروع. بعضها مألوف لنا بالفعل: [<bdi dir="ltr" class="odt-ltr-term">Contributions</bdi>] الموصوفة في القسم<a href="#cotisation-nhibernate"><u><span style="color: #0563c1"> 6.3.2.1</span></u></a>، و[<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>] الموصوفة في القسم<a href="#employe-nhibernate"><u><span style="color: #0563c1"> 6.3.2.3</span></u></a>، و[<bdi dir="ltr" class="odt-ltr-term">Allowances</bdi>] الموصوفة في القسم<a href="#indemnites-nhibernate"><u><span style="color: #0563c1"> 6.3.2.2</span></u></a>. جميعها موجودة في مساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Entities</bdi>].</p>
+<p>تم تجميع الكيانات (الكائنات) المطلوبة لطبقة [dao] في مجلد [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>] الخاص بالمشروع. بعضها مألوف لنا بالفعل: [<bdi dir="ltr" class="odt-ltr-term">Contributions</bdi>] الموصوفة في القسم<a href="#cotisation-nhibernate"><u><span style="color: #0563c1"> 6.3.2.1</span></u></a>، و[<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>] الموصوفة في القسم<a href="#employe-nhibernate"><u><span style="color: #0563c1"> 6.3.2.3</span></u></a>، و[<bdi dir="ltr" class="odt-ltr-term">Allowances</bdi>] الموصوفة في القسم<a href="#indemnites-nhibernate"><u><span style="color: #0563c1"> 6.3.2.2</span></u></a>. جميعها موجودة في مساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Entities</bdi>].</p>
 <p>يتم تعريف فئة [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Pam.Dao.Entites {</span></span>
@@ -1197,7 +1197,7 @@
 </code></pre></div>
 
 <h3 id="723-pamexception">7.2.3. <span style="color: #4f81bd">فئة [<bdi dir="ltr" class="odt-ltr-term">PamException</bdi>]</span></h3>
-<p>طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] مسؤولة عن تبادل البيانات مع مصدر خارجي. قد يفشل هذا التبادل. على سبيل المثال، إذا تم طلب معلومات من خدمة بعيدة على الإنترنت، فسيفشل استردادها بسبب أي انقطاع في الشبكة. بالنسبة لهذا النوع من الأخطاء، من الممارسات المعتادة في <bdi dir="ltr" class="odt-ltr-term">Java</bdi> إلقاء استثناء. إذا لم يكن الاستثناء من النوع [<bdi dir="ltr" class="odt-ltr-term">RunTimeException</bdi>] أو نوع مشتق، فيجب عليك الإشارة في توقيع الأسلوب إلى أن الأسلوب يلقي استثناءً. في .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>، جميع الاستثناءات غير معالجة، أي أنها تعادل نوع [<bdi dir="ltr" class="odt-ltr-term">RunTimeException</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> لذلك، لا داعي للإعلان عن أن الطرق [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi>، <bdi dir="ltr" class="odt-ltr-term">GetEmployee</bdi>، <bdi dir="ltr" class="odt-ltr-term">GetContributions</bdi>] من المحتمل أن ترمي استثناءً.</p>
+<p>طبقة [dao] مسؤولة عن تبادل البيانات مع مصدر خارجي. قد يفشل هذا التبادل. على سبيل المثال، إذا تم طلب معلومات من خدمة بعيدة على الإنترنت، فسيفشل استردادها بسبب أي انقطاع في الشبكة. بالنسبة لهذا النوع من الأخطاء، من الممارسات المعتادة في <bdi dir="ltr" class="odt-ltr-term">Java</bdi> إلقاء استثناء. إذا لم يكن الاستثناء من النوع [<bdi dir="ltr" class="odt-ltr-term">RunTimeException</bdi>] أو نوع مشتق، فيجب عليك الإشارة في توقيع الأسلوب إلى أن الأسلوب يلقي استثناءً. في .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>، جميع الاستثناءات غير معالجة، أي أنها تعادل نوع [<bdi dir="ltr" class="odt-ltr-term">RunTimeException</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> لذلك، لا داعي للإعلان عن أن الطرق [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi>، <bdi dir="ltr" class="odt-ltr-term">GetEmployee</bdi>، <bdi dir="ltr" class="odt-ltr-term">GetContributions</bdi>] من المحتمل أن ترمي استثناءً.</p>
 <p>ومع ذلك، من المفيد التمييز بين الاستثناءات المختلفة، حيث قد تختلف طريقة معالجتها. وبالتالي، يمكن كتابة الكود الذي يعالج أنواعًا مختلفة من الاستثناءات على النحو التالي:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>try{
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ... code pouvant générer divers types d&#39;exceptions
@@ -1248,7 +1248,7 @@
   </li>
   <li>السطر 7: تحتوي على خاصية عامة [<bdi dir="ltr" class="odt-ltr-term">Code</bdi>] وهي رمز خطأ
   </li>
-  <li>في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] الخاصة بنا، سنستخدم نوعين من المنشئات:
+  <li>في طبقة [dao] الخاصة بنا، سنستخدم نوعين من المنشئات:
     <ul>
       <li>المنشئ الموجود في الأسطر 18-21، والذي يمكن استخدامه كما هو موضح أدناه:
       </li>
@@ -1376,9 +1376,9 @@
 
 <p>في الحالات البسيطة، يمكننا البدء من طبقة [الأعمال] لاكتشاف واجهات التطبيق. لكي تعمل، تحتاج إلى بيانات:</p>
 <ul>
-  <li>المتوفرة بالفعل في الملفات أو قواعد البيانات أو عبر الشبكة. يتم توفير هذه البيانات بواسطة طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
+  <li>المتوفرة بالفعل في الملفات أو قواعد البيانات أو عبر الشبكة. يتم توفير هذه البيانات بواسطة طبقة [dao].
   </li>
-  <li>غير متوفرة بعد. يتم توفيرها بعد ذلك بواسطة طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]، التي تحصل عليها من مستخدم التطبيق.
+  <li>غير متوفرة بعد. يتم توفيرها بعد ذلك بواسطة طبقة [ui]، التي تحصل عليها من مستخدم التطبيق.
   </li>
 </ul>
 
@@ -1395,7 +1395,7 @@
 </ul>
 
 <p>هذه المعلومات معروفة قبل حساب الرواتب وبالتالي يمكن تخزينها. في الاتجاه [الأعمال] -&gt; [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]، يمكن لطبقة [الأعمال] أن تطلب من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] تسجيل نتيجة حساب الرواتب. لن نقوم بذلك هنا.</p>
-<p>باستخدام هذه المعلومات، يمكننا محاولة وضع تعريف أولي لواجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]:</p>
+<p>باستخدام هذه المعلومات، يمكننا محاولة وضع تعريف أولي لواجهة طبقة [dao]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1412,9 +1412,9 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 1: نقوم باستيراد مساحة الاسم للكيانات في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
+  <li>السطر 1: نقوم باستيراد مساحة الاسم للكيانات في طبقة [dao].
   </li>
-  <li>السطر 3: تقع طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في مساحة اسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Service</bdi>]. يمكن إنشاء العناصر الموجودة في مساحة اسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Entities</bdi>] في مثيلات متعددة. يتم إنشاء العناصر الموجودة في مساحة اسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Service</bdi>] كمثيل واحد (<bdi dir="ltr" class="odt-ltr-term">singleton</bdi>). وهذا ما برر اختيار أسماء مساحات الأسماء.
+  <li>السطر 3: تقع طبقة [dao] في مساحة اسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Service</bdi>]. يمكن إنشاء العناصر الموجودة في مساحة اسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Entities</bdi>] في مثيلات متعددة. يتم إنشاء العناصر الموجودة في مساحة اسم [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Service</bdi>] كمثيل واحد (<bdi dir="ltr" class="odt-ltr-term">singleton</bdi>). وهذا ما برر اختيار أسماء مساحات الأسماء.
   </li>
   <li>السطر 4: تسمى الواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>]. وهي تحدد ثلاث طرق:
     <ul>
@@ -1428,7 +1428,7 @@
   </li>
 </ul>
 
-<h2 id="73-dao">7.3. <span style="color: #4f81bd">تنفيذ واختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h2>
+<h2 id="73-dao">7.3. <span style="color: #4f81bd">تنفيذ واختبار طبقة [dao]</span></h2>
 <h3 id="731-visual-studio">7.3.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi></span></h3>
 <p>تم عرض مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> بالفعل. للتذكير:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C000001BAA8B49F92.png" width="590" height="221" style="display:inline-block; margin:4px;width:15.61cm;height:5.847cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C000001BAA8B49F92.png" /></td></tr></table>
@@ -1436,7 +1436,7 @@
 <ul>
   <li>في [1]، المشروع ككل
   </li>
-  <li>في [2]، الفئات المختلفة للمشروع. يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>] على الكيانات التي تتعامل معها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بالإضافة إلى ملفات التعيين الخاصة بـ <bdi dir="ltr" class="odt-ltr-term">NHibernate.</bdi> يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] على واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>] وتنفيذها [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>]. يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">tests</bdi>] على اختبار وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Main.cs</bdi>] واختبار الوحدة [<bdi dir="ltr" class="odt-ltr-term">NUnit.cs</bdi>].
+  <li>في [2]، الفئات المختلفة للمشروع. يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>] على الكيانات التي تتعامل معها طبقة [dao] بالإضافة إلى ملفات التعيين الخاصة بـ <bdi dir="ltr" class="odt-ltr-term">NHibernate.</bdi> يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] على واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>] وتنفيذها [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>]. يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">tests</bdi>] على اختبار وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Main.cs</bdi>] واختبار الوحدة [<bdi dir="ltr" class="odt-ltr-term">NUnit.cs</bdi>].
   </li>
   <li>في [3]، مراجع المشروع.
   </li>
@@ -1481,7 +1481,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 11: نطلب من <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> مرجعًا إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
+  <li>السطر 11: نطلب من <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> مرجعًا إلى طبقة [dao].
   </li>
   <li>الأسطر 13–15: اختبار طريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>]
   </li>
@@ -1576,7 +1576,7 @@
 <h3 id="733-pamdaonhibernate">7.3.3. <span style="color: #4f81bd">تعريف فئة [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056C0000010D33925926.png" width="680" height="132" style="display:inline-block; margin:4px;width:17.997cm;height:3.487cm;" class="odt-zoomable" data-zoom-src="images/100000000000056C0000010D33925926.png" /></td></tr></table>
 
-<p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>] التي تنفذها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هي كما يلي:</p>
+<p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>] التي تنفذها طبقة [dao] هي كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1596,7 +1596,7 @@
 <p><strong>السؤال</strong>: اكتب الكود الخاص بفئة [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>] التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>] المذكورة أعلاه باستخدام إطار عمل <bdi dir="ltr" class="odt-ltr-term">NHibernate</bdi> المُهيأ كما هو موضح سابقًا. سنقوم أيضًا بتنفيذ طريقتي <strong><bdi dir="ltr" class="odt-ltr-term">init</bdi></strong> و <strong><bdi dir="ltr" class="odt-ltr-term">destroy</bdi></strong> اللتين يتم تنفيذهما بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> ستقوم طريقة <em><bdi dir="ltr" class="odt-ltr-term">init</bdi></em> بإنشاء <em><bdi dir="ltr" class="odt-ltr-term">SessionFactory</bdi></em> التي سنحصل منها على كائنات <em><bdi dir="ltr" class="odt-ltr-term">Session</bdi></em>. وستقوم طريقة <em><bdi dir="ltr" class="odt-ltr-term">destroy</bdi></em> بإغلاق <em><bdi dir="ltr" class="odt-ltr-term">SessionFactory</bdi></em> هذه. سنستخدم الأمثلة الواردة في القسم<a href="#exemples-nhibernate"><u><span style="color: #0563c1"> 6.5</span></u></a>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><strong>القيود</strong>:</p>
-<p>سنفترض أن بعض البيانات المطلوبة من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] يمكن أن تتسع بالكامل في الذاكرة. وبالتالي، لتحسين الأداء، ستخزن فئة [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>]:</p>
+<p>سنفترض أن بعض البيانات المطلوبة من طبقة [dao] يمكن أن تتسع بالكامل في الذاكرة. وبالتالي، لتحسين الأداء، ستخزن فئة [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>]:</p>
 <ul>
   <li>جدول [<bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi>] بالتنسيق (<bdi dir="ltr" class="odt-ltr-term">SS</bdi>, <bdi dir="ltr" class="odt-ltr-term">LAST_NAME</bdi>, <bdi dir="ltr" class="odt-ltr-term">FIRST_NAME</bdi>) المطلوب بواسطة طريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi>]، كمصفوفة من كائنات [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>]
   </li>
@@ -1655,7 +1655,7 @@
 <p><strong>قراءة موصى بها</strong>: &quot;<strong><bdi dir="ltr" class="odt-ltr-term">C#</bdi> 2008، الفصل 4: البنى ثلاثية المستويات، اختبار <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi>، إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>&quot;</strong>.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>كان الاختبار السابق بصريًا: فقد تحققنا على الشاشة للتأكد من حصولنا على النتائج المتوقعة. هذه الطريقة غير كافية في بيئة عمل احترافية. يجب أن تكون الاختبارات آلية قدر الإمكان وأن تهدف إلى عدم الحاجة إلى تدخل بشري. فالإنسان معرض للتعب بالفعل، وتقل قدرته على التحقق من الاختبارات مع مرور اليوم. تساعد أداة [<bdi dir="ltr" class="odt-ltr-term">NUnit</bdi>] في تحقيق هذه الأتمتة. وهي متاحة على الرابط [<bdi dir="ltr" class="odt-ltr-term">http://www.nunit.org/</bdi>].</p>
-<p>سيتطور مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] على النحو التالي:</p>
+<p>سيتطور مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> لطبقة [dao] على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000634000001EE78D20A07.png" width="680" height="212" style="display:inline-block; margin:4px;width:17.997cm;height:5.599cm;" class="odt-zoomable" data-zoom-src="images/1000000000000634000001EE78D20A07.png" /></td></tr></table>
 
 <ul>
@@ -1747,7 +1747,7 @@
   </li>
   <li>السطر 12: الفئة مشتقة من فئة الأداة المساعدة <i><bdi dir="ltr" class="odt-ltr-term">AssertionHelper</bdi> </i>في إطار عمل <i><bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> </i>(بدءًا من الإصدار 2.4.6).
   </li>
-  <li>السطر 14: الحقل الخاص [<bdi dir="ltr" class="odt-ltr-term">pamDao</bdi>] هو مثيل للواجهة التي توفر الوصول إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. لاحظ أن نوع هذا الحقل هو <b>واجهة</b>، وليس <b>فئة</b>. وهذا يعني أن مثيل [<bdi dir="ltr" class="odt-ltr-term">pamDao</bdi>] يجعل الطرق فقط قابلة للوصول — على وجه التحديد، تلك الموجودة في واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>].
+  <li>السطر 14: الحقل الخاص [<bdi dir="ltr" class="odt-ltr-term">pamDao</bdi>] هو مثيل للواجهة التي توفر الوصول إلى طبقة [dao]. لاحظ أن نوع هذا الحقل هو <b>واجهة</b>، وليس <b>فئة</b>. وهذا يعني أن مثيل [<bdi dir="ltr" class="odt-ltr-term">pamDao</bdi>] يجعل الطرق فقط قابلة للوصول — على وجه التحديد، تلك الموجودة في واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamDao</bdi>].
   </li>
   <li>الطرق التي يتم اختبارها في الفئة هي تلك التي تحمل السمة [<i><bdi dir="ltr" class="odt-ltr-term">Test</bdi></i>]. بالنسبة لجميع هذه الطرق، تكون عملية الاختبار كما يلي:
     <ul>
@@ -1803,8 +1803,8 @@
   </li>
 </ul>
 <p><a id="daodll"></a></p>
-<h3 id="735-dll-dao">7.3.5. <span style="color: #4f81bd"><strong>إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> لطبقة [</strong> <strong>] وطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</strong></span></h3>
-<p>بمجرد كتابة فئة [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>] واختبارها، سيتم إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] على النحو التالي:</p>
+<h3 id="735-dll-dao">7.3.5. <span style="color: #4f81bd"><strong>إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> لطبقة [</strong> <strong>] وطبقة [dao]</strong></span></h3>
+<p>بمجرد كتابة فئة [<bdi dir="ltr" class="odt-ltr-term">PamDaoNHibernate</bdi>] واختبارها، سيتم إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> لطبقة [dao] على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FD000001B97BA62AC8.png" width="680" height="196" style="display:inline-block; margin:4px;width:17.997cm;height:5.177cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FD000001B97BA62AC8.png" /></td></tr></table>
 
 <ul>
@@ -1814,7 +1814,7 @@
   </li>
   <li>[4]، بناء المشروع
   </li>
-  <li>يتم إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> في المجلد [<bdi dir="ltr" class="odt-ltr-term">bin/Release</bdi>] [5]. نضيفه إلى ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الموجودة بالفعل في المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] [6]:
+  <li>يتم إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> في المجلد [<bdi dir="ltr" class="odt-ltr-term">bin/Release</bdi>] [5]. نضيفه إلى ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الموجودة بالفعل في المجلد [lib] [6]:
   </li>
 </ul>
 
@@ -1824,7 +1824,7 @@
 <p>دعونا نعيد النظر في البنية العامة لتطبيق [<bdi dir="ltr" class="odt-ltr-term">SimuPaie</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005F20000012BEE09A03F.png" width="680" height="134" style="display:inline-block; margin:4px;width:17.997cm;height:3.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000005F20000012BEE09A03F.png" /></td></tr></table>
 
-<p>نفترض الآن أن طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] قد اكتملت وتم تغليفها في مكتبة <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-dao-nhibernate.dll</bdi>]. سنركز الآن على طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. تنفذ هذه الطبقة قواعد العمل، وفي هذه الحالة قواعد حساب الراتب.</p>
+<p>نفترض الآن أن طبقة [dao] قد اكتملت وتم تغليفها في مكتبة <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-dao-nhibernate.dll</bdi>]. سنركز الآن على طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. تنفذ هذه الطبقة قواعد العمل، وفي هذه الحالة قواعد حساب الراتب.</p>
 <p><a id="vspammetier"></a></p>
 <h3 id="741-visual-studio-business">7.4.1. <span style="color: #4f81bd"><strong>مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> [</strong> <strong>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]</strong></span></h3>
 <p>قد يبدو مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> الخاص بطبقة الأعمال كما يلي:</p>
@@ -1857,7 +1857,7 @@
   </li>
 </ol>
 
-<p>يجب أن تفي واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] المقدمة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] من قبل طبقة [<bdi dir="ltr" class="odt-ltr-term">metier</bdi>] بالمتطلبات المذكورة أعلاه. هناك العديد من الواجهات الممكنة. نقترح ما يلي:</p>
+<p>يجب أن تفي واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] المقدمة إلى طبقة [ui] من قبل طبقة [<bdi dir="ltr" class="odt-ltr-term">metier</bdi>] بالمتطلبات المذكورة أعلاه. هناك العديد من الواجهات الممكنة. نقترح ما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span></span>
@@ -1883,7 +1883,7 @@
 <p>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>] في مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> على الكائنات التي تتعامل معها فئة الأعمال: [<bdi dir="ltr" class="odt-ltr-term">Payroll</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">PayrollItems</bdi>].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018C000001612569ED08.png" width="198" height="177" style="display:inline-block; margin:4px;width:5.239cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/100000000000018C000001612569ED08.png" /></td></tr></table>
 
-<p>تغلف فئة [<bdi dir="ltr" class="odt-ltr-term">FeuilleS</bdi><a id="feuillesalaire"></a> <bdi dir="ltr" class="odt-ltr-term">al</bdi>] الحقول من 6 إلى 24 من النموذج السابق:</p>
+<p>تغلف فئة [<bdi dir="ltr" class="odt-ltr-term">FeuilleS</bdi><a id="feuillesalaire"></a> al] الحقول من 6 إلى 24 من النموذج السابق:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1954,9 +1954,9 @@
 
 <p>سنقوم بتنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] باستخدام فئتين:</p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractBasePamMetier</bdi>]، وهي فئة مجردة سنقوم فيها بتنفيذ الوصول إلى البيانات لواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]. ستحتوي هذه الفئة على مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
+  <li>[<bdi dir="ltr" class="odt-ltr-term">AbstractBasePamMetier</bdi>]، وهي فئة مجردة سنقوم فيها بتنفيذ الوصول إلى البيانات لواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]. ستحتوي هذه الفئة على مرجع إلى طبقة [dao].
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]، وهي فئة مشتقة من [<bdi dir="ltr" class="odt-ltr-term">AbstractBasePamMetier</bdi>]، والتي ستنفذ قواعد الأعمال الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]. ولن تكون على علم بطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
+  <li>[<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>]، وهي فئة مشتقة من [<bdi dir="ltr" class="odt-ltr-term">AbstractBasePamMetier</bdi>]، والتي ستنفذ قواعد الأعمال الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]. ولن تكون على علم بطبقة [dao].
   </li>
 </ul>
 
@@ -1998,13 +1998,13 @@
   </li>
   <li>السطر 6: الفئة مجردة (السمة <i><bdi dir="ltr" class="odt-ltr-term">abstract</bdi></i>) وتنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]
   </li>
-  <li>السطر 9: تحتوي الفئة على مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في شكل خاصية عامة
+  <li>السطر 9: تحتوي الفئة على مرجع إلى طبقة [dao] في شكل خاصية عامة
   </li>
-  <li>الأسطر 12–14: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeIDs</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] – تستخدم الطريقة التي تحمل الاسم نفسه في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
+  <li>الأسطر 12–14: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeIDs</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>] – تستخدم الطريقة التي تحمل الاسم نفسه في طبقة [dao]
   </li>
-  <li>الأسطر 17–19: الطريقة الداخلية (المحمية) [<bdi dir="ltr" class="odt-ltr-term">GetEmployee</bdi>] التي تستدعي الطريقة التي تحمل الاسم نفسه في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] – تم إعلانها <i>على أنها محمية </i>حتى تتمكن الفئات المشتقة من الوصول إليها دون أن تكون عامة
+  <li>الأسطر 17–19: الطريقة الداخلية (المحمية) [<bdi dir="ltr" class="odt-ltr-term">GetEmployee</bdi>] التي تستدعي الطريقة التي تحمل الاسم نفسه في طبقة [dao] – تم إعلانها <i>على أنها محمية </i>حتى تتمكن الفئات المشتقة من الوصول إليها دون أن تكون عامة
   </li>
-  <li>الأسطر 22-24: الطريقة الداخلية (المحمية) [<bdi dir="ltr" class="odt-ltr-term">GetContributions</bdi>] التي تستدعي الطريقة التي تحمل الاسم نفسه في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
+  <li>الأسطر 22-24: الطريقة الداخلية (المحمية) [<bdi dir="ltr" class="odt-ltr-term">GetContributions</bdi>] التي تستدعي الطريقة التي تحمل الاسم نفسه في طبقة [dao]
   </li>
   <li>السطر 27: تنفيذ مجرد (سمة <i>مجردة</i>) لطريقة [<bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>].
   </li>
@@ -2137,9 +2137,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
-<p>هذا الملف مطابق لملف [<bdi dir="ltr" class="odt-ltr-term">App.config</bdi>] المستخدم في مشروع طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] (انظر القسم<a href="#appconfig-pam-dao-nhibernate"><u><span style="color: #0563c1"> 7.3.2</span></u></a>) مع الاختلافات الطفيفة التالية:</p>
+<p>هذا الملف مطابق لملف [<bdi dir="ltr" class="odt-ltr-term">App.config</bdi>] المستخدم في مشروع طبقة [dao] (انظر القسم<a href="#appconfig-pam-dao-nhibernate"><u><span style="color: #0563c1"> 7.3.2</span></u></a>) مع الاختلافات الطفيفة التالية:</p>
 <ul>
-  <li>السطر 20: الكائن الذي يحمل المعرف &quot;<bdi dir="ltr" class="odt-ltr-term">pamdao</bdi>&quot; هو من النوع [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Service.PamDaoNHibernate</bdi>] ويوجد في التجميع [<bdi dir="ltr" class="odt-ltr-term">pam-dao-nhibernate</bdi>]. طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هي الطبقة التي تمت مناقشتها سابقًا.
+  <li>السطر 20: الكائن الذي يحمل المعرف &quot;<bdi dir="ltr" class="odt-ltr-term">pamdao</bdi>&quot; هو من النوع [<bdi dir="ltr" class="odt-ltr-term">Pam.Dao.Service.PamDaoNHibernate</bdi>] ويوجد في التجميع [<bdi dir="ltr" class="odt-ltr-term">pam-dao-nhibernate</bdi>]. طبقة [dao] هي الطبقة التي تمت مناقشتها سابقًا.
   </li>
   <li>الأسطر 21–23: الكائن الذي يحمل المعرف &quot;<bdi dir="ltr" class="odt-ltr-term">pammetier</bdi>&quot; هو من النوع [<bdi dir="ltr" class="odt-ltr-term">Pam.Metier.Service.PamMetier</bdi>] ويوجد في التجميع [<bdi dir="ltr" class="odt-ltr-term">pam-metier-dao-nhibernate</bdi>]. يجب تكوين المشروع على النحو التالي:
   </li>
@@ -2148,7 +2148,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015C00000077BDE0D3A3.png" width="244" height="83" style="display:inline-block; margin:4px;width:6.451cm;height:2.207cm;" class="odt-zoomable" data-zoom-src="images/100000000000015C00000077BDE0D3A3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>السطر 22: الكائن [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>] الذي تم إنشاء مثيل له بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> له خاصية عامة [<bdi dir="ltr" class="odt-ltr-term">PamDao</bdi>] وهي مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. يتم تهيئة هذه الخاصية بالمرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] التي تم إنشاؤها في السطر 20. 
+  <li>السطر 22: الكائن [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>] الذي تم إنشاء مثيل له بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> له خاصية عامة [<bdi dir="ltr" class="odt-ltr-term">PamDao</bdi>] وهي مرجع إلى طبقة [dao]. يتم تهيئة هذه الخاصية بالمرجع إلى طبقة [dao] التي تم إنشاؤها في السطر 20. 
   </li>
 </ul>
 
@@ -2277,16 +2277,16 @@
 </ul>
 
 <h3 id="747-dll-business">7.4.7. <span style="color: #4f81bd">إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]</span></h3>
-<p>بمجرد كتابة فئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>] واختبارها، سنقوم بإنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-metier-dao-hibernate.dll</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] باتباع الطريقة الموضحة في القسم<a href="#daodll"><u><span style="color: #0563c1"> 7.3.5.</span></u></a> سنحرص على عدم تضمين برامج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Main.cs</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">NUnit.cs</bdi>] في ملف <bdi dir="ltr" class="odt-ltr-term">DLL.</bdi> ثم سنضعه في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] الخاص بملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [1].</p>
+<p>بمجرد كتابة فئة [<bdi dir="ltr" class="odt-ltr-term">PamMetier</bdi>] واختبارها، سنقوم بإنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-metier-dao-hibernate.dll</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] باتباع الطريقة الموضحة في القسم<a href="#daodll"><u><span style="color: #0563c1"> 7.3.5.</span></u></a> سنحرص على عدم تضمين برامج الاختبار [<bdi dir="ltr" class="odt-ltr-term">Main.cs</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">NUnit.cs</bdi>] في ملف <bdi dir="ltr" class="odt-ltr-term">DLL.</bdi> ثم سنضعه في مجلد [lib] الخاص بملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [1].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000165000001D54C0FA0C3.png" width="179" height="235" style="display:inline-block; margin:4px;width:4.724cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000165000001D54C0FA0C3.png" /></td></tr></table>
 
 <p><a id="refheadingtoc549421911809479"></a></p>
-<h2 id="75-web">7.5. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h2>
+<h2 id="75-web">7.5. <span style="color: #4f81bd">طبقة [web]</span></h2>
 <p>دعونا نعيد النظر في البنية العامة لتطبيق [<bdi dir="ltr" class="odt-ltr-term">SimuPaie</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FA00000122744B2F21.png" width="680" height="129" style="display:inline-block; margin:4px;width:17.997cm;height:3.411cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FA00000122744B2F21.png" /></td></tr></table>
 
-<p>نفترض أن طبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">business</bdi>] مكتملتان ومغلفتان في ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-dao-hibernate</bdi>، <bdi dir="ltr" class="odt-ltr-term">pam-business-dao-hibernate.dll</bdi>]. سنقوم الآن بوصف طبقة الويب. </p>
-<h3 id="751-visual-web-developer-web">7.5.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]</span></h3>
+<p>نفترض أن طبقتي [dao] و[<bdi dir="ltr" class="odt-ltr-term">business</bdi>] مكتملتان ومغلفتان في ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-dao-hibernate</bdi>، <bdi dir="ltr" class="odt-ltr-term">pam-business-dao-hibernate.dll</bdi>]. سنقوم الآن بوصف طبقة الويب. </p>
+<h3 id="751-visual-web-developer-web">7.5.1. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi> لطبقة [web]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000317000001B5171F3E34.png" width="396" height="219" style="display:inline-block; margin:4px;width:10.465cm;height:5.782cm;" class="odt-zoomable" data-zoom-src="images/1000000000000317000001B5171F3E34.png" /></td></tr></table>
 
 <ul>
@@ -2441,7 +2441,7 @@
   </li>
 </ul>
 <p><a id="pageload-aspnet-v7"></a></p>
-<h3 id="753-defaulta-spx">7.5.3. <span style="color: #4f81bd"><strong>نموذج [<bdi dir="ltr" class="odt-ltr-term">Default.a</bdi></strong> <strong><bdi dir="ltr" class="odt-ltr-term">spx</bdi>]</strong></span></h3>
+<h3 id="753-defaulta-spx">7.5.3. <span style="color: #4f81bd"><strong>نموذج [<bdi dir="ltr" class="odt-ltr-term">Default.a</bdi></strong> <strong>spx]</strong></span></h3>
 <p>النموذج هو النموذج الموجود في الإصدار 2.</p>
 <p><img src="images/100000000000029A00000326260E6170.png" width="466" height="564" style="width:12.33cm;height:14.923cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029A00000326260E6170.png" /></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
