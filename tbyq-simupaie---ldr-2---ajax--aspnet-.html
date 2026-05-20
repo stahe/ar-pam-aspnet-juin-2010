@@ -1,0 +1,1142 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-pam-aspnet-juin-2010/tbyq-simupaie---ldr-2---ajax--aspnet-.html">
+      
+      
+        <link rel="prev" href="tbyq-simupaie---ldr-1-mn---aspnet.html">
+      
+      
+        <link rel="next" href="mqdm-l-nhibernate-orm.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET - إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-simupaie-2-ajax-aspnet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-header__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-nav__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-sry-l-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. مقدمة سريعة إلى ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="drs-ll.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. دراسة الحالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-1-mn---aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tbyq-simupaie---ldr-2---ajax--aspnet-.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. مقدمة
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-visual-web-developer-web-ui-ajax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. مشروع Visual Web Developer في طبقة [ web-ui-ajax]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-ajax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. اختبار حل Ajax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. الخلاصة
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. مقدمة إلى NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---dr-3-mn---bny-thlthy-lbqt-m-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق [SimuPaie] – إصدار 3 من – بنية ثلاثية الطبقات مع NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-4---aspnet--r-mtdd--f-wd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تطبيق [SimuPaie] – الإصدار 4 – ASP.NET / عرض متعدد / صفحة واحدة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-5---aspnet--khdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-6---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق [SimuPaie] – الإصدار 6 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-7-mn---aspnet--r-mtdd--ft-mtdd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق [SimuPaie] – الإصدار 7 من – ASP.NET / عرض متعدد / صفحات متعددة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-8---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق [SimuPaie] – الإصدار 8 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-9---tkml-springnhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق [SimuPaie] – الإصدار 9 – تكامل Spring/NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-10---myl-flex-lkhdm-wyb-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="simupaie-ajax"></a></p>
+<h1 id="5-simupaie-2-ajax-aspnet">5. <span style="color: #365f91"><strong>تطبيق [<bdi dir="ltr" class="odt-ltr-term">SimuPaie</bdi>] – الإصدار 2 – <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> / <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi></strong></span></h1>
+<h2 id="51">5.1. <span style="color: #4f81bd">مقدمة</span></h2>
+<p>تجمع تقنية <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> (<bdi dir="ltr" class="odt-ltr-term">Asynchronous JavaScript and XML</bdi>) بين مجموعة من التقنيات:</p>
+<ul>
+  <li><b><bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi></b>: يمكن لصفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المعروضة في متصفح أن تتضمن كود <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> يتم تنفيذ هذا الكود بواسطة المتصفح إذا لم يقم المستخدم بتعطيل تنفيذ <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في متصفحه. هذه التقنية موجودة منذ الأيام الأولى للويب وقد شهدت اهتمامًا متجددًا منذ عام 2005 بفضل <bdi dir="ltr" class="odt-ltr-term">AJAX.</bdi>
+  </li>
+  <li><b><bdi dir="ltr" class="odt-ltr-term">DOM</bdi></b>: نموذج كائن المستند. يمكن لرمز <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الوصول إلى المستند في شكل شجرة كائنات، وهي <bdi dir="ltr" class="odt-ltr-term">DOM.</bdi> يتم تمثيل كل عنصر من عناصر المستند (حقل إدخال، علامة <bdi dir="ltr" class="odt-ltr-term">div</bdi> مسماة، علامة <bdi dir="ltr" class="odt-ltr-term">select</bdi>، إلخ) بعقدة في الشجرة. يمكن لرمز <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> تغيير المستند المعروض عن طريق تعديل <bdi dir="ltr" class="odt-ltr-term">DOM.</bdi> على سبيل المثال، يمكنه تغيير النص المعروض في حقل إدخال عبر عقدة <bdi dir="ltr" class="odt-ltr-term">DOM</bdi> التي تمثل هذا الحقل.
+  </li>
+</ul>
+
+<p>يستخدم <bdi dir="ltr" class="odt-ltr-term">AJAX JavaScript</bdi> لإجراء التبادلات بين المتصفح والخادم في الخلفية. للاستجابة لحدث مثل النقر على زر، يقوم المتصفح بتنفيذ كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> لإرسال طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> إلى الخادم. يحتوي هذا الطلب على معلمات تخبر الخادم بما يجب القيام به. ثم يقوم الخادم بتنفيذ الإجراء المطلوب. وردًا على ذلك، يرسل إلى المتصفح دفق <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> يحتوي على بيانات تتيح تحديثًا جزئيًا للصفحة المعروضة حاليًا. ويتم تنفيذ ذلك عبر <bdi dir="ltr" class="odt-ltr-term">DOM</bdi> الخاص بالمستند وتنفيذ كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في المستند. يمكن أن تكون البيانات التي يعيدها الخادم بتنسيقات مختلفة: <bdi dir="ltr" class="odt-ltr-term">XML</bdi>، <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>، <bdi dir="ltr" class="odt-ltr-term">JSON</bdi>، نص عادي، إلخ. </p>
+<p>تكمن فائدة هذه التقنية في هذا التحديث الجزئي للمستند المعروض. وهذا يعني:</p>
+<ul>
+  <li>تبادل بيانات أقل بين العميل والخادم، مما يؤدي إلى استجابة أسرع
+  </li>
+  <li>واجهة رسومية أكثر سلاسة في الاستخدام، حيث لا تؤدي إجراءات المستخدم إلى إعادة تحميل الصفحة بالكامل.
+  </li>
+</ul>
+
+<p>في شبكة داخلية حيث حركة مرور الشبكة سريعة، تتيح <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> إنشاء تطبيقات ويب تعمل بشكل مشابه لواجهات <bdi dir="ltr" class="odt-ltr-term">Windows</bdi> التقليدية. من الممكن التعامل مع أحداث مثل تغيير التحديد في قائمة وتحديث الصفحة فوراً وجزئياً لتعكس هذا التغيير. حقيقة أن الصفحة لا يتم إعادة تحميلها بالكامل تمنح المستخدم نفس الشعور بالسلاسة الذي يختبره مع تطبيقات <bdi dir="ltr" class="odt-ltr-term">Windows.</bdi> بالنسبة لتطبيقات الويب، حيث قد تكون أوقات الاستجابة طويلة، تظل تقنية <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> قابلة للاستخدام، لكن السلاسة الملحوظة تعتمد على أداء الشبكة.</p>
+<p>التحدي الرئيسي مع <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> هو لغة <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> تم إنشاؤها في الأيام الأولى للويب،</p>
+<ul>
+  <li>وقد ثبت أنها غير عملية للبرمجة الموجهة للكائنات. على سبيل المثال، فهي ليست لغة مكتوبة. لا تقوم بتحديد نوع البيانات التي يتم معالجتها. في هذا الصدد، فهي تشبه لغات مثل <bdi dir="ltr" class="odt-ltr-term">Perl</bdi> أو <bdi dir="ltr" class="odt-ltr-term">PHP.</bdi>
+  </li>
+  <li>لا يوجد معيار مقبول من قبل جميع المتصفحات. لكل متصفح امتدادات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الخاصة به، مما يعني أن كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المكتوب لـ <bdi dir="ltr" class="odt-ltr-term">Internet Explorer</bdi> قد لا يعمل في <bdi dir="ltr" class="odt-ltr-term">Mozilla Firefox</bdi>، والعكس صحيح.
+  </li>
+  <li>من الصعب تصحيح الأخطاء، حيث لا توفر المتصفحات أدوات قوية لتصحيح أخطاء كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الذي تقوم بتنفيذه.
+  </li>
+</ul>
+
+<p>كل هذه العيوب في <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> جعلت من استخدامها نادرًا قبل ظهور <bdi dir="ltr" class="odt-ltr-term">AJAX.</bdi> وبمجرد فهم قيمة تنفيذ كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في الخلفية — لإجراء طلبات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> إلى خادم الويب واستخدام استجابته لإجراء تحديث جزئي للوثيقة المعروضة عبر <bdi dir="ltr" class="odt-ltr-term">DOM</bdi> — بدأت فرق التطوير العمل واقترحت أطر عمل تتيح <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> دون الحاجة إلى أن يكتب المطور كود <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> ولتحقيق ذلك، تم تطوير مكتبات <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> قادرة على التكيف مع متصفح العميل. يتم إدراج كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسلة إلى المتصفح من جانب الخادم، باستخدام تقنيات تختلف باختلاف إطار عمل <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> المستخدم. تتوفر أطر عمل <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> لـ <bdi dir="ltr" class="odt-ltr-term">Java</bdi> و.<bdi dir="ltr" class="odt-ltr-term">NET</bdi> و<bdi dir="ltr" class="odt-ltr-term">PHP</bdi> و<bdi dir="ltr" class="odt-ltr-term">Ruby</bdi> وغيرها. تم دمج <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> في <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi> 2008.</p>
+<p><a id="projet-web-pam-v5"></a></p>
+<h2 id="52-visual-web-developer-web-ui-ajax">5.2. <span style="color: #4f81bd"><strong>مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi> في طبقة [</strong> <strong><bdi dir="ltr" class="odt-ltr-term">web-ui-ajax</bdi>]</strong></span></h2>
+<p>يتم إنشاء الإصدار الجديد عن طريق نسخ الإصدار السابق. سيتم تعديل صفحة [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] فقط.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003DB00000180FF6FEE71.png" width="494" height="192" style="display:inline-block; margin:4px;width:13.058cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DB00000180FF6FEE71.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، باستخدام <bdi dir="ltr" class="odt-ltr-term">Windows Explorer</bdi>، قم بنسخ مجلد المشروع [<bdi dir="ltr" class="odt-ltr-term">pam-v1-adonet</bdi>] وأعد تسميته [<bdi dir="ltr" class="odt-ltr-term">pam-v2-adonet-ajax</bdi>]. ثم، باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi>، افتح المشروع (<bdi dir="ltr" class="odt-ltr-term">File</bdi> / <bdi dir="ltr" class="odt-ltr-term">Open Project</bdi>) من هذا المجلد الجديد [2]
+  </li>
+  <li>في [3]، قم بتغيير اسمه
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A70000011C66E8ED99.png" width="596" height="142" style="display:inline-block; margin:4px;width:15.757cm;height:3.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A70000011C66E8ED99.png" /></td></tr></table>
+
+<ul>
+  <li>في خصائص المشروع الجديد، قم بتغيير اسم التجميع [4] ومساحة الاسم الافتراضية [5].
+  </li>
+</ul>
+
+<p>بمجرد الانتهاء من ذلك، استبدل مساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">pam</bdi>_v1] بمساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">pam</bdi>_v2] في الملفات [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>، <bdi dir="ltr" class="odt-ltr-term">Default.aspx.cs</bdi>، <bdi dir="ltr" class="odt-ltr-term">Default.aspx.designer.cs</bdi>، <bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>، <bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>] لضمان الاتساق مع مساحة الاسم الافتراضية. على سبيل المثال، يصبح [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] [6] كما يلي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;</span><span style="font-weight:bold;color:#00ae00">pam_v</span><span style="font-weight:bold;color:#00ae00">2</span><span style="color:#0000ff">._Default&quot;</span> %&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+</code></pre></div>
+
+<p>سيتم تعديل صفحة [<a id="pam-v5-default-aspx"></a> <bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062E000002C27E32800F.png" width="680" height="304" style="display:inline-block; margin:4px;width:17.997cm;height:8.033cm;" class="odt-zoomable" data-zoom-src="images/100000000000062E000002C27E32800F.png" /></td></tr></table>
+
+<ul>
+  <li>إضافة مكونات <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> إلى النموذج [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] (انظر [2] أعلاه).
+    <ul>
+      <li>2A: مكون &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:ScriptManager</bdi></i>&gt; مطلوب لأي مشروع <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi>
+      </li>
+      <li>2B: يُستخدم مكون &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:UpdatePanel</bdi></i>&gt; لتحديد المنطقة المراد تحديثها عندما يرسل المستخدم طلب <bdi dir="ltr" class="odt-ltr-term">POST.</bdi> يمنع هذا المكون إعادة تحميل الصفحة بأكملها.
+      </li>
+      <li>2C: يُستخدم مكون &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:UpdateProgress</bdi></i>&gt; لعرض نص أو صورة أثناء التحديث لإعلام المستخدم، كما هو موضح أدناه:
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C60000008F51B3125E.png" width="495" height="100" style="display:inline-block; margin:4px;width:13.109cm;height:2.641cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C60000008F51B3125E.png" /></td></tr></table>
+
+<ul>
+  <li>(تابع)
+    <ul>
+      <li>2D: عنصر تحكم <i><bdi dir="ltr" class="odt-ltr-term">Label</bdi> </i>باسم <i><bdi dir="ltr" class="odt-ltr-term">LabelHeureLoad</bdi> </i>سيعرض الوقت الذي يتم فيه تشغيل معالج حدث <i><bdi dir="ltr" class="odt-ltr-term">Load</bdi></i> للصفحة.
+      </li>
+      <li>2E: عنصر <i><bdi dir="ltr" class="odt-ltr-term">Label</bdi> </i>باسم <i><bdi dir="ltr" class="odt-ltr-term">LabelHeureSalaire</bdi> </i>يعرض الوقت الذي يتم فيه تنفيذ معالج حدث النقر<i> (<bdi dir="ltr" class="odt-ltr-term">Click</bdi>) </i>للزر [<bdi dir="ltr" class="odt-ltr-term">Salaire</bdi>]. نريد أن نوضح أن <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> لا يعيد تحميل الصفحة بالكامل عند النقر على الزر [<bdi dir="ltr" class="odt-ltr-term">Salaire</bdi>]. يظهر هذا في لقطة الشاشة السابقة، حيث يمكن رؤية وقتين مختلفين في عنصري <i><bdi dir="ltr" class="odt-ltr-term">Label</bdi></i>.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>يمكن إجراء عملية <bdi dir="ltr" class="odt-ltr-term">Ajaxification</bdi> السابقة للنموذج مباشرةً في شفرة المصدر لـ [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] عن طريق إضافة علامات امتداد <bdi dir="ltr" class="odt-ltr-term">Ajax:</bdi></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body</span> <span style="color:#ff0000">style</span><span style="color:#0000ff">=&quot;text-align: left&quot;</span> <span style="color:#ff0000">bgcolor</span><span style="color:#0000ff">=&quot;#ffccff&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">h3</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    Feuille de salaire</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LabelHeureLoad&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">BackColor</span><span style="color:#0000ff">=&quot;#C0C000&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#a31515">h3</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">hr</span> <span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">form</span> <span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;form1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">ScriptManager</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;ScriptManager1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">EnablePartialRendering</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;UpdatePanelPam&quot;</span> <span style="color:#ff0000">UpdateMode</span><span style="color:#0000ff">=&quot;Conditional&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ContentTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">div</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">DropDownList</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;ComboBoxEmployes&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">DropDownList</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">TextBox</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;TextBoxHeures&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">TextBox</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">TextBox</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;TextBoxJours&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">TextBox</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Button</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;ButtonSalaire&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">Text</span><span style="color:#0000ff">=&quot;Salaire&quot;</span> <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot;</span> <span style="color:#0000ff">/&gt;&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span>   <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;UpdateProgress1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">img</span> <span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;images/indicator.gif&quot;</span> <span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;Label5&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">BackColor</span><span style="color:#0000ff">=&quot;#FF8000&quot;</span> <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                      <span style="color:#ff0000">Text</span><span style="color:#0000ff">=&quot;Calcul en cours. Patientez ....&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                  <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LabelHeureSalaire&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">BackColor</span><span style="color:#0000ff">=&quot;#C0C000&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">div</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;</span><span style="color:#a31515">br</span> <span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                Salaire net à payer :</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span> <span style="color:#ff0000">align</span><span style="color:#0000ff">=&quot;center&quot;</span> <span style="color:#ff0000">bgcolor</span><span style="color:#0000ff">=&quot;#C0C000&quot;</span> <span style="color:#ff0000">height</span><span style="color:#0000ff">=&quot;20px&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LabelSN&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">tr</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">table</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#ff0000">&amp;nbsp;</span><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Panel</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ContentTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdatePanel</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">form</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">body</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">html</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 8: يجب أن تتضمن أي نموذج يدعم <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">asp:ScriptManager</bdi>&gt;. تتيح هذه العلامة استخدام مكونات <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> الجديدة:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A40000017A66AF052B.png" width="466" height="189" style="display:inline-block; margin:4px;width:12.33cm;height:5.001cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A40000017A66AF052B.png" /></td></tr></table>
+
+<ul>
+  <li>يمكن إضافة العلامة &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:ScriptManager</bdi></i>&gt; بالنقر المزدوج فوق مكون [<bdi dir="ltr" class="odt-ltr-term">ScriptManager</bdi>] أعلاه. تأكد من أن هذه العلامة موجودة داخل العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt; في شفرة المصدر. السمة [<bdi dir="ltr" class="odt-ltr-term">EnablePartialRendering</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">true</bdi>&quot;] في السطر 8 غير موجودة افتراضيًا. وبما أن &quot;<bdi dir="ltr" class="odt-ltr-term">true</bdi>&quot; هي قيمتها الافتراضية، فهي ليست ضرورية تمامًا.
+  </li>
+</ul>
+
+<ul>
+  <li>السطر 9: تُستخدم علامة &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:UpdatePanel</bdi></i>&gt; لتحديد مناطق الصفحة التي تحتاج إلى التحديث أثناء التحديث الجزئي للصفحة. تشير السمة [<i><bdi dir="ltr" class="odt-ltr-term">UpdateMode</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">Conditional</bdi>&quot;</i>] إلى أنه يجب تحديث المنطقة فقط استجابةً لحدث <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> من مكون داخل المنطقة. القيمة الأخرى هي [<i><bdi dir="ltr" class="odt-ltr-term">UpdateMode</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">Always</bdi>&quot;</i>]، وهي القيمة الافتراضية. باستخدام هذه السمة، يتم تحديث منطقة <i><bdi dir="ltr" class="odt-ltr-term">UpdatePanel</bdi> </i>بشكل منهجي حتى إذا كان حدث <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> الذي وقع قد نشأ من مكون في منطقة <i><bdi dir="ltr" class="odt-ltr-term">UpdatePanel</bdi></i> أخرى. بشكل عام، هذا السلوك غير مرغوب فيه.
+  </li>
+</ul>
+
+<p>تدعم العلامة &lt;<em><bdi dir="ltr" class="odt-ltr-term">asp:UpdatePanel</bdi></em>&gt; علامتين فرعيتين: &lt;<em><bdi dir="ltr" class="odt-ltr-term">ContentTemplate</bdi></em>&gt; و &lt;<em><bdi dir="ltr" class="odt-ltr-term">Triggers</bdi></em>&gt;.</p>
+<ul>
+  <li>تحدد علامات &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:ContentTemplate</bdi></i>&gt; في السطرين 10 و 53 منطقة الصفحة التي سيتم تحديثها جزئيًا.
+  </li>
+  <li>الأسطر 27–33: مكون <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi> &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:UpdateProgress</bdi></i>&gt; يعرض نصًا طوال عملية تحديث الصفحة. على سبيل المثال، يؤدي النقر فوق الزر [<bdi dir="ltr" class="odt-ltr-term">Salary</bdi>] إلى تشغيل طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> في الخلفية. لا يعرض المتصفح رمز الساعة الرملية، لذا قد يميل المستخدم إلى مواصلة استخدام النموذج. تعرض علامة &lt;<i><bdi dir="ltr" class="odt-ltr-term">asp:UpdateProgress</bdi></i>&gt; نصًا يشير إلى أن الصفحة قيد التحديث. يمكن أيضًا عرض صورة. هنا، يتم عرض صورة متحركة (السطر 29) ونص (السطران 30-31):
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011B000000541220C052.png" width="198" height="59" style="display:inline-block; margin:4px;width:5.241cm;height:1.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000011B000000541220C052.png" /></td></tr></table>
+
+<ul>
+  <li>الأسطر 28–32: تحدد علامة &lt;<i><bdi dir="ltr" class="odt-ltr-term">ProgressTemplate</bdi></i>&gt; المحتوى الذي سيتم عرضه طوال فترة تحديث عنصر <i><bdi dir="ltr" class="odt-ltr-term">UpdatePanel</bdi> </i>الذي توجد فيه علامة <i><bdi dir="ltr" class="odt-ltr-term">UpdateProgress</bdi></i>.
+  </li>
+  <li>الأسطر 29–31: الصورة المتحركة والنص اللذان سيتم عرضهما أثناء تحديث <i><bdi dir="ltr" class="odt-ltr-term">UpdatePanel</bdi></i>.
+  </li>
+  <li>السطر 5: يتم وضع التسمية <i><bdi dir="ltr" class="odt-ltr-term">LabelHeureLoad</bdi> </i>خارج المنطقة التي تدعم <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi>
+  </li>
+  <li>السطر 34: يتم وضع التسمية <i><bdi dir="ltr" class="odt-ltr-term">LabelHeureSalaire</bdi> </i>داخل المنطقة التي تدعم <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi>
+  </li>
+</ul>
+
+<p>يتغير كود صفحة [<a id="pam-v5-default-aspx-cs-ajax"></a> <bdi dir="ltr" class="odt-ltr-term">Default.aspx.cs</bdi>] على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // time of each page load</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        LabelHeureLoad.Text = <span style="color:#2b91af">DateTime</span>.Now.ToString(<span style="color:#a31515">&quot;hh:mm:ss&quot;</span>);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // initial request processing</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (!IsPostBack)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 4: تحديث وقت تحميل الصفحة
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">   <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> ButtonSalaire_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // hourly wage calculation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        LabelHeureSalaire.Text = <span style="color:#2b91af">DateTime</span>.Now.ToString(<span style="color:#a31515">&quot;hh:mm:ss&quot;</span>);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // data verification</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 4: تحديث وقت حساب الراتب
+  </li>
+</ul>
+
+<p>لإكمال صفحة [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]، نحتاج إلى تضمين الصورة المتحركة المشار إليها في السطر 4 من شفرة المصدر التالية في الصفحة:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;UpdateProgress1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">img</span> <span style="color:#ff0000">src</span><span style="color:#0000ff">=&quot;images/indicator.gif&quot;</span> <span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;Label5&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">BackColor</span><span style="color:#0000ff">=&quot;#FF8000&quot;</span> <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#ff0000">Text</span><span style="color:#0000ff">=&quot;Calcul en cours. Patientez ....&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ProgressTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">UpdateProgress</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LabelHeureSalaire&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">BackColor</span><span style="color:#0000ff">=&quot;#C0C000&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Label</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">td</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<p>باستخدام مستكشف <bdi dir="ltr" class="odt-ltr-term">Windows</bdi>، نضيف الملف [<bdi dir="ltr" class="odt-ltr-term">images/indicator.gif</bdi>] إلى مجلد المشروع [1]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E20000021017EA3AF9.png" width="680" height="238" style="display:inline-block; margin:4px;width:17.997cm;height:6.309cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E20000021017EA3AF9.png" /></td></tr></table>
+
+<ul>
+  <li>في [2]، نعرض جميع ملفات المشروع
+  </li>
+  <li>في [3]، نختار مجلد [<bdi dir="ltr" class="odt-ltr-term">images</bdi>]
+  </li>
+  <li>في [4]، نضمّن مجلد [<bdi dir="ltr" class="odt-ltr-term">images</bdi>] في المشروع
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A0000001E284547315.png" width="680" height="228" style="display:inline-block; margin:4px;width:17.997cm;height:6.024cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A0000001E284547315.png" /></td></tr></table>
+
+<ul>
+  <li>في [5]، تم تضمين مجلد [<bdi dir="ltr" class="odt-ltr-term">images</bdi>] في المشروع
+  </li>
+  <li>في [6]، نخفي الملفات التي ليست جزءًا من المشروع
+  </li>
+  <li>في [7]، المشروع الجديد
+  </li>
+</ul>
+<h2 id="53-ajax">5.3. <span style="color: #4f81bd">اختبار حل <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi></span></h2>
+<p>عند تشغيل المشروع (<bdi dir="ltr" class="odt-ltr-term">CTRL-F5</bdi>)، ستظهر لك الصفحة التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036200000127656A4240.png" width="433" height="147" style="display:inline-block; margin:4px;width:11.456cm;height:3.902cm;" class="odt-zoomable" data-zoom-src="images/100000000000036200000127656A4240.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، وقت تحميل الصفحة
+  </li>
+</ul>
+
+<p>اختبر التطبيق وتأكد من أن زر [الراتب] لا يتسبب في إعادة تحميل الصفحة بالكامل. يمكنك ملاحظة ذلك من خلال مقارنة الوقت المعروض لمعالجة النقر على زر [الراتب] [2]، والذي يختلف عن الوقت الذي استغرقته الصفحة في التحميل الأولي [3]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003B90000015D099E24DF.png" width="477" height="175" style="display:inline-block; margin:4px;width:12.608cm;height:4.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B90000015D099E24DF.png" /></td></tr></table>
+
+<p>كرر الاختبارات عن طريق تعيين الخاصية <em><bdi dir="ltr" class="odt-ltr-term">EnablePartialRendering</bdi></em> لمكون <em><bdi dir="ltr" class="odt-ltr-term">ScriptManager1</bdi></em> إلى <em><bdi dir="ltr" class="odt-ltr-term">False</bdi></em>:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010A000000C1B587AE3C.png" width="186" height="135" style="display:inline-block; margin:4px;width:4.93cm;height:3.577cm;" class="odt-zoomable" data-zoom-src="images/100000000000010A000000C1B587AE3C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>لاحظ أن السلوك يشبه الآن سلوك الصفحة غير المستندة إلى <bdi dir="ltr" class="odt-ltr-term">AJAX.</bdi> يتم إعادة تحميل الصفحة بالكامل عند النقر فوق الزر [الراتب]. كرر الاختبارات باستخدام متصفح مختلف. الغرض من الاختبار عبر المتصفحات هو إثبات أن <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> الذي تولده مكونات خادم <bdi dir="ltr" class="odt-ltr-term">ASP/AJAX</bdi> يتم تفسيره بشكل صحيح من قبل المتصفحات المختلفة.</p>
+<p>أخيرًا، دعونا نسلط الضوء على دور العلامة &lt;<em><bdi dir="ltr" class="odt-ltr-term">asp:UpdateProgress</bdi></em>&gt;. في كود الإجراء [<bdi dir="ltr" class="odt-ltr-term">ButtonSalaire</bdi>_Click] في [<bdi dir="ltr" class="odt-ltr-term">Default.aspx.cs</bdi>]، أضف عبارة توقف الإجراء لمدة 3 ثوانٍ:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Threading;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> ButtonSalaire_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // hourly wage calculation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        LabelHeureSalaire.Text = <span style="color:#2b91af">DateTime</span>.Now.ToString(<span style="color:#a31515">&quot;hh:mm:ss&quot;</span>);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // waiting </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Thread</span>.Sleep(3000);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // data verification</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تؤدي السطر 8 إلى جعل الخيط الذي ينفذ الإجراء [<bdi dir="ltr" class="odt-ltr-term">ButtonSalaire</bdi>_Click] ينتظر لمدة 5 ثوانٍ. وبمجرد الانتهاء من ذلك، دعونا نجري الاختبارات مرة أخرى (بعد تعيين الخاصية <em><bdi dir="ltr" class="odt-ltr-term">EnablePartialRendering</bdi></em> لمكون <em><bdi dir="ltr" class="odt-ltr-term">ScriptManager1</bdi></em> على <bdi dir="ltr" class="odt-ltr-term">True</bdi>). هذه المرة، نرى النص الوارد في [<bdi dir="ltr" class="odt-ltr-term">UpdateProgress</bdi>] بالإضافة إلى الصورة المتحركة أثناء حساب الراتب:</p>
+<p><img src="images/10000000000001200000004D5C161D0D.png" width="201" height="54" style="width:5.33cm;height:1.425cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001200000004D5C161D0D.png" /></p>
+<h2 id="54">5.4. <span style="color: #4f81bd">الخلاصة</span></h2>
+<p>أظهرت الدراسة السابقة أنه من الممكن إضافة وظائف <bdi dir="ltr" class="odt-ltr-term">AJAX</bdi> إلى تطبيقات <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> الحالية. تتجاوز امتدادات <bdi dir="ltr" class="odt-ltr-term">ASP.NET AJAX</bdi> ما رأيناه للتو. ندعو القراء لزيارة الموقع الإلكتروني [<bdi dir="ltr" class="odt-ltr-term">http://ajax.asp.net</bdi>].</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

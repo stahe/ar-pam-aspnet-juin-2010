@@ -1,0 +1,2036 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-pam-aspnet-juin-2010/tbyq-simupaie---ldr-10---myl-flex-lkhdm-wyb-aspnet.html">
+      
+      
+        <link rel="prev" href="tbyq-simupaie---ldr-9---tkml-springnhibernate.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET - إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14-simupaie-10-flex-aspnet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-header__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-nav__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-sry-l-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. مقدمة سريعة إلى ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="drs-ll.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. دراسة الحالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-1-mn---aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. مقدمة إلى NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---dr-3-mn---bny-thlthy-lbqt-m-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق [SimuPaie] – إصدار 3 من – بنية ثلاثية الطبقات مع NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-4---aspnet--r-mtdd--f-wd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تطبيق [SimuPaie] – الإصدار 4 – ASP.NET / عرض متعدد / صفحة واحدة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-5---aspnet--khdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-6---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق [SimuPaie] – الإصدار 6 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-7-mn---aspnet--r-mtdd--ft-mtdd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق [SimuPaie] – الإصدار 7 من – ASP.NET / عرض متعدد / صفحات متعددة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-8---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق [SimuPaie] – الإصدار 8 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-9---tkml-springnhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق [SimuPaie] – الإصدار 9 – تكامل Spring/NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tbyq-simupaie---ldr-10---myl-flex-lkhdm-wyb-aspnet.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1. بنية تطبيق العميل/الخادم
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-flex-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2. مشروع عميل Flex 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3. العرض رقم 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4. العرض رقم 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5. الطريقة #3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6. الطريقة الرابعة
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="14-simupaie-10-flex-aspnet">14. <span style="color: #365f91">تطبيق [<bdi dir="ltr" class="odt-ltr-term">SimuPaie</bdi>] – الإصدار 10 – عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> لخدمة ويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi></span></h1>
+<p>نقدم الآن عميل <strong><bdi dir="ltr" class="odt-ltr-term">Flex</bdi></strong> لخدمة الويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi>، الإصدار 5. بيئة التطوير المتكاملة المستخدمة هي <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3. يمكن تنزيل نسخة تجريبية من هذا المنتج من الرابط [<bdi dir="ltr" class="odt-ltr-term">https://www.adobe.com/cfusion/tdrc/index.cfm</bdi>?<bdi dir="ltr" class="odt-ltr-term">loc</bdi>=<bdi dir="ltr" class="odt-ltr-term">fr</bdi>_fr&amp;<bdi dir="ltr" class="odt-ltr-term">product</bdi>=<bdi dir="ltr" class="odt-ltr-term">flex</bdi>]. <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3 هو بيئة تطوير متكاملة (<bdi dir="ltr" class="odt-ltr-term">IDE</bdi>) قائمة على <bdi dir="ltr" class="odt-ltr-term">Eclipse.</bdi> بالإضافة إلى ذلك، لتشغيل عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>، نستخدم خادم ويب <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> من أداة <strong><bdi dir="ltr" class="odt-ltr-term">Wamp</bdi></strong> [<bdi dir="ltr" class="odt-ltr-term">http://www.wampserver.com/</bdi>]. أي خادم <strong><bdi dir="ltr" class="odt-ltr-term">Apache</bdi></strong> سيفي بالغرض. يجب أن يكون متصفح الويب الذي يعرض عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> مزودًا بإصدار <strong><bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi></strong> 9 أو أعلى.</p>
+<p>تتميز تطبيقات <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> بأنها تعمل داخل المكون الإضافي <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> للمتصفح. وفي هذا الصدد، فهي تشبه تطبيقات <bdi dir="ltr" class="odt-ltr-term">Ajax</bdi>، التي تدمج نصوص <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> في الصفحات المرسلة إلى المتصفح، والتي يتم تنفيذها بعد ذلك داخل المتصفح. تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> ليس تطبيق ويب بالمعنى المعتاد: إنه تطبيق عميل للخدمات التي تقدمها خوادم الويب. في هذا الصدد، فهو مشابه لتطبيق سطح المكتب الذي سيكون عميلاً لتلك الخدمات نفسها. ومع ذلك، فإنه يختلف في جانب واحد: يتم تنزيله مبدئيًا من خادم ويب إلى متصفح مزود بمكوّن <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> الإضافي القادر على تشغيله. </p>
+<p>مثل أي تطبيق سطح مكتب، يتكون تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> أساسًا من عنصرين:</p>
+<ul>
+  <li>طبقة <b>العرض</b>: العروض المعروضة في المتصفح. توفر هذه العروض نفس الثراء الذي توفره نوافذ تطبيقات سطح المكتب. يتم وصف العرض باستخدام لغة ترميز تسمى <b><bdi dir="ltr" class="odt-ltr-term">MXML</bdi></b>.
+  </li>
+  <li>قسم <b>كود </b>يتعامل بشكل أساسي مع الأحداث التي تطلقها إجراءات المستخدم على العرض. يمكن كتابة هذا الكود بلغة <b><bdi dir="ltr" class="odt-ltr-term">MXML</bdi> </b>أو بلغة موجهة للكائنات تسمى <b><bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi></b>. هناك نوعان من الأحداث يجب التمييز بينهما:
+    <ul>
+      <li>الأحداث التي تتطلب الاتصال بخادم الويب: ملء قائمة بالبيانات المقدمة من تطبيق ويب، وإرسال بيانات النموذج إلى الخادم، وما إلى ذلك. يوفر <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> عددًا من الطرق للاتصال بالخادم بطريقة شفافة للمطور. هذه الطرق <b>غير متزامنة </b>بشكل افتراضي: يمكن للمستخدم الاستمرار في التفاعل مع العرض أثناء تنفيذ طلب الخادم.
+      </li>
+      <li>الأحداث التي تعدل العرض المعروض دون تبادل البيانات مع الخادم، مثل سحب عنصر من شجرة وإفلاته في قائمة. يتم التعامل مع هذا النوع من الأحداث محليًا بالكامل داخل المتصفح.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>غالبًا ما يتم تنفيذ تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004160000012DF2F35CE6.png" width="523" height="151" style="display:inline-block; margin:4px;width:13.838cm;height:3.983cm;" class="odt-zoomable" data-zoom-src="images/10000000000004160000012DF2F35CE6.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، يتم طلب صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>
+  </li>
+  <li>في [2]، يتم إرسالها. وهي تتضمن ملفًا ثنائيًا <b><bdi dir="ltr" class="odt-ltr-term">SWF</bdi> </b>(<bdi dir="ltr" class="odt-ltr-term">ShockWave Flash</bdi>) يحتوي على تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> بالكامل: جميع طرق العرض ورموز معالجة الأحداث الخاصة بها. سيتم تنفيذ هذا الملف بواسطة المكون الإضافي <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> للمتصفح.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F10000012BC354BD1A.png" width="505" height="150" style="display:inline-block; margin:4px;width:13.349cm;height:3.956cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F10000012BC354BD1A.png" /></td></tr></table>
+
+<ul>
+  <li>يعمل عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> محليًا في المتصفح إلا عندما يحتاج إلى بيانات خارجية. في هذه الحالة، يطلبها من الخادم [3]. ويستلمها في [4] بتنسيقات مختلفة: <bdi dir="ltr" class="odt-ltr-term">XML</bdi> أو ثنائية. يمكن كتابة التطبيق المطلوب على خادم الويب بأي لغة. ما يهم هو تنسيق الاستجابة فقط.
+  </li>
+</ul>
+
+<p>لقد وصفنا بنية تنفيذ تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> حتى يتمكن القارئ من فهم الفرق بينه وبين تطبيق الويب التقليدي، حيث لا تتضمن الصفحات كودًا (<bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>، <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>، <bdi dir="ltr" class="odt-ltr-term">Silverlight</bdi>، إلخ) يقوم المتصفح بتنفيذه. في الحالة الأخيرة، يكون المتصفح سلبيًا: فهو يعرض ببساطة صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> مبنية على خادم الويب الذي يرسلها إليه.</p>
+<h2 id="141">14.1. <span style="color: #4f81bd">بنية تطبيق العميل/الخادم</span></h2>
+<p>تشبه بنية العميل/الخادم المطبقة هنا تلك الموجودة في الإصدارين 6 و 8:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066000000183281AB48F.png" width="680" height="161" style="display:inline-block; margin:4px;width:17.997cm;height:4.269cm;" class="odt-zoomable" data-zoom-src="images/100000000000066000000183281AB48F.png" /></td></tr></table>
+
+<p>في [1]، تم استبدال طبقة الويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> بطبقة ويب <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> مكتوبة بلغة <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> و <bdi dir="ltr" class="odt-ltr-term">ActionScript.</bdi> سيتم إنشاء العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] بواسطة بيئة تطوير <bdi dir="ltr" class="odt-ltr-term">Flex Builder.</bdi> وتجدر الإشارة هنا إلى أن هذه البنية تتضمن خادمين ويب غير موضحين:</p>
+<ul>
+  <li>خادم ويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> الذي يشغل خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]
+  </li>
+  <li>خادم ويب <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> الذي يشغل عميل الويب [1]
+  </li>
+</ul>
+<h2 id="142-flex-3">14.2. <span style="color: #4f81bd">مشروع عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> 3</span></h2>
+<p>نقوم ببناء عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> باستخدام بيئة تطوير <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000545000000D90204185F.png" width="675" height="109" style="display:inline-block; margin:4px;width:17.847cm;height:2.872cm;" class="odt-zoomable" data-zoom-src="images/1000000000000545000000D90204185F.png" /></td></tr></table>
+
+<ul>
+  <li>في <bdi dir="ltr" class="odt-ltr-term">Flex Builder</bdi> 3، قم بإنشاء مشروع جديد في [1]
+  </li>
+  <li>نقوم بتسميته في [2] ونحدد في [3] المجلد الذي سيتم إنشاؤه فيه
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059F000000E746A810EE.png" width="680" height="109" style="display:inline-block; margin:4px;width:17.997cm;height:2.889cm;" class="odt-zoomable" data-zoom-src="images/100000000000059F000000E746A810EE.png" /></td></tr></table>
+
+<ul>
+  <li>في [4]، نسمي التطبيق الرئيسي (الذي سيتم تنفيذه)
+  </li>
+  <li>في [5]، يظهر المشروع بمجرد إنشائه
+  </li>
+  <li>في [6]، ملف <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> الرئيسي للتطبيق
+  </li>
+  <li>يحتوي ملف <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> على عرض ورمز لمعالجة أحداثه. توفر علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Source</bdi>] [7] الوصول إلى ملف <bdi dir="ltr" class="odt-ltr-term">MXML.</bdi> ستجد هناك علامات<i> &lt;<bdi dir="ltr" class="odt-ltr-term">mx</bdi>&gt; </i>تصف العرض بالإضافة إلى رمز <bdi dir="ltr" class="odt-ltr-term">ActionScript.</bdi>
+  </li>
+  <li>يمكن إنشاء العرض بيانيًا باستخدام علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Design</bdi>] [8]. ثم يتم إنشاء علامات <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> التي تصف العرض تلقائيًا في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Source</bdi>]. والعكس صحيح أيضًا: تظهر علامات <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> المضافة مباشرةً في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Source</bdi>] بيانيًا في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Design</bdi>].
+  </li>
+</ul>
+<h2 id="143-1">14.3. <span style="color: #4f81bd">العرض رقم 1</span></h2>
+<p><span style="color: #000000">سنقوم تدريجيًا بإنشاء واجهة ويب مشابهة لتلك الموجودة في الإصدار 1 (انظر </span>القسم<a href="#pam-v1"><u><span style="color: #0563c1"> 4</span></u></a><span style="color: #000000">). أولاً، سنقوم بإنشاء الواجهة التالية:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000634000001728320E3F1.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.997cm;height:4.193cm;" class="odt-zoomable" data-zoom-src="images/1000000000000634000001728320E3F1.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [1]، العرض عند نجاح الاتصال بخدمة الويب. ثم يتم ملء القائمة المنسدلة للموظفين.</span>
+  </li>
+  <li><span style="color: #000000">في [2]، العرض عند فشل الاتصال بخدمة الويب. ثم يتم عرض رسالة خطأ.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">الملف الرئيسي للعميل [<bdi dir="ltr" class="odt-ltr-term">main.xml</bdi>] هو كما يلي:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    creationComplete=&quot;init()&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> width=&quot;</span><span style="color:#990000">100%</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Feuille de salaire</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">30</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:HBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Employés</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:ComboBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Heures travaillées</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:TextInput</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Jours travaillés</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:NumericStepper</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">joursTravailles</span><span style="color:#000000">&quot; minimum=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; maximum=&quot;</span><span style="color:#990000">31</span><span style="color:#000000">&quot; stepSize=&quot;</span><span style="color:#990000">1</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">btnSalaire</span><span style="color:#000000">&quot; label=&quot;</span><span style="color:#990000">Salaire</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:HBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:TextArea</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">msg</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">400</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; editable=&quot;</span><span style="color:#990000">false</span><span style="color:#000000">&quot; visible=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot; enabled=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot; horizontalScrollPolicy=&quot;</span><span style="color:#990000">auto</span><span style="color:#000000">&quot; verticalScrollPolicy=&quot;</span><span style="color:#990000">auto</span><span style="color:#000000">&quot; x=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; y=&quot;</span><span style="color:#990000">0</span><span style="color:#000000">&quot; maxHeight=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; maxWidth=&quot;</span><span style="color:#990000">400</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span><span style="color:#000000">        </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:WebService</span><span style="color:#000000"> ...</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:WebService&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">...</span>    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:Application&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">في هذا الكود، يجب التمييز بين عدة عناصر:</span></p>
+<ul>
+  <li><span style="color: #000000">تعريف التطبيق (السطران 2-3)</span>
+  </li>
+  <li><span style="color: #000000">وصف طريقة العرض الخاصة به (الأسطر 4–25)</span>
+  </li>
+  <li><span style="color: #000000">معالجات أحداث <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> داخل العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi>&gt; (الأسطر 31-42)</span>
+  </li>
+  <li><span style="color: #000000">تعريف خدمة الويب البعيدة (الأسطر 27-29)</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">لنبدأ بالتعليق على تعريف التطبيق نفسه ووصف طريقة عرضه:</span></p>
+<ul>
+  <li><span style="color: #000000">السطران 2 و3: تعريف: </span>
+    <ul>
+      <li><span style="color: #000000">تخطيط المكونات داخل حاوية العرض. تشير السمة</span><i><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">layout</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">vertical</bdi>&quot; </span></i><span style="color: #000000">إلى أن المكونات سيتم ترتيبها واحدة أسفل الأخرى.</span>
+      </li>
+      <li><span style="color: #000000">الطريقة التي سيتم تنفيذها عند إنشاء مثيل للواجهة، أي عند إنشاء مثيل لجميع مكوناتها. تشير السمة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">creationComplete</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">init</bdi>();&quot; </span></i><span style="color: #000000">إلى أنه يجب تنفيذ الطريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi> </span></i><span style="color: #000000">في السطر 38. </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">creationComplete</bdi> </span></i><span style="color: #000000">هي أحد الأحداث التي يمكن لفئة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Application</bdi> </span></i><span style="color: #000000">إصدارها.</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">الأسطر 4–25 تحدد مكونات العرض</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 4-25: حاوية عمودية: سيتم وضع المكونات واحدة أسفل الأخرى</span>
+  </li>
+  <li><span style="color: #000000">السطر 5: يحدد مكون نصي</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 6-23: حاوية أفقية: سيتم وضع المكونات أفقيًا داخلها.</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 7-10: حاوية عمودية ستحتوي على نص وقائمة منسدلة</span>
+  </li>
+  <li><span style="color: #000000">السطر 8: النص</span>
+  </li>
+  <li><span style="color: #000000">السطر 9: القائمة المنسدلة التي ستُعرض فيها قائمة الموظفين. تحدد العلامة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">dataProvider</bdi>=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">employees</bdi></span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot; </span></i><span style="color: #000000">مصدر البيانات الذي سيُستخدم لملء القائمة. هنا، سيتم ملء القائمة بكائن </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">employees</bdi> </span></i><span style="color: #000000">المُعرَّف في السطر 36. لكي يتسنى كتابة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">dataProvider</bdi>=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">employees</bdi></span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;، </span></i><span style="color: #000000">يجب أن يحتوي حقل </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">employees</bdi> </span></i><span style="color: #000000">على السمة [<bdi dir="ltr" class="odt-ltr-term">Bindable</bdi>] (السطر 35). تسمح هذه السمة بالإشارة إلى متغير <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> خارج علامة &lt;</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi></span></i><span style="color: #000000">&gt;. حقل </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">employees</bdi> </span></i><span style="color: #000000">هو من النوع <bdi dir="ltr" class="odt-ltr-term">ArrayCollection</bdi>، وهو نوع <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> يسمح لك بتخزين قوائم الكائنات، وفي هذه الحالة قائمة كائنات من النوع </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Employee</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 11-14: حاوية عمودية ستحتوي على نص وحقل إدخال</span>
+  </li>
+  <li><span style="color: #000000">السطر 12: النص</span>
+  </li>
+  <li><span style="color: #000000">السطر 13: حقل الإدخال لساعات العمل.</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 15-18: حاوية عمودية ستحتوي على نص وعداد</span>
+  </li>
+  <li><span style="color: #000000">السطر 16: النص</span>
+  </li>
+  <li><span style="color: #000000">السطر 17: العداد لإدخال عدد أيام العمل</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 19-22: حاوية عمودية ستحتوي على نص وزر سيؤدي إلى حساب الراتب للشخص المحدد في القائمة المنسدلة.</span>
+  </li>
+  <li><span style="color: #000000">السطر 20: النص</span>
+  </li>
+  <li><span style="color: #000000">السطر 21: الزر.</span>
+  </li>
+  <li><span style="color: #000000">السطر 23: نهاية الحاوية الأفقية التي بدأت في السطر 6</span>
+  </li>
+  <li><span style="color: #000000">السطر 24: منطقة نصية في مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">TextArea</bdi></span></i><span style="color: #000000">. ستعرض رسائل الخطأ.</span>
+  </li>
+  <li><span style="color: #000000">السطر 25: نهاية الحاوية الرأسية التي بدأت في السطر 4</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">تُنشئ الأسطر من 4 إلى 25 العرض التالي في علامة التبويب [التصميم]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004930000018CE907FA06.png" width="586" height="198" style="display:inline-block; margin:4px;width:15.492cm;height:5.239cm;" class="odt-zoomable" data-zoom-src="images/10000000000004930000018CE907FA06.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">[1]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Label</bdi> </span></i><span style="color: #000000">في السطر 5</span>
+  </li>
+  <li><span style="color: #000000">[2]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ComboBox</bdi> </span></i><span style="color: #000000">في السطر 9</span>
+  </li>
+  <li><span style="color: #000000">[3]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">TextInput</bdi> </span></i><span style="color: #000000">في السطر 13</span>
+  </li>
+  <li><span style="color: #000000">[4]: تم إنشاؤه بواسطة مكون </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">NumericStepper</bdi> </span></i><span style="color: #000000">في السطر 17</span>
+  </li>
+  <li><span style="color: #000000">[5]: تم إنشاؤه بواسطة مكون </span><i><bdi dir="ltr" class="odt-ltr-term">Button</bdi> </i><span style="color: #000000">في السطر 21</span>
+  </li>
+  <li><span style="color: #000000">[6]: تم إنشاؤه بواسطة مكون </span><i><bdi dir="ltr" class="odt-ltr-term">TextArea</bdi> </i><span style="color: #000000">في السطر 24</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">الآن دعونا نفحص إعلان خدمة الويب البعيدة:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:WebService</span> id=&quot;<span style="color:#990000">pam</span>&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        wsdl=&quot;</span><span style="color:#990000">http://localhost:1077/Service1.asmx?WSDL</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        fault=&quot;wsFault(event);&quot; </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showBusyCursor=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            name=&quot;</span><span style="color:#990000">GetAllIdentitesEmployes</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            result=&quot;loadEmployesCompleted(event)&quot; </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            fault=&quot;loadEmployesFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:WebService&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 1: خدمة الويب هي مكون يحمل المعرف &quot;</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">pam</bdi>&quot; </span></i><span style="color: #000000">(سمة <bdi dir="ltr" class="odt-ltr-term">id</bdi>)</span>
+  </li>
+  <li><span style="color: #000000">السطر 2: عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بخدمة الويب (انظر القسم</span><a href="#pam-v5-url-wsdl"><u><span style="color: #0563c1"> 9.2</span></u></a><span style="color: #000000">)</span>
+  </li>
+  <li><span style="color: #000000">السطر 3: الطريقة التي يجب تنفيذها في حالة حدوث خطأ أثناء الاتصال بخدمة الويب: طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">wsFault</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">السطر 4: يطلب عرض مؤشر لإعلام المستخدم بأن عملية التبادل مع خدمة الويب جارية.</span>
+  </li>
+  <li><span style="color: #000000">الأسطر 5-10: إحدى العمليات التي توفرها خدمة الويب البعيدة. هنا، طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmployes</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">السطر 7: الطريقة التي يجب تنفيذها عند اكتمال استدعاء هذه الطريقة بنجاح، أي عندما تعرض خدمة الويب قائمة الموظفين بنجاح</span>
+  </li>
+  <li><span style="color: #000000">السطر 8: الطريقة التي يجب تنفيذها عندما ينتهي استدعاء هذه الطريقة بخطأ.</span>
+  </li>
+  <li><span style="color: #000000">السطر 9: المعلمات الخاصة بعملية </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi></span></i><span style="color: #000000">. نعلم أن هذه الطريقة لا تتوقع أي معلمات. لذلك، نترك العلامة &lt;</span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">mx:request</bdi></span></i><span style="color: #000000">&gt; فارغة.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">دعونا الآن نفحص كود <bdi dir="ltr" class="odt-ltr-term">ActionScript</bdi> المرتبط بخدمة الويب:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;mx:Script&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.FaultEvent;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on note les coordonnées de la zone de message</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                msgHeight=msg.height;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                msgWidth=msg.width;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on cache la zone de message</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                hideMsg();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// requête au service web distant pour avoir la liste simplifiée des employés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                pam.GetAllIdentitesEmployes.send();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> wsFault(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// on signale l&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    msg.text=</span><span style="font-weight:bold;color:#990000">&quot;Service distant indisponible&quot;</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    showMsg();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadEmployesCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// remplissage combo des employés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                employes=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayEmploye(employe:Object):String{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// identité d&#x27;un employé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> employe.Prenom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + employe.Nom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadEmployesFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// affichage msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                msg.text=event.fault.message;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                showMsg();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// gestion des blocs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> msgWidth:int;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> msgHeight:int;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> hideMsg():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            msg.height=0;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            msg.width=0;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> showMsg():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            msg.height=msgHeight;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            msg.width=msgWidth;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 11: يتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi> </span></i><span style="color: #000000">عند بدء تشغيل التطبيق لأننا كتبنا:</span>
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    creationComplete=&quot;init()&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطران 13-14: نقوم بتخزين ارتفاع وعرض منطقة الرسالة. نستخدم طريقتين، </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">hideMsg</bdi> </span></i><span style="color: #000000">(السطور 48-51) و </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">showMsg</bdi> </span></i><span style="color: #000000">(السطور 53-56)، لإخفاء أو إظهار منطقة الرسالة، على التوالي، اعتمادًا على حدوث خطأ أم لا. تخفي طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">hideMsg</bdi> </span></i><span style="color: #000000">منطقة الرسالة عن طريق </span><span style="color: #000000">تعيين ارتفاعها وعرضها إلى 0. تعرض طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">showMsg</bdi> </span></i><span style="color: #000000">منطقة الرسالة عن طريق استعادة الارتفاع والعرض المخزنين في طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">init</bdi></span></i><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">السطر 16: منطقة الرسائل مخفية. في البداية، لا يوجد خطأ.</span>
+  </li>
+  <li><span style="color: #000000">السطر 18: يتم استدعاء طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmploye</bdi> </span></i><span style="color: #000000">(السطر 6 من خدمة الويب) لخدمة الويب </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">pam</bdi> </span></i><span style="color: #000000">(السطر 1 من خدمة الويب). الاستدعاء غير متزامن. يشير السطر 7 من خدمة الويب إلى أنه سيتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadEmployesCompleted</bdi> </span></i><span style="color: #000000">إذا اكتمل هذا الاستدعاء غير المتزامن بنجاح. يشير السطر 8 من خدمة الويب إلى أنه سيتم تنفيذ طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadEmployesFault</bdi> </span></i><span style="color: #000000">إذا فشل هذا الاستدعاء غير المتزامن.</span>
+  </li>
+  <li><span style="color: #000000">السطر 27: طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadEmployesCompleted</bdi></span></i><span style="color: #000000">، التي يتم تنفيذها إذا اكتمل استدعاء خدمة الويب في السطر 18 بنجاح.</span>
+  </li>
+  <li><span style="color: #000000">السطر 29: نعلم أن خدمة الويب تُرجع استجابة <bdi dir="ltr" class="odt-ltr-term">XML.</bdi> من المفيد الرجوع إلى هذا لفهم كود <bdi dir="ltr" class="odt-ltr-term">ActionScript:</bdi></span>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005DD000002286D672F46.png" width="680" height="250" style="display:inline-block; margin:4px;width:17.997cm;height:6.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DD000002286D672F46.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، صفحة خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>]
+  </li>
+  <li>في [2]، الرابط إلى صفحة الاختبار الخاصة بالطريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmployes</bdi>]
+  </li>
+  <li>في [3]، يتم إجراء الاختبار. لا يُتوقع وجود أي معلمات.
+  </li>
+  <li>في [4]: تحتوي استجابة <bdi dir="ltr" class="odt-ltr-term">XML</bdi> على مصفوفة من الموظفين. لكل موظف، هناك خمسة عناصر من المعلومات محاطة بعلامات &lt;<bdi dir="ltr" class="odt-ltr-term">Id</bdi>&gt; و&lt;<bdi dir="ltr" class="odt-ltr-term">Version</bdi>&gt; <i>و&lt;<bdi dir="ltr" class="odt-ltr-term">SS</bdi>&gt; و&lt;<bdi dir="ltr" class="odt-ltr-term">LastName</bdi>&gt; و&lt;<bdi dir="ltr" class="odt-ltr-term">FirstName</bdi>&gt;</i>. إذا تم تخزين استجابة <bdi dir="ltr" class="odt-ltr-term">XML</bdi> في مصفوفة <i>`<bdi dir="ltr" class="odt-ltr-term">employees</bdi>` </i>من النوع <i>`<bdi dir="ltr" class="odt-ltr-term">ArrayCollection</bdi>`</i>:
+    <ul>
+      <li><i><bdi dir="ltr" class="odt-ltr-term">employees.getItemAt</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>)</i>: هو العنصر <bdi dir="ltr" class="odt-ltr-term">i</bdi> من المصفوفة
+      </li>
+      <li><i><bdi dir="ltr" class="odt-ltr-term">employees.getItemAt</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>).<bdi dir="ltr" class="odt-ltr-term">SS</bdi></i>: هو رقم الضمان الاجتماعي لهذا الموظف.
+      </li>
+      <li><i><bdi dir="ltr" class="odt-ltr-term">employees.getItemAt</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>).<bdi dir="ltr" class="odt-ltr-term">LastName</bdi></i>: هو اسم العائلة لهذا الموظف
+      </li>
+      <li>...
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span style="color: #000000">لنعد إلى كود <bdi dir="ltr" class="odt-ltr-term">ActionScript:</bdi></span></p>
+<ul>
+  <li><span style="color: #000000">السطر 29: </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">event.result</bdi> </span></i><span style="color: #000000">يمثل استجابة <bdi dir="ltr" class="odt-ltr-term">XML</bdi> من خدمة الويب. تعرض طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmployes</bdi> </span></i><span style="color: #000000">مصفوفة من الموظفين. ويمثل</span><i><span style="color: #000000"> <bdi dir="ltr" class="odt-ltr-term">event.result</bdi> </span></i><span style="color: #000000">هذه المصفوفة من الموظفين. ويتم تخزينها في متغير من نوع </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ArrayCollection</bdi></span></i><span style="color: #000000">، وهو نوع يمثل عمومًا مجموعة من الكائنات. ويتم تعريف هذا المتغير، المسمى </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">employees</bdi>، </span></i><span style="color: #000000">في السطر 9. تذكر أن هذا المتغير هو مصدر البيانات لمربع القائمة المنسدلة <bdi dir="ltr" class="odt-ltr-term">employees:</bdi></span>
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:ComboBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">بالنسبة لكل موظف في مصدر البيانات الخاص به، سيستدعي مربع القائمة المنسدلة طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">displayEmploye</bdi> </span></em><span style="color: #000000">(سمة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">labelFunction</bdi></span></em><span style="color: #000000">) لعرض الموظف. توضح الأسطر 32-34 أن هذه الطريقة تعرض الاسم الأول واسم العائلة للموظف.</span></p>
+<ul>
+  <li><span style="color: #000000">السطر 37: طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">loadEmployesFault</bdi></span></i><span style="color: #000000">، التي يتم تنفيذها في حالة فشل استدعاء خدمة الويب في السطر 18. </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">event.fault.message</bdi> </span></i><span style="color: #000000">هي رسالة الخطأ التي ترجعها خدمة الويب.</span>
+  </li>
+  <li><span style="color: #000000">السطر 39: يتم وضع رسالة الخطأ هذه في مربع الرسائل</span>
+  </li>
+  <li><span style="color: #000000">السطر 41: يتم عرض مربع الرسالة.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">بمجرد إنشاء التطبيق، يوجد الكود القابل للتنفيذ في مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] الخاص بمشروع <bdi dir="ltr" class="odt-ltr-term">Flex:</bdi></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A80000011ACD68D95D.png" width="212" height="141" style="display:inline-block; margin:4px;width:5.609cm;height:3.731cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A80000011ACD68D95D.png" /></td></tr></table>
+
+<p><span style="color: #000000">أعلاه،</span></p>
+<ul>
+  <li><span style="color: #000000">يمثل ملف [<bdi dir="ltr" class="odt-ltr-term">main.html</bdi>] ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي سيطلبه المتصفح من خادم الويب للحصول على عميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi></span>
+  </li>
+  <li><span style="color: #000000">الملف [<bdi dir="ltr" class="odt-ltr-term">main.swf</bdi>] هو الملف الثنائي لعميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الذي سيتم تضمينه في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسلة إلى المتصفح ثم تنفيذه بواسطة المكون الإضافي <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> للمتصفح.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">نحن جاهزون لتشغيل عميل <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> أولاً، نحتاج إلى إعداد بيئة التشغيل التي يتطلبها. لنعد إلى بنية العميل/الخادم التي اختبرناها:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000067B0000018EABC473A7.png" width="680" height="163" style="display:inline-block; margin:4px;width:17.997cm;height:4.318cm;" class="odt-zoomable" data-zoom-src="images/100000000000067B0000018EABC473A7.png" /></td></tr></table>
+
+<p><strong>من جانب الخادم</strong><span style="color: #000000">:</span></p>
+<ul>
+  <li><span style="color: #000000">بدء خدمة الويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]</span>
+  </li>
+</ul>
+
+<p><strong>جانب العميل</strong><span style="color: #000000">:</span></p>
+<ul>
+  <li><span style="color: #000000">ابدأ تشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> الذي سيقدم تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi></span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">نستخدم هنا أداة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Wamp</bdi></span></em><span style="color: #000000">. باستخدام هذه الأداة، يمكننا تعيين اسم مستعار لمجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] في مشروع <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000623000001A2C366DFEE.png" width="680" height="181" style="display:inline-block; margin:4px;width:17.997cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/1000000000000623000001A2C366DFEE.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">يوجد رمز <bdi dir="ltr" class="odt-ltr-term">Wamp</bdi> في أسفل الشاشة [1]</span>
+  </li>
+  <li><span style="color: #000000">انقر بزر الماوس الأيسر على أيقونة </span><i><bdi dir="ltr" class="odt-ltr-term">Wamp</bdi></i><span style="color: #000000">، واختر خيار </span><i><bdi dir="ltr" class="odt-ltr-term">Apache</bdi> </i><span style="color: #000000">[2] / </span><i><bdi dir="ltr" class="odt-ltr-term">Alias Directories</bdi> </i><span style="color: #000000">[3، 4]</span>
+  </li>
+  <li><span style="color: #000000">اختر الخيار [5]: </span><i>إضافة اسم مستعار</i>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000061800000125D75876F3.png" width="680" height="128" style="display:inline-block; margin:4px;width:17.997cm;height:3.38cm;" class="odt-zoomable" data-zoom-src="images/100000000000061800000125D75876F3.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [6]، قم بتعيين اسم مستعار (أي اسم) لتطبيق الويب الذي سيتم تنفيذه</span>
+  </li>
+  <li><span style="color: #000000">في [7]، حدد جذر تطبيق الويب الذي سيستخدم هذا الاسم المستعار: وهو مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الذي أنشأناه للتو.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">دعونا نستعرض بنية مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] في مشروع <bdi dir="ltr" class="odt-ltr-term">Flex:</bdi></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000045600000123B5B0E906.png" width="555" height="146" style="display:inline-block; margin:4px;width:14.684cm;height:3.851cm;" class="odt-zoomable" data-zoom-src="images/100000000000045600000123B5B0E906.png" /></td></tr></table>
+
+<p><span style="color: #000000">ملف [<bdi dir="ltr" class="odt-ltr-term">main.html</bdi>] هو ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> لتطبيق <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> بفضل الاسم المستعار الذي أنشأناه للتو لمجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>]، سيكون هذا الملف متاحًا عبر عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost/pam-v10-flex-client-webservice/main.html</bdi>]. يمكننا الوصول إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا في متصفح مزود بمكوّن <bdi dir="ltr" class="odt-ltr-term">Flash Player</bdi> الإضافي الإصدار 9 أو أعلى:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000064A000002023382231A.png" width="680" height="217" style="display:inline-block; margin:4px;width:17.997cm;height:5.747cm;" class="odt-zoomable" data-zoom-src="images/100000000000064A000002023382231A.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لتطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi></span>
+  </li>
+  <li><span style="color: #000000">في [2]، القائمة المنسدلة للموظفين عندما يعمل كل شيء بشكل صحيح</span>
+  </li>
+  <li><span style="color: #000000">في [3]، النتيجة عند إيقاف خدمة الويب</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">قد تكون مهتمًا بمشاهدة شفرة المصدر لصفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المستلمة:</span></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;!--</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="mi">0014</span><span class="p">)</span><span class="n">about</span><span class="p">:</span><span class="n">internet</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&lt;</span><span class="n">html</span><span class="w"> </span><span class="n">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&lt;!--</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">Smart</span><span class="w"> </span><span class="n">developers</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">Source</span><span class="p">.</span><span class="w"> </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">This</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">built</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">Adobe</span><span class="w"> </span><span class="n">Flex</span><span class="p">,</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">framework</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">for</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">rich</span><span class="w"> </span><span class="n">Internet</span><span class="w"> </span><span class="n">applications</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">delivered</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">the</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Flash</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">desktops</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">Adobe</span><span class="w"> </span><span class="n">AIR</span><span class="p">.</span><span class="w"> </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">Learn</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="n">Flex</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="c1">//flex.org </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">// --&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="o">&lt;</span><span class="n">meta</span><span class="w"> </span><span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span><span class="w"> </span><span class="n">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="o">&lt;</span><span class="n">link</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s">&quot;history/history.css&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">END</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">....</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="o">&lt;</span><span class="n">body</span><span class="w"> </span><span class="n">scroll</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="p">...</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="o">&lt;</span><span class="n">noscript</span><span class="o">&gt;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">        </span><span class="o">&lt;</span><span class="kt">object</span><span class="w"> </span><span class="n">classid</span><span class="o">=</span><span class="s">&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">                        </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">                        </span><span class="n">codebase</span><span class="o">=</span><span class="s">&quot;http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;movie&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;main.swf&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;quality&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;high&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;bgcolor&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;#869ca7&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">param</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;allowScriptAccess&quot;</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="s">&quot;sameDomain&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">                        </span><span class="o">&lt;</span><span class="n">embed</span><span class="w"> </span><span class="n">src</span><span class="o">=</span><span class="s">&quot;main.swf&quot;</span><span class="w"> </span><span class="n">quality</span><span class="o">=</span><span class="s">&quot;high&quot;</span><span class="w"> </span><span class="n">bgcolor</span><span class="o">=</span><span class="s">&quot;#869ca7&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">                                </span><span class="n">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="w"> </span><span class="n">align</span><span class="o">=</span><span class="s">&quot;middle&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">                                </span><span class="n">play</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">                                </span><span class="n">loop</span><span class="o">=</span><span class="s">&quot;false&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">                                </span><span class="n">quality</span><span class="o">=</span><span class="s">&quot;high&quot;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">                                </span><span class="n">allowScriptAccess</span><span class="o">=</span><span class="s">&quot;sameDomain&quot;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">                                </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;application/x-shockwave-flash&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">                                </span><span class="n">pluginspage</span><span class="o">=</span><span class="s">&quot;http://www.adobe.com/go/getflashplayer&quot;</span><span class="o">&gt;</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">                        </span><span class="o">&lt;/</span><span class="n">embed</span><span class="o">&gt;</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">        </span><span class="o">&lt;/</span><span class="kt">object</span><span class="o">&gt;</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="o">&lt;/</span><span class="n">noscript</span><span class="o">&gt;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li><span style="color: #000000">يبدأ نص الصفحة في السطر 25. ولا يحتوي على <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> قياسي بل كائن (السطر 28) من النوع &quot;<bdi dir="ltr" class="odt-ltr-term">application/x-shockwave-flash</bdi>&quot; (السطر 41). هذا هو ملف [<bdi dir="ltr" class="odt-ltr-term">main.swf</bdi>] (السطر 31) الموجود في مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">Flex.</bdi> وهو ملف كبير الحجم: حوالي 600 كيلوبايت لهذا المثال البسيط.</span>
+  </li>
+</ul>
+<h2 id="144-2">14.4. <span style="color: #4f81bd">العرض رقم 2</span></h2>
+<p><span style="color: #000000">سنضيف حاوية </span><em><bdi dir="ltr" class="odt-ltr-term">VBox</bdi></em><span style="color: #000000"> جديدة إلى العرض الحالي:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C000002403DBDA8AE.png" width="678" height="288" style="display:inline-block; margin:4px;width:17.939cm;height:7.62cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C000002403DBDA8AE.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E30000028B88CECF5B.png" width="626" height="326" style="display:inline-block; margin:4px;width:16.551cm;height:8.613cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E30000028B88CECF5B.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">في [4،5]، قمنا بتعيين [<bdi dir="ltr" class="odt-ltr-term">main2.mxml</bdi>]</span><a id="v13-application-par-defaut"></a><span style="color: #000000"> باعتباره التطبيق الافتراضي الجديد. وهذا هو التطبيق الذي سيتم تجميعه الآن.</span>
+  </li>
+  <li><span style="color: #000000">في [6]، يُشار إلى التطبيق الافتراضي بنقطة زرقاء.</span>
+  </li>
+</ul>
+
+<p>سيعرض الحاوية [1] معلومات حول الموظف المحدد في مربع القائمة المنسدلة [2]. نقوم بنسخ [<bdi dir="ltr" class="odt-ltr-term">main.xml</bdi>] كملف [<bdi dir="ltr" class="odt-ltr-term">main2.xml</bdi>] [3] لإنشاء العرض الجديد. سنعمل الآن مع [<bdi dir="ltr" class="odt-ltr-term">main2.xml</bdi>].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005100000019CE9CC2048.png" width="648" height="206" style="display:inline-block; margin:4px;width:17.145cm;height:5.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000005100000019CE9CC2048.png" /></td></tr></table>
+
+<p>التغيير الذي تم إجراؤه على المشروع السابق هو إضافة الحاوية في السطر 26 أعلاه، والتي تحتوي على كود <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> لحاوية العرض [1]. نمنحها المعرف <em><code>&lt;bdi dir="ltr" class="odt-ltr-term"&gt;employe&lt;/bdi&gt;</code></em> حتى نتمكن من التعامل معها عبر الكود. يجب أن يكون من الممكن إخفاء هذه الحاوية أو إظهارها باستخدام نفس التقنية المستخدمة سابقًا لمنطقة الرسائل.</p>
+<p>لنعد إلى التخطيط المرئي للعرض:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000032300000255B2445646.png" width="402" height="299" style="display:inline-block; margin:4px;width:10.624cm;height:7.899cm;" class="odt-zoomable" data-zoom-src="images/100000000000032300000255B2445646.png" /></td></tr></table>
+
+<p>دعونا نحدد الحاويات المختلفة للمعلومات المعروضة الجديدة:</p>
+<ul>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">V1</bdi></i>: حاوية عمودية لجميع المكونات: التسمية &quot;<i>الموظف </i>[1]&quot; والحاويات الأفقية [<bdi dir="ltr" class="odt-ltr-term">H1</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">H2</bdi>]
+  </li>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">H1</bdi></i>: حاوية أفقية لمعلومات <i>الاسم الأخير والاسم الأول والعنوان</i>
+  </li>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">V2</bdi></i>: حاوية عمودية لتسمية &quot;<i>اللقب&quot; </i>وعرض لقب الموظف.
+  </li>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">H2</bdi></i>: حاوية أفقية لمعلومات <i>المدينة والرمز البريدي والمؤشر</i>
+  </li>
+</ul>
+
+<p>فيما يلي الكود الكامل للحاوية &quot;<bdi dir="ltr" class="odt-ltr-term">employe</bdi>&quot;:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">employe</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">100%</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Employé</span><span style="color:#000000">&quot; fontSize=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; color=&quot;</span><span style="color:#990000">#09F3EB</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:HBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Nom</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblNom</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Prénom</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblPreNom</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Adresse</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblAdresse</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">250</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:HBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:HBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Ville</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblVille</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">100</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Code Postal</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblCodePostal</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">70</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> </span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Label</span><span style="color:#000000"> text=&quot;</span><span style="color:#990000">Indice</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:VBox</span><span style="color:#000000"> backgroundColor=&quot;</span><span style="color:#990000">#EECA05</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">lblIndice</span><span style="color:#000000">&quot; minWidth=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; minHeight=&quot;</span><span style="color:#990000">20</span><span style="color:#000000">&quot; fontFamily=&quot;</span><span style="color:#990000">Verdana</span><span style="color:#000000">&quot; textAlign=&quot;</span><span style="color:#990000">center</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:HBox&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/mx:VBox&gt;</span></span></span>
+</code></pre></div>
+
+<p>الرمز واضح بذاته. دعونا نشرح بإيجاز الحاوية الرأسية التي تعرض اسم الموظف، على سبيل المثال:</p>
+<ul>
+  <li>الأسطر 4–9: الحاوية الرأسية
+  </li>
+  <li>السطر 5: تسمية &quot;<i><bdi dir="ltr" class="odt-ltr-term">Name</bdi>&quot;</i>
+  </li>
+  <li>الأسطر 6-8: حاوية عمودية ستعرض اسم الموظف (السطر 7). نريد إعطاء الحقول التي تعرض معلومات الموظف لون خلفية مختلف. لا يوفر مكون <i>النص </i>هذا الخيار (أو ربما لم أبحث جيدًا). يمكنك تعيين لون خلفية الحاوية. ولهذا السبب تم استخدامه هنا.
+  </li>
+  <li>السطر 7: مكون <i>النص </i>الذي سيعرض اسم الموظف. قمنا بتعيين الحد الأدنى للارتفاع والعرض له.
+  </li>
+</ul>
+
+<p>سنستخدم الحاوية &quot;<em><bdi dir="ltr" class="odt-ltr-term">employee</bdi></em>&quot; لعرض معلومات الموظف التي يختارها المستخدم من القائمة المنسدلة للموظفين، بشكل مستقل عن الزر [<bdi dir="ltr" class="odt-ltr-term">Salary</bdi>]، الذي سيُستخدم لاحقًا لحساب الراتب بمجرد إدخال جميع المعلومات الضرورية.</p>
+<p>لمعالجة التغيير الذي طرأ على التحديد في مربع القائمة المنسدلة &quot;<em>الموظفون</em>&quot;، يتغير كود <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> الخاص به على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:ComboBox</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">cmbEmployes</span><span style="color:#000000">&quot; dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">employes</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayEmploye</span><span style="color:#000000">&quot; change=&quot;displayInfosEmploye();&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<p>يتم تشغيل حدث <strong>التغيير</strong> بواسطة مربع القائمة المنسدلة عندما يغير المستخدم اختياره. وسيكون معالج هذا الحدث هو الأسلوب <strong><bdi dir="ltr" class="odt-ltr-term">displayInfosEmploye</bdi></strong>.</p>
+<p>دعونا نستعرض الطرق التي تعرضها خدمة الويب البعيدة:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">// liste de toutes les identités des employés </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">// ------- le calcul du salaire </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">double</span> heuresTravaillees, <span style="color:#0000ff">int</span> joursTravailles);</span></span>
+</code></pre></div>
+
+<p>هنا، نريد عرض المعلومات (اللقب، الاسم الأول، إلخ) الخاصة بالموظف المحدد في القائمة المنسدلة. لا توفر خدمة الويب طريقة لاسترداد هذه المعلومات. ومع ذلك، يمكننا استخدام طريقة <em><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></em> عن طريق تمرير رقم الضمان الاجتماعي للموظف المحدد و 0 لساعات وأيام العمل. سيتم إجراء حساب راتب زائد عن الحاجة، لكن طريقة <em><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></em> ستُرجع كائن <em><bdi dir="ltr" class="odt-ltr-term">PayStub</bdi></em> يحتوي على المعلومات التي نحتاجها.</p>
+<p>تم تعديل إعلان خدمة الويب الحالية لتضمين تعريف طريقة <em><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi></em>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:WebService</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">pam</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        wsdl=&quot;</span><span style="color:#990000">http://localhost:1077/Service1.asmx?WSDL</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        fault=&quot;wsFault(event);&quot; </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        showBusyCursor=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            name=&quot;</span><span style="color:#990000">GetAllIdentitesEmployes</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            result=&quot;loadEmployesCompleted(event)&quot; </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            fault=&quot;loadEmployesFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            result=&quot;getSalaireCompleted(event)&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            fault=&quot;getSalaireFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:request&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:WebService&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>الأسطر 11-19: تعريف طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi> </i>لخدمة الويب
+  </li>
+  <li>السطر 12: يحدد الطريقة التي سيتم تنفيذها عند نجاح استدعاء طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi></i>
+  </li>
+  <li>السطر 13: يحدد الطريقة التي سيتم تنفيذها عند فشل استدعاء طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi></i>
+  </li>
+  <li>الأسطر 14-18: تتوقع طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi> </i>ثلاثة معلمات. يتم تعريفها داخل علامة &lt;<i><bdi dir="ltr" class="odt-ltr-term">mx:request</bdi></i>&gt; بالشكل <b>&lt;<bdi dir="ltr" class="odt-ltr-term">param1</bdi>&gt;<bdi dir="ltr" class="odt-ltr-term">value1</bdi>&lt;/<bdi dir="ltr" class="odt-ltr-term">param1</bdi>&gt;</b>. لا يمكن أن يكون المعرف <b><bdi dir="ltr" class="odt-ltr-term">param1</bdi> </b>عشوائياً. يجب عليك استخدام الأسماء التي تتوقعها خدمة الويب:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000501000001601C3F3008.png" width="641" height="176" style="display:inline-block; margin:4px;width:16.947cm;height:4.657cm;" class="odt-zoomable" data-zoom-src="images/1000000000000501000001601C3F3008.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، صفحة خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">http://localhost:1077/Service1.asmx</bdi>]
+  </li>
+  <li>في [2]، الرابط إلى صفحة اختبار الطريقة [<bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi>]
+  </li>
+  <li>في [3]، المعلمات المتوقعة من قبل الطريقة. <b>هذه هي الأسماء </b>التي يجب استخدامها كعلامات فرعية لعلامة &lt;<i><bdi dir="ltr" class="odt-ltr-term">mx:request</bdi></i>&gt;.
+  </li>
+</ul>
+
+<p>لنعد إلى إعلان خدمة الويب:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            result=&quot;getSalaireCompleted(event)&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            fault=&quot;getSalaireFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:request&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;/mx:operation&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 5: المعلمة <b><bdi dir="ltr" class="odt-ltr-term">ss</bdi></b>. تذكر أنه عند بدء تشغيل تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>، تم تخزين مصفوفة جميع الموظفين في متغير <b>باسم <bdi dir="ltr" class="odt-ltr-term">employees</bdi> </b>من النوع <i><bdi dir="ltr" class="odt-ltr-term">ArrayCollection</bdi></i>.
+    <ul>
+      <li><i><bdi dir="ltr" class="odt-ltr-term">employees.getItemAt</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>)</i>: هو الموظف رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi> في المصفوفة
+      </li>
+      <li><i><bdi dir="ltr" class="odt-ltr-term">employees.getItemAt</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>).</i><i><b><bdi dir="ltr" class="odt-ltr-term">SS</bdi></b></i>: هو رقم الضمان الاجتماعي لهذا الموظف.
+      </li>
+      <li><i><bdi dir="ltr" class="odt-ltr-term">cmbEmployees.selectedIndex</bdi></i>: هو مؤشر العنصر المحدد في مربع القائمة المنسدلة <bdi dir="ltr" class="odt-ltr-term">employees</bdi> <i><bdi dir="ltr" class="odt-ltr-term">cmbEmployees</bdi></i>.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>في الكود أعلاه، كيف نعرف أن <strong><bdi dir="ltr" class="odt-ltr-term">SS</bdi></strong> هو رقم الضمان الاجتماعي للموظف؟ للإجابة على هذا السؤال، نحتاج إلى الرجوع إلى الاستجابة المرسلة بواسطة طريقة <em><bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmployes</bdi></em>:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D8000001F6CD2D90E4.png" width="680" height="228" style="display:inline-block; margin:4px;width:17.997cm;height:6.04cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D8000001F6CD2D90E4.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، صفحة خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>]
+  </li>
+  <li>في [2]، الرابط إلى صفحة الاختبار الخاصة بالطريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmployes</bdi>]
+  </li>
+  <li>في [3]، يتم إجراء الاختبار. لا يُتوقع وجود أي معلمات.
+  </li>
+  <li>في [4]: تحتوي استجابة <bdi dir="ltr" class="odt-ltr-term">XML</bdi> على مصفوفة من الموظفين. يتم تخزين هذه المصفوفة في المتغير <i>`<bdi dir="ltr" class="odt-ltr-term">employees</bdi>`</i>. كما هو موضح في [5]، فإن `<b><bdi dir="ltr" class="odt-ltr-term">SS</bdi>` </b>هي بالفعل العلامة المستخدمة لتخزين رقم الضمان الاجتماعي.
+  </li>
+</ul>
+
+<p>لنختتم فحصنا لخدمة الويب:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;mx:operation</span><span style="color:#000000"> name=&quot;</span><span style="color:#990000">GetSalaire</span><span style="color:#000000">&quot; </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            result=&quot;getSalaireCompleted(event)&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            fault=&quot;getSalaireFault(event);&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;mx:request&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;/mx:request&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:operation&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 6: سيتم توفير عدد ساعات العمل بواسطة متغير <b><bdi dir="ltr" class="odt-ltr-term">hoursWorked</bdi></b>
+  </li>
+  <li>السطر 6: سيتم توفير عدد أيام العمل بواسطة متغير <b><bdi dir="ltr" class="odt-ltr-term">daysWorked</bdi></b>
+  </li>
+</ul>
+
+<p>يجب إعلان هذه المتغيرات داخل علامة &lt;<em><bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi></em>&gt; باستخدام السمة <strong>[<bdi dir="ltr" class="odt-ltr-term">Bindable</bdi>]</strong>، مما يسمح لمكونات <bdi dir="ltr" class="odt-ltr-term">MXML</bdi> بالرجوع إليها (الأسطر 7–10 أدناه).</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> heuresTravaillees:Number;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> joursDeTravail:int;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:Script&gt;</span></span>
+</code></pre></div>
+
+<p>يتغير كود معالجة الأحداث في العرض على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;mx:Script&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.FaultEvent;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> heuresTravaillees:Number;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> joursDeTravail:int;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on note les hauteur / largeur de # blocs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                employeHeight=employe.height;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                employeWidth=employe.width;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on cache certains éléments</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                hideEmploye();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayInfosEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// formulaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                hideEmploye();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on calcule un salaire fictif</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                heuresTravaillees=0;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                joursDeTravail=0;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                pam.GetSalaire.send();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-style:italic;color:#009900">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-style:italic;color:#009900">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// vues partielles -------------------------------------------------</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employeHeight:int;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employeWidth:int;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> hideEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            employe.height=0;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            employe.width=0;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> showEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            employe.height=employeHeight;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            employe.width=employeWidth;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 15: طريقة <b><bdi dir="ltr" class="odt-ltr-term">init</bdi></b>، التي يتم تنفيذها عند بدء تشغيل تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>، تخزن ارتفاع وعرض الحاوية الرأسية <i>للموظفين </i>بحيث يمكن استعادتها (الأسطر 50–53) بعد إخفائها (الأسطر 45–48).
+  </li>
+  <li>السطر 24: يتم تنفيذ طريقة <b><bdi dir="ltr" class="odt-ltr-term">displayInfosEmploye</bdi> </b>عندما يغير المستخدم اختياره في مربع القائمة المنسدلة <bdi dir="ltr" class="odt-ltr-term">employee.</bdi>
+  </li>
+  <li>السطر 26: يتم إخفاء حاوية <i>الموظفين </i>إذا كانت مرئية سابقًا
+  </li>
+  <li>السطر 30: يتم استدعاء طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></i> الخاصة بخدمة الويب بشكل غير متزامن. ونعلم أنها تتوقع ثلاثة معلمات:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;ss&gt;</span><span style="color:#000000">{employes.getItemAt(cmbEmployes.selectedIndex).SS}</span><span style="color:#0000ff">&lt;/ss&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;heuresTravaillees&gt;</span><span style="color:#000000">{heuresTravaillees}</span><span style="color:#0000ff">&lt;/heuresTravaillees&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">              </span><span style="color:#0000ff">&lt;joursTravailles&gt;</span><span style="color:#000000">{joursDeTravail}</span><span style="color:#0000ff">&lt;/joursTravailles&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 1: ستكون المعلمة </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">ss</bdi> </span></b><span style="color: #000000">هي رقم الضمان الاجتماعي للموظف المحدد في مربع القائمة المنسدلة للموظفين</span>
+  </li>
+  <li><span style="color: #000000">السطر 2: تقوم طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">displayInfosEmploye</bdi> </span></i><span style="color: #000000">بتعيين القيمة 0 للمتغير </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">hoursWorked</bdi> </span></b><span style="color: #000000">(السطر 28)</span>
+  </li>
+  <li><span style="color: #000000">السطر 3: تعين طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">displayInfosEmploye</bdi> </span></i><span style="color: #000000">القيمة 0 للمتغير </span><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">daysWorked</bdi> </span></b><span style="color: #000000">(السطر 29)</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">يتم تنفيذ طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetSalaireCompleted</bdi> </span></em><span style="color: #000000">إذا اكتملت طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi> </span></em><span style="color: #000000">الخاصة بخدمة الويب بنجاح:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// hide error msg</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                hideMsg();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// you receive a payslip</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> feuilleSalaire:Object=event.result;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// display</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblNom.text=feuilleSalaire.Employe.Nom;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblPreNom.text=feuilleSalaire.Employe.Prenom;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblAdresse.text=feuilleSalaire.Employe.Adresse;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblVille.text=feuilleSalaire.Employe.Ville;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblCodePostal.text=feuilleSalaire.Employe.CodePostal;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblIndice.text=feuilleSalaire.Employe.Indice;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                showEmploye();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 3: نخفي مربع الرسالة في حالة ظهوره.</span>
+  </li>
+  <li><span style="color: #000000">السطر 5: نسترد كشف الراتب الذي أعادته طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></span></i>
+  </li>
+</ul>
+
+<p><span style="color: #000000">لمعرفة ما تعيده طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi></span></em><span style="color: #000000"> بالضبط، نعود إلى صفحة خدمة الويب:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000500000003AA1CB631DF.png" width="640" height="469" style="display:inline-block; margin:4px;width:16.933cm;height:12.409cm;" class="odt-zoomable" data-zoom-src="images/1000000000000500000003AA1CB631DF.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">[1] هي صفحة خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>]</span>
+  </li>
+  <li><span style="color: #000000">في [2]، الرابط المؤدي إلى صفحة الاختبار لطريقة [<bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi>]</span>
+  </li>
+  <li><span style="color: #000000">في [3]، نقدم المعلمات</span>
+  </li>
+  <li><span style="color: #000000">في [4]، <bdi dir="ltr" class="odt-ltr-term">XML</bdi> الناتج.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">لنعد إلى طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getSalaireCompleted</bdi></span></em><span style="color: #000000">:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// hide error msg</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                hideMsg();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// you receive a payslip</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> feuilleSalaire:Object=event.result;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// display</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblNom.text=feuilleSalaire.Employe.Nom;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblPreNom.text=feuilleSalaire.Employe.Prenom;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblAdresse.text=feuilleSalaire.Employe.Adresse;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblVille.text=feuilleSalaire.Employe.Ville;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblCodePostal.text=feuilleSalaire.Employe.CodePostal;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                lblIndice.text=feuilleSalaire.Employe.Indemnites.Indice;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                showEmploye();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">السطر 5: </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">PayrollSheet</bdi> = <bdi dir="ltr" class="odt-ltr-term">event.result</bdi> </span></i><span style="color: #000000">يمثل موجز <bdi dir="ltr" class="odt-ltr-term">XML</bdi> [4] الذي تم إرجاعه بواسطة طريقة </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetSalary.</bdi> </span></i><span style="color: #000000">من هذا الموجز، يمكننا أن نرى أن:</span>
+    <ul>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">payrollSheet.Employee</bdi> </span></i><span style="color: #000000">هو دفق <bdi dir="ltr" class="odt-ltr-term">XML</bdi> الخاص بموظف</span>
+      </li>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">sheetSalary.Employee.Name</bdi> </span></i><span style="color: #000000">هو اسم هذا الموظف</span>
+      </li>
+      <li><span style="color: #000000">...</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">الأسطر 7–12: يتم استخدام موجز <bdi dir="ltr" class="odt-ltr-term">XML</bdi> </span><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Payroll.</bdi></span></i><b><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Employee</bdi> </span></b><span style="color: #000000">لملء الحقول المختلفة لحاوية </span><b><span style="color: #000000">الموظف</span></b><span style="color: #000000">.</span>
+  </li>
+  <li><span style="color: #000000">السطر 13: يتم عرض حاوية </span><b><span style="color: #000000">الموظف</span></b><span style="color: #000000">.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">يتم تنفيذ طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">getSalaireFault</bdi> </span></em><span style="color: #000000">في حالة فشل طريقة </span><em><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi> </span></em><span style="color: #000000">الخاصة بخدمة الويب:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// error msg display</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                msg.text=event.fault.message;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// form</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                showMsg();            </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 3: يتم وضع رسالة الخطأ <i><bdi dir="ltr" class="odt-ltr-term">event.fault.message</bdi> </i>في مربع الرسالة
+  </li>
+  <li>السطر 5: يتم عرض مربع الرسالة
+  </li>
+</ul>
+
+<p>وبهذا تنتهي التغييرات المطلوبة لهذه النسخة الجديدة. عند حفظها، وإذا كانت الصيغة صحيحة، يتم إنشاء النسخة القابلة للتنفيذ في مجلد [<bdi dir="ltr" class="odt-ltr-term">bin-debug</bdi>] الخاص بالمشروع:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000CC000000F11183FBAF.png" width="144" height="170" style="display:inline-block; margin:4px;width:3.799cm;height:4.487cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CC000000F11183FBAF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>أعلاه، [<bdi dir="ltr" class="odt-ltr-term">main2.html</bdi>] هي صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> التي تضم ملف تطبيق <bdi dir="ltr" class="odt-ltr-term">Flex</bdi> الثنائي [<bdi dir="ltr" class="odt-ltr-term">main2.swf</bdi>]، والذي سيتم تنفيذه بواسطة <bdi dir="ltr" class="odt-ltr-term">Flash Player.</bdi></p>
+<p>يمكننا اختبار هذا الإصدار الجديد:</p>
+<ul>
+  <li>يجب أن تكون خدمة الويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> قيد التشغيل
+  </li>
+  <li>يجب أن يكون خادم <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> قيد التشغيل لعميل <bdi dir="ltr" class="odt-ltr-term">Flex</bdi>
+  </li>
+</ul>
+
+<p>بافتراض أن الاسم المستعار [<bdi dir="ltr" class="odt-ltr-term">pam-v10-flex-client-webservice</bdi>] المستخدم في الإصدار السابق لا يزال موجودًا، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost/pam-v10-flex-client-webservice/main2.html</bdi>] من خادم <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> في متصفح:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059D00000174A82A01B1.png" width="680" height="176" style="display:inline-block; margin:4px;width:17.997cm;height:4.658cm;" class="odt-zoomable" data-zoom-src="images/100000000000059D00000174A82A01B1.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031E000001A3D1689F08.png" width="399" height="209" style="display:inline-block; margin:4px;width:10.557cm;height:5.542cm;" class="odt-zoomable" data-zoom-src="images/100000000000031E000001A3D1689F08.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> المطلوب
+  </li>
+  <li>في [2]، القائمة المنسدلة للموظفين
+  </li>
+  <li>في [3]، قم بتغيير الاختيار في القائمة المنسدلة لتشغيل حدث <i>التغيير</i>
+  </li>
+  <li>في [4]، النتيجة التي تم الحصول عليها: ملف تعريف <i>جوستين </i>لافيرتي.
+  </li>
+</ul>
+<h2 id="145-3">14.5. <span style="color: #4f81bd">الطريقة #3</span></h2>
+<p>تتولى العرض 3 التحقق من صحة النموذج. هنا، يتم التحقق فقط من حقل الإدخال &quot;<em><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi></em>&quot;. طالما أن النموذج غير صالح، سيظل الزر &quot;<em><bdi dir="ltr" class="odt-ltr-term">btnSalaire</bdi></em>&quot; معطلاً.</p>
+<p>لإضافة هذه الوظيفة، نقوم بنسخ ملف [<bdi dir="ltr" class="odt-ltr-term">main2.mxml</bdi>] إلى ملف [<bdi dir="ltr" class="odt-ltr-term">main3.mxml</bdi>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014A00000110FA84D79D.png" width="165" height="136" style="display:inline-block; margin:4px;width:4.366cm;height:3.598cm;" class="odt-zoomable" data-zoom-src="images/100000000000014A00000110FA84D79D.png" /></td></tr></table>
+
+<p>من الآن فصاعدًا، سنعمل مع [<bdi dir="ltr" class="odt-ltr-term">main3.mxml</bdi>]، الذي سنقوم بتعيينه كتطبيق افتراضي (انظر هذا المفهوم في القسم<a href="#v13-application-par-defaut"><u><span style="color: #0563c1"> 14.4</span></u></a>). أولاً، نضيف سمة إلى مكون &quot;<em><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi></em>&quot;:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:TextInput</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot; change=&quot;validateForm(event)&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<p>في كل مرة يتغير فيها محتوى حقل الإدخال &quot;<em><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi></em>&quot;، يتم استدعاء طريقة <em><bdi dir="ltr" class="odt-ltr-term">validateForm</bdi></em>. هذه طريقة محلية كتبها المطور. فيها، يمكننا التحقق من أن محتوى حقل الإدخال &quot;<em><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi></em>&quot; هو بالفعل عدد صحيح موجب. سنقوم بإجراء مختلف باستخدام مكون التحقق من الصحة:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:NumberValidator</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">heuresTravailleesValidator</span><span style="color:#000000">&quot; source=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">txtHeuresTravaillees</span><span style="color:#990000">}</span><span style="color:#000000">&quot; property=&quot;t</span><span style="color:#990000">ext</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    precision=&quot;</span><span style="color:#990000">2</span><span style="color:#000000">&quot; allowNegative=&quot;</span><span style="color:#990000">false</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    invalidCharError=&quot;</span><span style="color:#990000">Caractères invalides</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    precisionError=&quot;</span><span style="color:#990000">Deux chiffres au plus après la virgule</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    negativeError=&quot;</span><span style="color:#990000">Le nombre d&#x27;heures doit être positif ou nul</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    invalidFormatCharsError=&quot;</span><span style="color:#990000">Format invalide</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    required=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">requiredFieldError=&quot;</span><span style="color:#990000">Donnée requise</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: يتحقق المكون &lt;<i><bdi dir="ltr" class="odt-ltr-term">mx:NumberValidator</bdi></i>&gt; من أن مكونًا آخر يحتوي على عدد صحيح أو عدد حقيقي.
+  </li>
+  <li>السطر 1: تُعيّن السمة <i><bdi dir="ltr" class="odt-ltr-term">id</bdi> </i>معرّفًا للمكون.
+  </li>
+  <li>السطر 1: <i><bdi dir="ltr" class="odt-ltr-term">source</bdi> </i>هو معرف المكون الذي يتم التحقق من صحته بواسطة مكون <i><bdi dir="ltr" class="odt-ltr-term">NumberValidator</bdi></i>. هنا، يتم التحقق من صحة حقل الإدخال &quot;<i><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi></i>&quot;.
+  </li>
+  <li>السطر 1: <i><bdi dir="ltr" class="odt-ltr-term">property</bdi> </i>هو اسم خاصية المكون <i>المصدر </i>التي تحتوي على القيمة المراد التحقق من صحتها. في النهاية، يتم التحقق من صحة القيمة <i><bdi dir="ltr" class="odt-ltr-term">source.property</bdi></i>، وهي في هذه الحالة <i><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees.text</bdi></i>.
+  </li>
+  <li>السطر 2: تحدد<i> الدقة (<bdi dir="ltr" class="odt-ltr-term">precision</bdi>) </i>الحد الأقصى لعدد الخانات العشرية المسموح بها. تعني<i> الدقة 0 (<bdi dir="ltr" class="odt-ltr-term">precision</bdi>=0) </i>أن الرقم المدخل يجب أن يكون عددًا صحيحًا.
+  </li>
+  <li>السطر 2: تحدد<i> <bdi dir="ltr" class="odt-ltr-term">allowNegative</bdi> </i>ما إذا كان الأرقام السالبة مسموحة أم لا
+  </li>
+  <li>السطر 7: يحدد<i> <bdi dir="ltr" class="odt-ltr-term">required</bdi> </i>ما إذا كان الإدخال إلزاميًا أم لا.
+  </li>
+</ul>
+
+<p>عندما لا يتم استيفاء شرط التحقق من الصحة، يتم عرض رسالة خطأ في تلميح أداة بالقرب من المكون غير الصالح. بشكل افتراضي، تكون هذه الرسائل باللغة الإنجليزية. يمكنك تعريف هذه الرسائل بنفسك:</p>
+<ul>
+  <li>(تابع)
+    <ul>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">invalidCharError</bdi></span></i><span style="color: #000000">: رسالة الخطأ عندما يحتوي النص على حرف لا يمكن أن يظهر في رقم</span>
+      </li>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">precisionError</bdi></span></i><span style="color: #000000">: رسالة الخطأ عندما يكون عدد الخانات العشرية غير صحيح بالنسبة لخاصية </span><i><span style="color: #000000">الدقة</span></i>
+      </li>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">negativeError</bdi></span></i><span style="color: #000000">: رسالة الخطأ عندما يكون الرقم سالبًا ولكن السمة <bdi dir="ltr" class="odt-ltr-term">allowNegative</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">false</bdi>&quot; محددة</span>
+      </li>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">requiredFieldError</bdi></span></i><span style="color: #000000">: رسالة الخطأ عندما لا يتم إدخال أي قيمة على الرغم من تعيين السمة <bdi dir="ltr" class="odt-ltr-term">requiredField</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">true</bdi>&quot;</span>
+      </li>
+      <li><i><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">invalidFormatCharsError</bdi></span></i><span style="color: #000000">: رسالة الخطأ التي تظهر عندما يحتوي النص على أحرف غير صالحة أو بتنسيق غير صحيح؟</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>لنعد إلى المكون &quot;<em><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi></em>&quot;:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:TextInput</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtHeuresTravaillees</span><span style="color:#000000">&quot; change=&quot;validateForm(event)&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<p>يمكن أن تكون طريقة <em><bdi dir="ltr" class="odt-ltr-term">validateForm</bdi></em> كما يلي داخل علامة &lt;<em><bdi dir="ltr" class="odt-ltr-term">mx:Script</bdi></em>&gt;:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> validateForm(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        {                    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// validate hours worked</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> evt:ValidationResultEvent = heuresTravailleesValidator.validate();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// successful validation?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            btnSalaire.enabled=evt.type==ValidationResultEvent.VALID;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 4: يتم تنفيذ أداة التحقق &quot;<i><bdi dir="ltr" class="odt-ltr-term">heuresTravailleesValidator</bdi></i>&quot;. وتُرجع نتيجة من النوع <i><bdi dir="ltr" class="odt-ltr-term">ValidationResultEvent</bdi></i>.
+  </li>
+  <li>السطر 6: <i><bdi dir="ltr" class="odt-ltr-term">evt.type</bdi> </i>من النوع <i><bdi dir="ltr" class="odt-ltr-term">String</bdi> </i>ويشير إلى نوع الحدث. <i><bdi dir="ltr" class="odt-ltr-term">evt.type</bdi> </i>له قيمتان محتملتان لنوع <i><bdi dir="ltr" class="odt-ltr-term">ValidationResultEvent:</bdi> </i>&quot;<bdi dir="ltr" class="odt-ltr-term">invalid</bdi>&quot; أو &quot;<bdi dir="ltr" class="odt-ltr-term">valid</bdi>&quot;، ممثلتان بالثوابت <i><bdi dir="ltr" class="odt-ltr-term">ValidationResultEvent.INVALID</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">ValidationResultEvent.VALID.</bdi> </i>إذا نجحت عملية التحقق من الصحة في السطر 4، يجب أن يكون لـ<i> <bdi dir="ltr" class="odt-ltr-term">evt.type</bdi> </i>القيمة <i><bdi dir="ltr" class="odt-ltr-term">ValidationResultEvent.VALID.</bdi> </i>في هذه الحالة، يتم تمكين الزر <i><bdi dir="ltr" class="odt-ltr-term">btnSalaire</bdi></i>؛ وإلا، يتم تعطيله.
+  </li>
+</ul>
+
+<p>وهذا يكفي لاختبار صحة ساعات العمل.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000175000001C1424117BB.png" width="187" height="225" style="display:inline-block; margin:4px;width:4.935cm;height:5.941cm;" class="odt-zoomable" data-zoom-src="images/1000000000000175000001C1424117BB.png" /></td></tr></table>
+
+<p>فيما سبق، أسفر تجميع المشروع عن إنشاء الملفين [<bdi dir="ltr" class="odt-ltr-term">main3.html</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">main3.swf</bdi>]. ندخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost/pam-v10-flex-client-webservice/main3.html</bdi>] في متصفح ونتحقق من حالات الخطأ المختلفة:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005BC00000093700C8222.png" width="680" height="68" style="display:inline-block; margin:4px;width:17.997cm;height:1.803cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BC00000093700C8222.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AD000000A75E5B9FE6.png" width="680" height="78" style="display:inline-block; margin:4px;width:17.997cm;height:2.067cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AD000000A75E5B9FE6.png" /></td></tr></table>
+
+<ul>
+  <li>يظهر الحقل غير الصحيح بإطار أحمر [1، 2، 3]، بينما يظهر الحقل الصحيح بإطار أزرق [4].
+  </li>
+  <li>في [4]، لاحظ أن زر [الراتب] نشط لأن عدد ساعات العمل صحيح.
+  </li>
+</ul>
+<h2 id="146">14.6. <span style="color: #4f81bd">الطريقة الرابعة</span></h2>
+<p>تستكمل العرض 4 نموذج حساب الراتب. للقيام بذلك، نقوم بنسخ [<bdi dir="ltr" class="odt-ltr-term">main3.xml</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">main4.xml</bdi>] ونعمل الآن مع <em><bdi dir="ltr" class="odt-ltr-term">main4</bdi></em>، الذي قمنا بتعيينه كتطبيق افتراضي (انظر القسم<a href="#v13-application-par-defaut"><u><span style="color: #0563c1"> 14.4</span></u></a>).</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D1000002159955DAA4.png" width="680" height="243" style="display:inline-block; margin:4px;width:17.997cm;height:6.442cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D1000002159955DAA4.png" /></td></tr></table>
+
+<p>التغييرات التي تم إجراؤها في [<bdi dir="ltr" class="odt-ltr-term">main4.xml</bdi>] [1] هي كما يلي:</p>
+<ul>
+  <li>تمت إضافة حاوية عمودية جديدة إلى العرض [2] لعرض مكونات راتب الموظف
+  </li>
+  <li>تمت إضافة مكون لتنسيق القيم النقدية [3]
+  </li>
+  <li>يتم التعامل مع عرض مكونات الراتب بواسطة المعالج المرتبط بحدث &quot;النقر&quot; الخاص بالزر &quot;<i><bdi dir="ltr" class="odt-ltr-term">btnSalaire</bdi></i>&quot;.
+  </li>
+</ul>
+
+<p>يتطور العرض على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A4000002173759CC42.png" width="466" height="268" style="display:inline-block; margin:4px;width:12.33cm;height:7.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A4000002173759CC42.png" /></td></tr></table>
+
+<p>تتبع الحاوية الجديدة نفس مبدأ الحاوية السابقة. وهي عبارة عن حاوية <em><bdi dir="ltr" class="odt-ltr-term">VBox</bdi></em> رأسية [<bdi dir="ltr" class="odt-ltr-term">V1</bdi>] تحتوي على أربع حاويات <em><bdi dir="ltr" class="odt-ltr-term">HBox</bdi></em> أفقية [<bdi dir="ltr" class="odt-ltr-term">Hi</bdi>]. وتتألف الحاويات الأفقية من <bdi dir="ltr" class="odt-ltr-term">H1</bdi> إلى <bdi dir="ltr" class="odt-ltr-term">H3</bdi> من حاويات رأسية تحتوي على تسميتين، تقع الثانية منها داخل حاوية رأسية لتوفير لون الخلفية.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال 1</strong>: اكتب حاوية الراتب. سيُشار إليها فيما بعد باسم <em><bdi dir="ltr" class="odt-ltr-term">complements.</bdi></em></p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال 2</strong>: اكتب الطرق لإخفاء/إظهار حاوية <em>المكملات</em>. استلهم من ما تم عمله سابقًا لحاوية <em>الموظف</em>.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>نربط معالجًا بحدث &quot;<bdi dir="ltr" class="odt-ltr-term">click</bdi>&quot; الخاص بالزر &quot;<bdi dir="ltr" class="odt-ltr-term">btnSalaire</bdi>&quot;:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">btnSalaire</span><span style="color:#000000">&quot; label=&quot;</span><span style="color:#990000">Salaire</span><span style="color:#000000">&quot; click=&quot;calculerSalaire()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<p>طريقة <code>*&lt;bdi dir="ltr" class="odt-ltr-term"&gt;calculerSalaire&lt;/bdi&gt;</code>* هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> calculerSalaire():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// form preparation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                affichageSalaire=</span><span style="font-weight:bold;color:#0033ff">true</span><span style="color:#000000">;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                msg.text=</span><span style="font-weight:bold;color:#990000">&quot;&quot;</span><span style="color:#000000">;                </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// salary calculation parameters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                heuresTravaillees=Number(txtHeuresTravaillees.text);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                joursDeTravail=int(joursTravailles.value);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// the salary is requested from the web service</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                pam.GetSalaire.send();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 3: تُستخدم المتغير المنطقي <i><bdi dir="ltr" class="odt-ltr-term">displaySalary</bdi> </i>للإشارة إلى ما إذا كان سيتم عرض حاوية المكملات، التي تعرض تفاصيل الراتب، أم لا. يتم تنفيذ الأسلوب <i><bdi dir="ltr" class="odt-ltr-term">getSalaryCompleted</bdi> </i>في حالتين:
+    <ul>
+      <li>عند تغيير الموظف في القائمة المنسدلة للموظفين لعرض معلوماته بدون الراتب. في هذه الحالة، يتم تعيين <bdi dir="ltr" class="odt-ltr-term">salaryDisplay</bdi>=<bdi dir="ltr" class="odt-ltr-term">false.</bdi>
+      </li>
+      <li>حساب الراتب
+      </li>
+    </ul>
+  </li>
+  <li>السطر 6: يتم تحويل النص الموجود في حقل الإدخال <i><bdi dir="ltr" class="odt-ltr-term">txtHeuresTravaillees</bdi> </i>إلى عدد حقيقي.
+  </li>
+  <li>السطر 7: يتم تحويل قيمة عداد <i><bdi dir="ltr" class="odt-ltr-term">daysWorked</bdi> </i>إلى عدد صحيح.
+  </li>
+  <li>السطر 9: يتم استدعاء طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></i> عن بُعد. لاحظ أن هذه الطريقة تتوقع ثلاثة معلمات، بما في ذلك معلمتا <i><bdi dir="ltr" class="odt-ltr-term">hoursWorked</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">daysWorked</bdi> </i>اللتان تم تهيئتهما في السطرين 6 و 7. لاحظ أيضًا أنه في حالة نجاح الاستدعاء غير المتزامن لطريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></i>:
+    <ul>
+      <li>نجح، فسيتم استدعاء الأسلوب <i><bdi dir="ltr" class="odt-ltr-term">getSalaireCompleted</bdi></i>
+      </li>
+      <li>فشل، سيتم استدعاء الأسلوب <i><bdi dir="ltr" class="odt-ltr-term">getSalaireFault</bdi></i>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال 3</strong>: أكمل الطريقة الحالية <em><bdi dir="ltr" class="odt-ltr-term">getSalaireCompleted</bdi></em> بحيث تعرض راتب الموظف في حالة النقر على زر <em><bdi dir="ltr" class="odt-ltr-term">btnSalaire</bdi></em>.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>حاليًا، يتم عرض بنود الراتب بدون رمز اليورو. يمكنك تضمينه في الكود أو استخدام أداة تنسيق. هذه هي الطريقة التي نتبعها حاليًا. ستكون أداة التنسيق كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:CurrencyFormatter</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">eurosFormatter</span><span style="color:#000000">&quot; precision=&quot;</span><span style="color:#990000">2</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        currencySymbol=&quot;</span><span style="color:#990000">€</span><span style="color:#000000">&quot; useNegativeSign=&quot;</span><span style="color:#990000">true</span><span style="color:#000000">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">alignSymbol=&quot;</span><span style="color:#990000">right</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 1: <b><bdi dir="ltr" class="odt-ltr-term">id</bdi> </b>هو معرف أداة التنسيق، <b>و<bdi dir="ltr" class="odt-ltr-term">precision</bdi> هو </b>عدد المنازل العشرية المطلوب الاحتفاظ بها.
+  </li>
+  <li>السطر 2: <b><bdi dir="ltr" class="odt-ltr-term">currencySymbol</bdi> </b>هو رمز العملة المراد استخدامه. <b><bdi dir="ltr" class="odt-ltr-term">useNegativeSign</bdi> </b>يشير إلى ما إذا كان سيتم استخدام علامة الطرح للقيم السالبة أم لا.
+  </li>
+  <li>السطر 3: يحدد<b> <bdi dir="ltr" class="odt-ltr-term">alignSymbol</bdi> </b>مكان وضع رمز العملة بالنسبة للرقم.
+  </li>
+</ul>
+
+<p>يُستخدم مُنسق النص هذا في كود البرنامج النصي على النحو التالي:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>                    lblSH.text=eurosFormatter.format(feuilleSalaire.Indemnites.BaseHeure);
+</code></pre></div>
+<ul>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">eurosFormatter</bdi> </i>هو معرف أداة التنسيق المطلوب استخدامها
+  </li>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">format</bdi> </i>هي الطريقة التي يتم استدعاؤها لتنسيق رقم. وهي تُرجع سلسلة نصية.
+  </li>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">feuilleSalaire.Indemnites.BaseHeure</bdi> </i>هو الرقم المراد تنسيقه.
+  </li>
+  <li><i><bdi dir="ltr" class="odt-ltr-term">lblSH</bdi> </i>هو اسم مكون نصي.
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال 4</strong>: قم بتعديل الطريقة <em><bdi dir="ltr" class="odt-ltr-term">getSalaireCompleted</bdi></em> بحيث تستخدم أداة تنسيق العملة.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

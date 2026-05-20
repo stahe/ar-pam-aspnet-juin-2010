@@ -1,0 +1,1584 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-pam-aspnet-juin-2010/tbyq-simupaie---ldr-5---aspnet--khdm-wyb.html">
+      
+      
+        <link rel="prev" href="tbyq-simupaie---ldr-4---aspnet--r-mtdd--f-wd.html">
+      
+      
+        <link rel="next" href="tbyq-simupaie---ldr-6---myl-aspnet-lkhdm-wyb.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب - إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-simupaie-5-aspnet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-header__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-nav__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-sry-l-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. مقدمة سريعة إلى ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="drs-ll.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. دراسة الحالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-1-mn---aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. مقدمة إلى NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---dr-3-mn---bny-thlthy-lbqt-m-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق [SimuPaie] – إصدار 3 من – بنية ثلاثية الطبقات مع NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-4---aspnet--r-mtdd--f-wd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تطبيق [SimuPaie] – الإصدار 4 – ASP.NET / عرض متعدد / صفحة واحدة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tbyq-simupaie---ldr-5---aspnet--khdm-wyb.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. البنية الجديدة للتطبيق
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-visual-web-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. مشروع Visual Web Developer لخدمة الويب
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-c-nunit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. مشروع C# لعميل NUnit لخدمة الويب
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-6---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق [SimuPaie] – الإصدار 6 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-7-mn---aspnet--r-mtdd--ft-mtdd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق [SimuPaie] – الإصدار 7 من – ASP.NET / عرض متعدد / صفحات متعددة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-8---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق [SimuPaie] – الإصدار 8 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-9---tkml-springnhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق [SimuPaie] – الإصدار 9 – تكامل Spring/NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-10---myl-flex-lkhdm-wyb-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="9-simupaie-5-aspnet">9. <span style="color: #365f91">تطبيق [<bdi dir="ltr" class="odt-ltr-term">SimuPaie</bdi>] – الإصدار 5 – <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> / خدمة ويب</span></h1>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>قراءات موصى بها</strong>: المرجع [2]، <strong>مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">C#</bdi> 2008</strong>، الفصل 10 &quot;<strong>خدمات الويب</strong>&quot;</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h2 id="91">9.1. <span style="color: #4f81bd">البنية الجديدة للتطبيق</span></h2>
+<p>تتكون بنية تطبيق <em><bdi dir="ltr" class="odt-ltr-term">Pam</bdi></em> ذات الطبقات حاليًا مما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BE000000BEF19A80DE.png" width="607" height="95" style="display:inline-block; margin:4px;width:16.06cm;height:2.514cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BE000000BEF19A80DE.png" /></td></tr></table>
+
+<p>وسنعمل على تطويرها على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000067B000000F635427F8B.png" width="680" height="101" style="display:inline-block; margin:4px;width:17.997cm;height:2.669cm;" class="odt-zoomable" data-zoom-src="images/100000000000067B000000F635427F8B.png" /></td></tr></table>
+
+<p>في حين أن طبقات [الويب] و[الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] كانت تعمل في نفس الآلة الافتراضية .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> في البنية السابقة، فإن طبقة [الويب] ستعمل في الآلة الافتراضية الجديدة في آلة افتراضية مختلفة عن طبقات [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. سيكون هذا هو الحال، على سبيل المثال، إذا كانت طبقة [الويب] موجودة على الجهاز <bdi dir="ltr" class="odt-ltr-term">M1</bdi> وطبقتي [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] موجودتين على الجهاز <bdi dir="ltr" class="odt-ltr-term">M2.</bdi> لدينا هنا بنية عميل/خادم:</p>
+<ul>
+  <li>يتكون الخادم من طبقتي [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. ونظرًا لكونه خدمة ويب، فإنه يتطلب خادم الويب رقم 2 للتشغيل.
+  </li>
+  <li>يتكون العميل من طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]. للتشغيل، يتطلب خادم الويب رقم 1.
+  </li>
+  <li>يتواصل العميل والخادم عبر شبكة <bdi dir="ltr" class="odt-ltr-term">TCP/IP</bdi> باستخدام بروتوكول <bdi dir="ltr" class="odt-ltr-term">HTTP/SOAP.</bdi> للقيام بذلك، يجب إضافة طبقتين جديدتين إلى البنية:
+    <ul>
+      <li>طبقة [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]، التي ستكون <b>خدمة ويب</b>. تتلقى خدمة الويب الطلبات من العملاء البعيدين وتستخدم طبقتي [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] لتلبيتها. هناك العديد من الطرق لإنشاء خدمة <bdi dir="ltr" class="odt-ltr-term">TCP/IP.</bdi> تتمثل ميزة <b>خدمة الويب </b>في أمرين:
+        <ul>
+          <li>تستخدم بروتوكول <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>، المسموح به عبر جدران الحماية المؤسسية والحكومية
+          </li>
+          <li>تستخدم بروتوكول فرعي <bdi dir="ltr" class="odt-ltr-term">HTTP/SOAP</bdi> قياسي، يتم تنفيذه بواسطة العديد من منصات التطوير: .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> و<bdi dir="ltr" class="odt-ltr-term">Java</bdi> و<bdi dir="ltr" class="odt-ltr-term">PHP</bdi> و<bdi dir="ltr" class="odt-ltr-term">Flex</bdi> وغيرها. وبالتالي، يمكن &quot;استهلاك&quot; خدمة الويب (المصطلح القياسي) بواسطة عملاء .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> و<bdi dir="ltr" class="odt-ltr-term">Java</bdi> و<bdi dir="ltr" class="odt-ltr-term">PHP</bdi> و<bdi dir="ltr" class="odt-ltr-term">Flex</bdi> وغيرها
+          </li>
+        </ul>
+      </li>
+      <li>الطبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>]، التي ستعمل <b>كعميل </b>لخدمة الويب البعيدة. وسيكون دورها هو التواصل مع خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>].
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>يمكن اشتقاق هذه البنية الجديدة من البنى السابقة دون بذل الكثير من الجهد: </p>
+<ul>
+  <li>تظل الطبقتان [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] دون تغيير
+  </li>
+  <li>تتطور الطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] قليلاً، وذلك بشكل أساسي للإشارة إلى كيانات مثل <i><bdi dir="ltr" class="odt-ltr-term">Employee</bdi> </i>و <bdi dir="ltr" class="odt-ltr-term">Payroll</bdi>، التي أصبحت كيانات تابعة لطبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>]. هذه الكيانات مشابهة لتلك الموجودة في طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] ولكنها تنتمي إلى مساحات أسماء مختلفة. 
+  </li>
+  <li>طبقة الخادم [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] هي فئة تنفذ واجهة <i><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi> </i>لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. هذا التنفيذ يستدعي ببساطة الطرق المقابلة لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>]. الطرق التي تنفذها طبقة الخادم [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] ستكون &quot;معروضة&quot; للعملاء البعيدين، الذين سيتمكنون من استدعائها.
+  </li>
+  <li>سيتم إنشاء طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] بواسطة <bdi dir="ltr" class="odt-ltr-term">Visual Studio.</bdi>
+  </li>
+</ul>
+
+<p>فيما يلي مبادئ البنية الجديدة:</p>
+<ul>
+  <li>تستمر طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] في التواصل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] كما لو كانت محلية. لتحقيق ذلك، تنفذ طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] واجهة <i><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi> </i>لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] الفعلية وتقدم نفسها لطبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] كطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محلية. وبصرف النظر عن مشكلة مساحة الاسم المذكورة سابقًا، تظل طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] دون تغيير. هذه هي ميزة العمل في طبقات. لو كنا قد أنشأنا تطبيقًا من طبقة واحدة، لكان ذلك يتطلب إجراء تعديل جذري.
+  </li>
+  <li>تقوم طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] بإعادة توجيه طلبات طبقة [الويب] بشكل شفاف إلى خدمة الويب البعيدة [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]. وهي تتولى جميع جوانب &quot;الاتصال الشبكي&quot;. تتلقى استجابة من خدمة الويب البعيدة، وتقوم بتنسيقها لإعادتها إلى طبقة [الويب] بالشكل الذي تتوقعه هذه الأخيرة.
+  </li>
+  <li>على جانب الخادم، تتلقى خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] الأوامر من عملائها البعيدين. وتقوم بتنسيقها لاستدعاء أساليب واجهة <i><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi> </i>في طبقة [الأعمال]. وبمجرد تلقيها الرد من طبقة [الأعمال]، تقوم بتنسيقه لإرساله عبر الشبكة إلى العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>]. ولا تحتاج طبقتا [الأعمال] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] إلى تعديل.
+  </li>
+</ul>
+<h2 id="92-visual-web-developer">9.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi> لخدمة الويب</span></h2>
+<p>نقوم بإنشاء مشروع جديد باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer:</bdi></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046B0000026E45A89882.png" width="566" height="311" style="display:inline-block; margin:4px;width:14.963cm;height:8.229cm;" class="odt-zoomable" data-zoom-src="images/100000000000046B0000026E45A89882.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، نختار مشروع ويب بلغة <bdi dir="ltr" class="odt-ltr-term">C#</bdi>
+  </li>
+  <li>في [2]، نختار &quot;تطبيق خدمة ويب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi>&quot;
+  </li>
+  <li>في [3]، نسمي مشروع الويب
+  </li>
+  <li>في [4]، نحدد موقعًا لهذا المشروع
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025B00000106E6132AC0.png" width="302" height="131" style="display:inline-block; margin:4px;width:7.978cm;height:3.466cm;" class="odt-zoomable" data-zoom-src="images/100000000000025B00000106E6132AC0.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، المشروع الذي تم إنشاؤه. وهو مشروع ويب قياسي يحتوي على التفاصيل التالية:
+    <ul>
+      <li>حددنا أن المشروع هو &quot;خدمة ويب&quot;. لا ترسل خدمة الويب صفحات ويب بتنسيق <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> إلى عملائها، بل ترسل بيانات بتنسيق <bdi dir="ltr" class="odt-ltr-term">XML.</bdi> لذلك، لم يتم إنشاء الصفحة [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] التي يتم إنشاؤها عادةً.
+      </li>
+    </ul>
+  </li>
+  <li>في [2]، تم إنشاء ملف [<bdi dir="ltr" class="odt-ltr-term">Service1.asmx</bdi>] بالمحتوى التالي:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">WebService</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Service1.asmx.cs&quot;</span> <span style="color:#ff0000">Class</span><span style="color:#0000ff">=&quot;pam_v5_webservice.Service1&quot;</span> %&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>(تابع)
+    <ul>
+      <li>- تشير علامة <i><bdi dir="ltr" class="odt-ltr-term">WebService</bdi> </i>إلى أن [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>] هي خدمة ويب
+      </li>
+      <li>- تحدد السمة <i><bdi dir="ltr" class="odt-ltr-term">CodeBehind</bdi> </i>موقع شفرة المصدر لهذه الخدمة الويب
+      </li>
+      <li>- تحدد السمة <i><bdi dir="ltr" class="odt-ltr-term">Class</bdi> </i>اسم الفئة التي تنفذ خدمة الويب في شفرة المصدر
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>فيما يلي شفرة المصدر [<bdi dir="ltr" class="odt-ltr-term">Service.asmx.cs</bdi>] لخدمة الويب الافتراضية:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Web.Services;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v5_webservice</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  /// &lt;summary&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  /// Service summary description1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  /// &lt;/summary&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://tempuri.org/&quot;</span>)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  // To allow this Web service to be called from a script using ASP.NET AJAX, remove the comment marks from the following line. </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  // [System.Web.Script.Services.ScriptService]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">WebMethod</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> HelloWorld()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Hello World&quot;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 8: تعليق <i><bdi dir="ltr" class="odt-ltr-term">WebService</bdi></i>، الذي يؤدي إلى عرض فئة <i><bdi dir="ltr" class="odt-ltr-term">Service1</bdi> </i>في السطر 13 كخدمة ويب. تنتمي خدمة الويب إلى مساحة اسم لمنع وجود خدمتين ويب في العالم تحملان نفس الاسم. سنحتاج إلى تغيير مساحة الاسم هذه لاحقًا.
+  </li>
+  <li>السطر 13: تستمد فئة <i><bdi dir="ltr" class="odt-ltr-term">Service1</bdi> </i>من فئة <i><bdi dir="ltr" class="odt-ltr-term">WebService</bdi> </i>في إطار عمل .<bdi dir="ltr" class="odt-ltr-term">NET.</bdi>
+  </li>
+  <li>السطر 16: يضمن تعليق <i><bdi dir="ltr" class="odt-ltr-term">WebMethod</bdi> </i>أن الطريقة المُعلَّمة بهذه الطريقة ستُتاح للعملاء البعيدين، الذين سيتمكنون بعد ذلك من استدعائها.
+  </li>
+  <li>الأسطر 17-20: طريقة <i><bdi dir="ltr" class="odt-ltr-term">HelloWorld</bdi> </i>هي طريقة توضيحية. سنقوم بإزالتها لاحقًا. وهي تتيح لنا إجراء الاختبارات الأولية واستكشاف أدوات <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> بالإضافة إلى بعض المفاهيم الأساسية المتعلقة بخدمات الويب.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A7000001676B5A9D50.png" width="212" height="180" style="display:inline-block; margin:4px;width:5.597cm;height:4.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A7000001676B5A9D50.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، نقوم بتشغيل خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000040500000147CACAFCC9.png" width="515" height="164" style="display:inline-block; margin:4px;width:13.614cm;height:4.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000040500000147CACAFCC9.png" /></td></tr></table>
+
+<ul>
+  <li>قام <bdi dir="ltr" class="odt-ltr-term">VS Web Developer</bdi> بتشغيل خادم الويب المدمج الخاص به وهو يستمع على منفذ عشوائي، وهو في هذه الحالة 1599. ثم تم طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [2] من خادم الويب. هذا هو عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لصفحة اختبار خدمة الويب.
+  </li>
+  <li>في [3]، يوجد رابط يتيح لك عرض ملف وصف خدمة الويب. هذا الملف، الذي يُسمى ملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> (لغة وصف خدمة الويب) بسبب امتداده (.<bdi dir="ltr" class="odt-ltr-term">wsdl</bdi>)، هو ملف <bdi dir="ltr" class="odt-ltr-term">XML</bdi> يصف الطرق التي تعرضها خدمة الويب. ومن خلال ملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> هذا، يمكن للعملاء معرفة:
+    <ul>
+      <li>مساحة اسم خدمة الويب
+      </li>
+      <li>قائمة الطرق التي تعرضها خدمة الويب
+      </li>
+      <li>المعلمات المتوقعة من كل منها
+      </li>
+      <li>الاستجابة التي ترجعها كل منها
+      </li>
+    </ul>
+  </li>
+  <li>في [4]، الطريقة الوحيدة التي توفرها خدمة الويب<a id="pam-v5-url-wsdl"></a> .
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000421000002C7D5E7C00C.png" width="529" height="356" style="display:inline-block; margin:4px;width:13.984cm;height:9.407cm;" class="odt-zoomable" data-zoom-src="images/1000000000000421000002C7D5E7C00C.png" /></td></tr></table>
+
+<ul>
+  <li>في [5]، محتويات ملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الذي تم الحصول عليه عبر الرابط [3]. لاحظ عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [6]. معرفة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا ضرورية لعملاء خدمة الويب.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000575000001922489169F.png" width="680" height="196" style="display:inline-block; margin:4px;width:17.997cm;height:5.179cm;" class="odt-zoomable" data-zoom-src="images/1000000000000575000001922489169F.png" /></td></tr></table>
+
+<ul>
+  <li>في [7]، تتيح لك الصفحة التي يتم الوصول إليها عبر الرابط [4] استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">HelloWorld</bdi>] لخدمة الويب
+  </li>
+  <li>في [8]، النتيجة التي تم الحصول عليها: استجابة <bdi dir="ltr" class="odt-ltr-term">XML.</bdi> لاحظ عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الخاص بالطريقة [9].
+  </li>
+</ul>
+
+<p>يساعدنا فحص الصفحات السابقة على فهم كيفية استدعاء طريقة خدمة الويب ونوع الاستجابة التي تعيدها. وهذا يمكّننا من كتابة عملاء <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> قادرين على التواصل مع خدمة الويب. تسمح معظم بيئات التطوير المتكاملة الحديثة (<bdi dir="ltr" class="odt-ltr-term">IDE</bdi>) بإنشاء عميل <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> هذا تلقائيًا، مما يوفر على المطور عناء كتابته. وهذا ينطبق بشكل خاص على <bdi dir="ltr" class="odt-ltr-term">Visual Studio Express.</bdi></p>
+<p>قبل متابعة هذا المشروع، سنقوم بتغيير مساحة الاسم الافتراضية المستخدمة عند إنشاء الفئات:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002D1000000DE54148427.png" width="361" height="111" style="display:inline-block; margin:4px;width:9.539cm;height:2.937cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D1000000DE54148427.png" /></td></tr></table>
+
+<p>عندما نختار خصائص المشروع (انقر بزر الماوس الأيمن على المشروع / خصائص)، نرى [1] اسم <em>تجميع</em> المشروع و[2] مساحة الاسم الافتراضية الخاصة به.</p>
+<p>بمجرد الانتهاء من ذلك،</p>
+<ul>
+  <li>في [<bdi dir="ltr" class="odt-ltr-term">Service1.asmx.cs</bdi>]، نقوم بتغيير مساحة اسم الفئة:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Web.Services;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v5</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>في [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>]، نقوم أيضًا بتغيير مساحة الاسم المستخدمة لفئة [<bdi dir="ltr" class="odt-ltr-term">Service1</bdi>] (انقر بزر الماوس الأيمن / عرض المصدر):
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">WebService</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Service1.asmx.cs&quot;</span> <span style="color:#ff0000">Class</span><span style="color:#0000ff">=&quot;pam_v5.Service1&quot;</span> %&gt;</span></span>
+</code></pre></div>
+
+<p>لنعد إلى بنية تطبيقنا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065F000000EBD4EC4116.png" width="680" height="98" style="display:inline-block; margin:4px;width:17.997cm;height:2.593cm;" class="odt-zoomable" data-zoom-src="images/100000000000065F000000EBD4EC4116.png" /></td></tr></table>
+
+<ul>
+  <li>الطبقة [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] هي خدمة الويب. وهي تعرض ببساطة أساليب الطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] للعملاء البعيدين. هذه هي الطبقة التي نقوم ببنائها حاليًا.
+  </li>
+  <li>الطبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] هي عميل <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> لخدمة الويب. هذه هي الطبقة التي يمكن لبيئات تطوير التطبيقات (<bdi dir="ltr" class="odt-ltr-term">IDE</bdi>) إنشاؤها تلقائيًا.
+  </li>
+  <li>تتعامل طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] مع طبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] كطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] محلية إذا تأكدنا من أن طبقة [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] تنفذ واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] البعيدة.
+  </li>
+</ul>
+
+<p>يمكننا أن نرى أدناه أن خدمة الويب الخاصة بنا ستقوم بما يلي:</p>
+<ul>
+  <li>تعرض أساليب طبقة [الأعمال]
+  </li>
+  <li>التواصل مع طبقة [الأعمال]، والتي ستتواصل بدورها مع طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>].
+  </li>
+</ul>
+
+<p>لذلك يجب أن يستخدم المشروع مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> لطبقتي [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. ويتطور الأمر على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003520000017B53D051F3.png" width="425" height="190" style="display:inline-block; margin:4px;width:11.245cm;height:5.015cm;" class="odt-zoomable" data-zoom-src="images/10000000000003520000017B53D051F3.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، نضيف مراجع إلى المشروع
+  </li>
+  <li>في [2]، نختار مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المعتادة من مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]. وسنتأكد من ضبط خاصية &quot;<bdi dir="ltr" class="odt-ltr-term">Copy to Local</bdi>&quot; الخاصة بها على <i><bdi dir="ltr" class="odt-ltr-term">True</bdi></i>. مكتبات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المختارة هي تلك التي تنفذ طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] بدعم <bdi dir="ltr" class="odt-ltr-term">NHibernate.</bdi>
+  </li>
+</ul>
+
+<p>يمكن أن يحتوي تطبيق الويب من نوع &quot;<bdi dir="ltr" class="odt-ltr-term">ASP.NET Web Service</bdi>&quot; على فئة تطبيق عامة &quot;<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>&quot; تمامًا مثل تطبيق &quot;<bdi dir="ltr" class="odt-ltr-term">ASP.NET Web Site</bdi>&quot; الكلاسيكي. وقد رأينا مزايا هذه الفئة:</p>
+<ul>
+  <li>يتم إنشاء مثيل لها عند بدء تشغيل التطبيق وتبقى في الذاكرة
+  </li>
+  <li>وبالتالي يمكنها تخزين البيانات المشتركة بين جميع العملاء والتي تكون للقراءة فقط. في تطبيقنا، ستخزن، كما في التطبيقات السابقة، القائمة المبسطة للموظفين. وهذا سيتجنب الحاجة إلى استرداد هذه القائمة من قاعدة البيانات عندما يطلبها أحد العملاء.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005A200000183BB97BA69.png" width="680" height="183" style="display:inline-block; margin:4px;width:17.997cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A200000183BB97BA69.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، انقر بزر الماوس الأيمن على المشروع
+  </li>
+  <li>في [2]، حدد خيار [<bdi dir="ltr" class="odt-ltr-term">Add New Item</bdi>]
+  </li>
+  <li>في [3]، حدد [فئة التطبيق العامة]
+  </li>
+  <li>في [4]، تمت إضافة ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>] إلى المشروع
+  </li>
+</ul>
+
+<p>محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Application</span> <span style="color:#ff0000">Codebehind</span><span style="color:#0000ff">=&quot;Global.asax.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;pam_v5.Global&quot;</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> %&gt;</span></span>
+</code></pre></div>
+
+<p>محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v5</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>ماذا يجب أن نفعل في طريقة <bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start؟ بالضبط نفس الشيء كما في تطبيقات الويب السابقة. دعونا نعود إلى بنية التطبيق ونضع فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] هناك:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006510000013B1BEAAB88.png" width="680" height="133" style="display:inline-block; margin:4px;width:17.997cm;height:3.507cm;" class="odt-zoomable" data-zoom-src="images/10000000000006510000013B1BEAAB88.png" /></td></tr></table>
+
+<p>في الرسم البياني أعلاه،</p>
+<ul>
+  <li>يتم إنشاء مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] عند بدء تشغيل خدمة الويب. وتبقى في الذاكرة طالما أن خدمة الويب نشطة.
+  </li>
+  <li>تقوم فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] بإنشاء مثيلات لطبقتي [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] في أسلوبها [<bdi dir="ltr" class="odt-ltr-term">Application_Start</bdi>]
+  </li>
+  <li>لتحسين الأداء، تخزن فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] القائمة المبسطة للموظفين في حقل داخلي. وستسترد قائمة الموظفين من هذا الحقل.
+  </li>
+  <li>يتم إنشاء مثيل لخدمة الويب مع كل طلب من العميل. وتختفي بعد تلبية ذلك الطلب. ولن تتواصل مباشرة مع طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] بل مع الفئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>]. وستقوم هذه الأخيرة بتنفيذ واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>].
+  </li>
+</ul>
+
+<p>تشبه فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] تلك التي تم إنشاؤها بالفعل للتطبيقات السابقة:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Spring.Context.Support;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v5</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // --- static application data ---</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Employe</span>[] Employes;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IPamMetier</span> PamMetier = <span style="color:#0000ff">null</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // instantiation layer [metier]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      PamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // retrieve the simplified employee table </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Employes = PamMetier.GetAllIdentitesEmployes();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // simplified list of employees</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> Employes;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // employee salary</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> SS, <span style="color:#0000ff">double</span> heuresTravaillées, <span style="color:#0000ff">int</span> joursTravailles)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> PamMetier.GetSalaire(SS, heuresTravaillées, joursTravailles);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]، ولكن هذا لم يُذكر صراحةً في الإعلان:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication, IPamMetier</span></span></span>
+</code></pre></div>
+
+<p>في الواقع، تعد الطريقتان <em><bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi></em> (السطر 24) و <em><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></em> (السطر 30) ثابتتين، في حين أن طرق واجهة <em><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi></em> ليست كذلك. لذلك، لا يمكن للفئة <em><bdi dir="ltr" class="odt-ltr-term">Global</bdi></em> تنفيذ واجهة <em><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi></em>. علاوة على ذلك، لا يمكن إعلان الطريقتين <em><bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi></em> و <em><bdi dir="ltr" class="odt-ltr-term">GetSalary</bdi></em> على أنهما غير ثابتتين. وذلك لأن الوصول إليهما يتم عبر اسم الفئة وليس عبر مثيل للفئة.</p>
+<ul>
+  <li>السطر 15: تشبه طريقة <i><bdi dir="ltr" class="odt-ltr-term">Application_Start</bdi></i> تلك الخاصة بفئات [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] التي تمت دراستها في الإصدارات السابقة. فهي تقوم بإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] (السطر 18) ثم تهيئة (السطر 20) مصفوفة الموظفين من السطر 12.
+  </li>
+  <li>السطر 24: تعرض طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi> </i>ببساطة مصفوفة الموظفين من السطر 12. وهذه هي فائدة تخزينها في بداية التطبيق.
+  </li>
+  <li>السطر 30: تستدعي طريقة <i><bdi dir="ltr" class="odt-ltr-term">GetSalaire</bdi> </i>الطريقة التي تحمل الاسم نفسه في طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>].
+  </li>
+</ul>
+
+<p>لإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] (السطر 18)، تستخدم فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> يتم تكوين هذا بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>]، وهو مطابق لملف المشروع السابق: فهو يكوّن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> و <bdi dir="ltr" class="odt-ltr-term">NHibernate</bdi> لإنشاء مثيلات لطبقتي [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] لخدمة الويب.</p>
+<p>لنعد إلى بنية تطبيق العميل/الخادم الخاص بنا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000066500000156A0DC531E.png" width="680" height="142" style="display:inline-block; margin:4px;width:17.997cm;height:3.761cm;" class="odt-zoomable" data-zoom-src="images/100000000000066500000156A0DC531E.png" /></td></tr></table>
+
+<p>على جانب الخادم، كل ما تبقى هو كتابة خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>] نفسها. إذا عدنا إلى بنية التطبيق:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006630000017C50B231AF.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.997cm;height:4.182cm;" class="odt-zoomable" data-zoom-src="images/10000000000006630000017C50B231AF.png" /></td></tr></table>
+
+<p>نرى أنه على جانب الخادم، جميع الطبقات التي تسبق طبقة [الأعمال] تنفذ واجهتها، <em><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi></em>. هذا ليس إلزامياً، ولكنه نهج منطقي. يمكن تطبيق هذا المنطق على جانب العميل، على العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] لخدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]. وبالتالي، فإن جميع الطبقات التي تفصل طبقة [الويب] عن طبقة [الأعمال] تنفذ واجهة <em><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi></em>. وبالتالي، يمكننا القول إننا عدنا إلى تطبيق ثلاثي الطبقات:</p>
+<ul>
+  <li>طبقة العرض [الويب] [1]
+  </li>
+  <li>طبقة [الأعمال] [2]
+  </li>
+  <li>طبقة الوصول إلى البيانات [3]
+  </li>
+</ul>
+
+<p>يمكن أن يكون تنفيذ خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">Service1.asmx.cs</bdi>] على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Web.Services;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v5</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://st.istia.univ-angers.fr/&quot;</span>)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span>, <span style="color:#2b91af">IPamMetier</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // list of all employee identities </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">WebMethod</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#2b91af">Global</span>.GetAllIdentitesEmployes();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // ------- salary calculation </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">WebMethod</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">double</span> heuresTravaillees, <span style="color:#0000ff">int</span> joursTravailles)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#2b91af">Global</span>.GetSalaire(ss, heuresTravaillees, joursTravailles);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 8: تم توضيح الفئة بالسمة [<bdi dir="ltr" class="odt-ltr-term">WebService</bdi>]، وقمنا بتعيين اسم لمساحة أسماء خدمة الويب
+  </li>
+  <li>السطر 11: ترث الفئة [<bdi dir="ltr" class="odt-ltr-term">Service1</bdi>] من الفئة [<bdi dir="ltr" class="odt-ltr-term">WebService</bdi>] وتنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]
+  </li>
+  <li>السطران 15 و 22: يتم توضيح كل طريقة من طرق الفئة بالسمة [<bdi dir="ltr" class="odt-ltr-term">WebMethod</bdi>] من أجل عرضها على العملاء البعيدين. بشكل افتراضي، يتم عرض جميع الطرق العامة لخدمة الويب. وبالتالي، فإن السمات في السطرين 15 و 22 اختيارية هنا. لتنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi>]، تقوم كل طريقة ببساطة باستدعاء الطريقة التي تحمل الاسم نفسه في الفئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>].
+  </li>
+</ul>
+
+<p>نحن جاهزون لتشغيل خدمة الويب:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006390000016419119FC6.png" width="680" height="152" style="display:inline-block; margin:4px;width:17.997cm;height:4.022cm;" class="odt-zoomable" data-zoom-src="images/10000000000006390000016419119FC6.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، يتم إعادة إنشاء المشروع
+  </li>
+  <li>في [2]، نختار خدمة الويب [<bdi dir="ltr" class="odt-ltr-term">Service1.asmx</bdi>] ونعرضها في المتصفح [3]
+  </li>
+  <li>في [4]، الصفحة الويب المعروضة. وهي تعرض طرق خدمة الويب.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FB00000240EBD02E3D.png" width="680" height="256" style="display:inline-block; margin:4px;width:17.997cm;height:6.772cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FB00000240EBD02E3D.png" /></td></tr></table>
+
+<ul>
+  <li>في [4]، نتبع الرابط [<bdi dir="ltr" class="odt-ltr-term">GetAllIdentitesEmployes</bdi>] وفي [5] نحصل على صفحة الاختبار لهذه الطريقة.
+  </li>
+  <li>في [6]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للطريقة
+  </li>
+  <li>في [7]، زر [<bdi dir="ltr" class="odt-ltr-term">Call</bdi>] المستخدم لاختبار الطريقة. لا تتطلب هذه الطريقة أي معلمات.
+  </li>
+  <li>في [8]، نتيجة <bdi dir="ltr" class="odt-ltr-term">XML</bdi> التي أعادتها خدمة الويب. في هذه النتيجة، تعتبر خصائص <i><bdi dir="ltr" class="odt-ltr-term">SS</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">LastName</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">FirstName</bdi> </i>فقط من كائنات <i><bdi dir="ltr" class="odt-ltr-term">Employee</bdi> </i>ذات أهمية لأن طريقة [<bdi dir="ltr" class="odt-ltr-term">GetAllEmployeeIDs</bdi>] تطلب هذه الخصائص فقط. ومع ذلك، تعيد هذه الطريقة مصفوفة من كائنات <i><bdi dir="ltr" class="odt-ltr-term">Employee</bdi></i>. يمكننا أن نرى في [8] أن الخصائص الرقمية <i><bdi dir="ltr" class="odt-ltr-term">Id</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">Version</bdi> </i>مضمنة في دفق <bdi dir="ltr" class="odt-ltr-term">XML</bdi> الذي تم إرجاعه، ولكن ليس الخصائص ذات القيمة <i>الفارغة</i>: <i><bdi dir="ltr" class="odt-ltr-term">Address</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">City</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">ZipCode</bdi> </i>و <i><bdi dir="ltr" class="odt-ltr-term">Allowances</bdi></i>.
+  </li>
+</ul>
+
+<p>لدينا خدمة ويب نشطة. سنقوم الآن بكتابة عميل <bdi dir="ltr" class="odt-ltr-term">C#</bdi> لها. للقيام بذلك، سنحتاج إلى <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بخدمة الويب. نحصل عليه من الصفحة التي يتم عرضها مبدئيًا عند تنفيذ [<bdi dir="ltr" class="odt-ltr-term">Service.asmx</bdi>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C5000001FD281167BC.png" width="355" height="255" style="display:inline-block; margin:4px;width:9.38cm;height:6.735cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C5000001FD281167BC.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لخدمة الويب
+  </li>
+  <li>في [2]، الرابط إلى ملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بها
+  </li>
+  <li>في [3]، قيمة هذا الرابط
+  </li>
+</ul>
+<h2 id="93-c-nunit">9.3. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">C#</bdi> لعميل <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> لخدمة الويب</span></h2>
+<p>نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">C#</bdi> (باستخدام <bdi dir="ltr" class="odt-ltr-term">Visual C#</bdi>، وليس <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi>) لعميل خدمة الويب. سيكون هذا عميل اختبار <bdi dir="ltr" class="odt-ltr-term">NUnit.</bdi> لذلك، سيكون المشروع من نوع &quot;مكتبة الفئات&quot;.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006020000016560980782.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.997cm;height:4.177cm;" class="odt-zoomable" data-zoom-src="images/10000000000006020000016560980782.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">C#</bdi> من نوع &quot;مكتبة الفئات&quot;
+  </li>
+  <li>في [2]، نسمي المشروع
+  </li>
+  <li>في [3]، المشروع. نحذف [<bdi dir="ltr" class="odt-ltr-term">Class1.cs</bdi>].
+  </li>
+  <li>في [4]، المشروع الجديد.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000041F000000C1CD8525CF.png" width="528" height="96" style="display:inline-block; margin:4px;width:13.958cm;height:2.552cm;" class="odt-zoomable" data-zoom-src="images/100000000000041F000000C1CD8525CF.png" /></td></tr></table>
+
+<ul>
+  <li>في خصائص المشروع، في علامة التبويب [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] [5]، نقوم بتعيين مساحة اسم المشروع. ستكون كل فئة يتم إنشاؤها بواسطة <bdi dir="ltr" class="odt-ltr-term">IDE</bdi> ضمن مساحة الاسم هذه.
+  </li>
+</ul>
+
+<p>نحفظ مشروعنا الجديد في المكان الذي نختاره:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000111000000438B2A1320.png" width="191" height="47" style="display:inline-block; margin:4px;width:5.061cm;height:1.242cm;" class="odt-zoomable" data-zoom-src="images/1000000000000111000000438B2A1320.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>وبمجرد الانتهاء من ذلك، نقوم بإنشاء عميل خدمة الويب البعيدة. لفهم ما نحن على وشك القيام به، علينا إعادة النظر في بنية العميل/الخادم التي يجري إنشاؤها حاليًا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006720000016738878E87.png" width="680" height="148" style="display:inline-block; margin:4px;width:17.997cm;height:3.916cm;" class="odt-zoomable" data-zoom-src="images/10000000000006720000016738878E87.png" /></td></tr></table>
+
+<p>سيقوم <bdi dir="ltr" class="odt-ltr-term">IDE</bdi> بإنشاء طبقة العميل [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] من عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بخدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]. تذكر أن عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> لهذا الملف قد تم تدوينه سابقًا. ننتقل من الويب<a id="v10-generation-client-serviceweb1"></a> كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000065B000001572059E0CC.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.997cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000065B000001572059E0CC.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، انقر بزر الماوس الأيمن على فرع <i><bdi dir="ltr" class="odt-ltr-term">References</bdi> </i>وأضف <i>مرجع خدمة</i>
+  </li>
+  <li>في [2]، أدخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بخدمة الويب الذي تم تدوينه سابقًا. يجب أن تكون الخدمة قيد التشغيل إذا لم تكن كذلك بالفعل.
+  </li>
+  <li>في [3]، اطلب اكتشاف خدمة الويب عبر ملف <bdi dir="ltr" class="odt-ltr-term">WSDL</bdi> الخاص بها
+  </li>
+  <li>في [4]، خدمة الويب التي تم اكتشافها
+  </li>
+  <li>في [5]، الطرق التي تعرضها خدمة الويب.
+  </li>
+  <li>في [6]، مساحة الاسم التي تريد وضع فئات وواجهات العميل التي سيتم إنشاؤها فيها.
+  </li>
+  <li>قم بتأكيد المعالج
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006310000021FADA7D792.png" width="680" height="233" style="display:inline-block; margin:4px;width:17.997cm;height:6.167cm;" class="odt-zoomable" data-zoom-src="images/10000000000006310000021FADA7D792.png" /></td></tr></table>
+
+<p><a id="v10-servicesoapclient1"></a></p>
+<ul>
+  <li>في [1]، ملف العميل الذي تم إنشاؤه (<a id="client-csharp-webservice"></a> ). انقر عليه مرتين لعرض محتوياته.
+  </li>
+  <li>في [2]، في مستكشف الكائنات، يتم عرض الفئات والواجهات الخاصة بمساحة الاسم<i> <bdi dir="ltr" class="odt-ltr-term">Client.WsPam</bdi></i>. هذه هي مساحة الاسم للعميل الذي تم إنشاؤه.
+  </li>
+  <li>في [3]، الفئة التي تنفذ عميل خدمة الويب.
+  </li>
+  <li>في [4]، الطرق التي ينفذها العميل [<bdi dir="ltr" class="odt-ltr-term">Service1SoapClient</bdi>]. ستجد هنا طريقتين لخدمة الويب البعيدة [5] و[6].
+  </li>
+  <li>في [2]، يمكنك رؤية مخططات الكيانات للطبقات:
+    <ul>
+      <li>[<bdi dir="ltr" class="odt-ltr-term">business</bdi>]: <i><bdi dir="ltr" class="odt-ltr-term">Payroll</bdi></i>، <i><bdi dir="ltr" class="odt-ltr-term">PayrollItems</bdi></i>
+      </li>
+      <li>[<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]: <i>الموظف</i>، <i>الاشتراكات</i>، <i>البدلات</i>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>للمضي قدمًا، ضع في اعتبارك أن هذه التمثيلات للكيانات البعيدة موجودة على جانب العميل وفي مساحة اسم <em><bdi dir="ltr" class="odt-ltr-term">PamV5Client.WsPam</bdi></em>.</p>
+<p>دعونا نفحص الطرق والخصائص التي يعرضها أحدها:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003FC0000027A658721C5.png" width="510" height="317" style="display:inline-block; margin:4px;width:13.494cm;height:8.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000003FC0000027A658721C5.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، نختار الفئة المحلية [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>]
+  </li>
+  <li>في [2]، نرى خصائص الكيان [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>] البعيد بالإضافة إلى الحقول الخاصة المستخدمة لتلبية الاحتياجات المحددة للكيان المحلي. 
+  </li>
+</ul>
+
+<p>لنعد إلى تطبيق <bdi dir="ltr" class="odt-ltr-term">C#</bdi> الخاص بنا. نضيف إليه فئة اختبار <bdi dir="ltr" class="odt-ltr-term">NUnit:</bdi></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C30000019F017880A6.png" width="680" height="191" style="display:inline-block; margin:4px;width:17.997cm;height:5.064cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C30000019F017880A6.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، الفئة [<bdi dir="ltr" class="odt-ltr-term">NUnit</bdi>] المضافة. ستتطلب فئة [<bdi dir="ltr" class="odt-ltr-term">NUnit</bdi>] إطار عمل <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> وبالتالي مرجعًا إلى ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الخاص به. نفترض هنا أن إطار عمل <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> قد تم تثبيته على الجهاز (<bdi dir="ltr" class="odt-ltr-term">http://nunit.org/</bdi>).
+  </li>
+  <li>في [2]، نضيف مرجعًا إلى المشروع
+  </li>
+  <li>في علامة التبويب [3] .<bdi dir="ltr" class="odt-ltr-term">NET</bdi>، التي تسرد ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المسجلة على الجهاز، نختار [4]، ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [<bdi dir="ltr" class="odt-ltr-term">nunit.framework</bdi>]، الإصدار 2.4.6 أو أحدث.
+  </li>
+</ul>
+
+<p>بالإضافة إلى ذلك، سنستخدم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لإنشاء مثيل للعميل المحلي [<bdi dir="ltr" class="odt-ltr-term">C</bdi>] لخدمة الويب [<bdi dir="ltr" class="odt-ltr-term">S</bdi>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000068500000177114EA989.png" width="680" height="153" style="display:inline-block; margin:4px;width:17.997cm;height:4.045cm;" class="odt-zoomable" data-zoom-src="images/100000000000068500000177114EA989.png" /></td></tr></table>
+
+<p>يمكن إضافة الإشارة إلى ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الخاص بـ <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بنفس الطريقة المتبعة مع إطار عمل <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> إذا كانت ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> مسجلة بالفعل على الجهاز (<bdi dir="ltr" class="odt-ltr-term">http://www.springframework.net/download.html</bdi>).</p>
+<p>نحن نتبع طريقة مختلفة. نستخدم المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] من المشاريع السابقة، الذي يحتوي على ملفات <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> المطلوبة من قبل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi>، ونضيف مرجع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> إلى المشروع:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D5000000EDBF9AEB8A.png" width="235" height="119" style="display:inline-block; margin:4px;width:6.205cm;height:3.136cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D5000000EDBF9AEB8A.png" /></td></tr></table>
+
+<p>دعونا نعيد النظر في بنية العميل قيد التطوير حاليًا:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B40000018AE82310FE.png" width="680" height="156" style="display:inline-block; margin:4px;width:17.997cm;height:4.133cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B40000018AE82310FE.png" /></td></tr></table>
+
+<p>في الأعلى، نرى أن عميل الاختبار [1] يتفاعل مع طبقة [الأعمال] الموسعة [2]. تحتوي هذه الطبقة على نفس الأساليب الموجودة في طبقة [الأعمال] البعيدة. وبالتالي، يمكننا استخدام فئة الاختبار التي سبق أن تعاملنا معها عند اختبار طبقة [الأعمال] في مشروع <bdi dir="ltr" class="odt-ltr-term">C#</bdi> [<bdi dir="ltr" class="odt-ltr-term">pam-metier-dao-nhibernate</bdi>]: </p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> NUnit.Framework;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Dao.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Service;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Spring.Context.Support;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Pam.Metier.Tests {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">TestFixture</span>()]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">NunitTestPamMetier</span> : <span style="color:#2b91af">AssertionHelper</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // the [metier] layer to test </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IPamMetier</span> pamMetier;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // manufacturer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // layer instantiation [dao]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        [<span style="color:#2b91af">Test</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetAllIdentitesEmployes() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // audit no. of employees </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            Expect(2, EqualTo(pamMetier.GetAllIdentitesEmployes().Length));</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        [<span style="color:#2b91af">Test</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // wage sheet calculation </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">FeuilleSalaire</span> feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;254104940426058&quot;</span>, 150, 20);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // checks </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            Expect(368.77, EqualTo(feuilleSalaire.ElementsSalaire.SalaireNet).Within(1E-06));</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // non-existent employee payslip </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">try</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">PamException</span>) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                erreur = <span style="color:#0000ff">true</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            Expect(erreur, True);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>هناك بعض التغييرات التي يجب إجراؤها:</p>
+<ul>
+  <li>في السطر 18، نقوم بإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] باستخدام إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> الفئة ليست هي نفسها في كلتا الحالتين. هنا، طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المحلية هي مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">PamV5Client.WsPam.Service1SoapClient</bdi>]، وهي الفئة التي تم إنشاؤها بواسطة <bdi dir="ltr" class="odt-ltr-term">IDE.</bdi> لذلك، يتم تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> على النحو التالي في ملف [<bdi dir="ltr" class="odt-ltr-term">app.config</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">C#:</bdi>
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff"> ?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">sectionGroup</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">spring</span>&quot;<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">context</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.ContextHandler, Spring.Core</span>&quot;<span style="color:#0000ff"> /&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">section</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">objects</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">Spring.Context.Support.DefaultSectionHandler, Spring.Core</span>&quot;<span style="color:#0000ff"> /&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">sectionGroup</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">resource</span><span style="color:#0000ff"> </span><span style="color:#ff0000">uri</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">config://spring/objects</span>&quot;<span style="color:#0000ff"> /&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">context</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">objects</span><span style="color:#0000ff"> </span><span style="color:#ff0000">xmlns</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">http://www.springframework.net</span>&quot;<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">            &lt;</span><span style="color:#a31515">object</span><span style="color:#0000ff"> </span><span style="color:#ff0000">id</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">pammetier</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">type</span><span style="color:#0000ff">=</span>&quot;<span style="color:#2323dc">PamV5</span><span style="color:#0000ff">Client.WsPam.Service1SoapClient, pam-v5-client-csharp-webservice</span>&quot;<span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;/</span><span style="color:#a31515">objects</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">spring</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.serviceModel</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 16 أعلاه، الكائن [<bdi dir="ltr" class="odt-ltr-term">pammetier</bdi>] هو مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">PamV5Client.WsPam.Service1SoapClient</bdi>] الموجودة في التجميع [<bdi dir="ltr" class="odt-ltr-term">pam-v5-client-csharp-webservice</bdi>]. للعثور على المعلومة الأولى، ما عليك سوى الرجوع إلى تعريف فئة [<bdi dir="ltr" class="odt-ltr-term">Service1SoapClient</bdi>] في مستكشف الكائنات (القسم<a href="#client-csharp-webservice"><u><span style="color: #0563c1"> 9.3</span></u></a>):
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053200000222F940039B.png" width="665" height="273" style="display:inline-block; margin:4px;width:17.595cm;height:7.223cm;" class="odt-zoomable" data-zoom-src="images/100000000000053200000222F940039B.png" /></td></tr></table>
+
+<ul>
+  <li>في [2]، فئة التنفيذ للطبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] المحلية، وفي [1] مساحة اسمها
+  </li>
+  <li>في [3]، في خصائص المشروع، اسم التجميع، وهي المعلومة الثانية اللازمة لتكوين كائن <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">pammetier</bdi>].
+  </li>
+</ul>
+
+<p>لنعد إلى الكود الخاص بإنشاء مثيل لطبقة [الأعمال] المحلية في [<bdi dir="ltr" class="odt-ltr-term">NUnit.cs</bdi>]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">        // the [metier] layer to test </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IPamMetier</span> pamMetier;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // manufacturer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // layer instantiation [dao]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>السطر 7: كانت الطبقة [الأعمال] البعيدة من النوع <em><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi></em>. هنا، الطبقة [الأعمال] من النوع [<bdi dir="ltr" class="odt-ltr-term">Service1SoapClient</bdi>]:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">public class </span><span style="font-weight:bold;color:#000000">Service1SoapClient</span><span style="color:#000000"> : </span><span style="font-weight:bold;text-decoration:underline;color:#215dc6">System.ServiceModel.ClientBase&lt;Service1Soap&gt;</span></span></span>
+</code></pre></div>
+
+<p>نلاحظ أن فئة <em><bdi dir="ltr" class="odt-ltr-term">Service1SoapClient</bdi></em> لا تنفذ واجهة <em><bdi dir="ltr" class="odt-ltr-term">IPamMetier</bdi></em> على الرغم من أنها تعرض طرقًا تحمل الأسماء نفسها. لذلك، يجب أن نكتب إنشاء مثيل الطبقة [الأعمال] المحلية على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// the [metier] layer to test </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">Service1SoapClient</span> pamMetier;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // manufacturer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // instantiation layer [metier]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">Service1SoapClient</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<p>تغيير آخر يجب إجراؤه:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">        [<span style="color:#2b91af">Test</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">try</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">PamException</span>) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                erreur = <span style="color:#0000ff">true</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            Expect(erreur, True);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>يستخدم الكود أعلاه، في السطر 6، نوع <bdi dir="ltr" class="odt-ltr-term">PamException</bdi>، الذي لا يوجد على جانب العميل. سنستبدله بفئته الأصلية، وهي نوع <em><bdi dir="ltr" class="odt-ltr-term">Exception</bdi></em>. </p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">        [<span style="color:#2b91af">Test</span>]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">try</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                 feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            } <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span>) {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                erreur = <span style="color:#0000ff">true</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            Expect(erreur, True);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>أخيرًا، لم تعد مساحات الأسماء المستوردة هي نفسها:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> PamV5Client.WsPam;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> NUnit.Framework;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Spring.Context.Support;</span></span>
+</code></pre></div>
+
+<p>بمجرد الانتهاء من ذلك، يمكن تجميع مشروع &quot;مكتبة الفئات&quot;. ويتم إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059B00000151C46311D1.png" width="680" height="160" style="display:inline-block; margin:4px;width:17.997cm;height:4.226cm;" class="odt-zoomable" data-zoom-src="images/100000000000059B00000151C46311D1.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، المجلد [<bdi dir="ltr" class="odt-ltr-term">bin/Release</bdi>] لمشروع <bdi dir="ltr" class="odt-ltr-term">C#</bdi>
+  </li>
+  <li>في [2]، ملف <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> الخاص بالمشروع.
+  </li>
+</ul>
+
+<p>ثم يتم تشغيل اختبار <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> بواسطة إطار عمل <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi> (يجب أن تكون قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> <em><bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>_nhibernate</em> نشطة لإجراء الاختبار):</p>
+<ul>
+  <li>في [3] و [4]، يتم تحميل <bdi dir="ltr" class="odt-ltr-term">DLL</bdi> [2] في تطبيق اختبار <bdi dir="ltr" class="odt-ltr-term">NUnit</bdi>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006010000013BE03C9519.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.997cm;height:3.688cm;" class="odt-zoomable" data-zoom-src="images/10000000000006010000013BE03C9519.png" /></td></tr></table>
+
+<ul>
+  <li>في [5]، يتم تحديد فئة الاختبار وتنفيذها [6]
+  </li>
+  <li>في [7]، تظهر نتائج الاختبار الناجح
+  </li>
+</ul>
+
+<p>لدينا الآن خدمة ويب عاملة.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

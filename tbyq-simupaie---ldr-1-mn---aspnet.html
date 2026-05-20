@@ -1,0 +1,1463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-pam-aspnet-juin-2010/tbyq-simupaie---ldr-1-mn---aspnet.html">
+      
+      
+        <link rel="prev" href="drs-ll.html">
+      
+      
+        <link rel="next" href="tbyq-simupaie---ldr-2---ajax--aspnet-.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET - إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-simupaie-1-aspnet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-header__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-nav__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-sry-l-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. مقدمة سريعة إلى ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="drs-ll.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. دراسة الحالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tbyq-simupaie---ldr-1-mn---aspnet.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. مقدمة
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-visual-web-developer-2008" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Visual Web Developer 2008
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Visual Web Developer 2008">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-defaultaspx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1. نموذج [ Default.aspx]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2. التحقق من صحة المدخلات
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3. كيانات التطبيق
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4. تكوين التطبيق
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#425" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.5. تهيئة التطبيق
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-defaultaspx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. أحداث نموذج [Default.aspx]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. أحداث نموذج [Default.aspx]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-p-age_load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1. الإجراء [P age_Load]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2. حساب الراتب
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. مقدمة إلى NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---dr-3-mn---bny-thlthy-lbqt-m-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق [SimuPaie] – إصدار 3 من – بنية ثلاثية الطبقات مع NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-4---aspnet--r-mtdd--f-wd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تطبيق [SimuPaie] – الإصدار 4 – ASP.NET / عرض متعدد / صفحة واحدة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-5---aspnet--khdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-6---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق [SimuPaie] – الإصدار 6 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-7-mn---aspnet--r-mtdd--ft-mtdd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق [SimuPaie] – الإصدار 7 من – ASP.NET / عرض متعدد / صفحات متعددة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-8---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق [SimuPaie] – الإصدار 8 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-9---tkml-springnhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق [SimuPaie] – الإصدار 9 – تكامل Spring/NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-10---myl-flex-lkhdm-wyb-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="pam-v1"></a></p>
+<h1 id="4-simupaie-1-aspnet">4. <span style="color: #365f91"><strong>تطبيق [<bdi dir="ltr" class="odt-ltr-term">SimuPaie</bdi>] – الإصدار 1 من</strong> <strong>– <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi></strong></span></h1>
+<h2 id="41">4.1. <span style="color: #4f81bd">مقدمة</span></h2>
+<p>نريد كتابة تطبيق .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> يسمح للمستخدم بمحاكاة حسابات الرواتب لمقدمي خدمات رعاية الأطفال في جمعية &quot;<bdi dir="ltr" class="odt-ltr-term">Maison de la petite enfance</bdi>&quot; في إحدى البلديات.</p>
+<p>سيبدو نموذج حساب الرواتب <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi><a id="formulaire-version1"></a> كما يلي:</p>
+<p><img src="images/100000000000020F000002CD27C5E04B.png" width="316" height="430" style="width:8.37cm;height:11.388cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020F000002CD27C5E04B.png" /></p>
+<p>سيكون لتطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> البنية التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CE00000177F771384D.png" width="487" height="188" style="display:inline-block; margin:4px;width:12.885cm;height:4.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CE00000177F771384D.png" /></td></tr></table>
+
+<ul>
+  <li>عند إرسال الطلب الأول إلى التطبيق، يتم إنشاء مثيل لكائن من النوع [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] مشتق من النوع [<bdi dir="ltr" class="odt-ltr-term">System.Web.HttpApplication</bdi>]. سيقوم هذا الكائن بمعالجة ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">web.config</bdi>] الخاص بتطبيق الويب وتخزين بعض البيانات مؤقتًا من قاعدة البيانات (العملية 0 أعلاه). 
+  </li>
+  <li>عندما يتم إرسال الطلب الأول (العملية 1) إلى صفحة [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]، وهي الصفحة الوحيدة للتطبيق، يتم معالجة الحدث [<bdi dir="ltr" class="odt-ltr-term">Load</bdi>]. وهنا يتم ملء مربع القائمة المنسدلة الخاص بالموظفين. يتم استرداد البيانات المطلوبة لمربع القائمة المنسدلة من الكائن [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>]، الذي قام بتخزينها مؤقتًا. هذه هي العملية 2 أعلاه. ترسل العملية 4 الصفحة التي تم تهيئتها إلى المستخدم.
+  </li>
+  <li>عندما يتم إرسال طلب حساب الراتب (العملية 1) إلى صفحة [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]، تتم معالجة الحدث [<bdi dir="ltr" class="odt-ltr-term">Load</bdi>] مرة أخرى. لا يتم تنفيذ أي شيء لأن هذا طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>، وقد تمت كتابة معالج [<bdi dir="ltr" class="odt-ltr-term">Pam_Load</bdi>] بحيث لا يقوم بأي شيء في هذه الحالة (باستخدام القيمة المنطقية <i><bdi dir="ltr" class="odt-ltr-term">IsPostBack</bdi></i>). بمجرد معالجة الحدث [<bdi dir="ltr" class="odt-ltr-term">Load</bdi>]، تتم معالجة الحدث [<bdi dir="ltr" class="odt-ltr-term">Click</bdi>] على الزر [<bdi dir="ltr" class="odt-ltr-term">Salary</bdi>] بعد ذلك. يتطلب هذا الحدث بيانات لم يتم تخزينها مؤقتًا في [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>]. لذلك، يسترد معالج الأحداث هذه البيانات من قاعدة البيانات. هذه هي العملية 3 أعلاه. ثم يتم حساب الراتب، وترسل العملية 4 النتائج إلى المستخدم.
+  </li>
+</ul>
+<h2 id="42-visual-web-developer-2008">4.2. <span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi> 2008</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005FD0000015BC94819DA.png" width="680" height="154" style="display:inline-block; margin:4px;width:17.997cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000005FD0000015BC94819DA.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، قم بإنشاء مشروع جديد
+  </li>
+  <li>في [2]، من النوع [<bdi dir="ltr" class="odt-ltr-term">Web</bdi> / <bdi dir="ltr" class="odt-ltr-term">ASP.NET Web Application</bdi>]
+  </li>
+  <li>في [3]، قم بتسمية المشروع
+  </li>
+  <li>في [4]، حدد اسمه وفي [5] موقعه. سيتم إنشاء مجلد [<bdi dir="ltr" class="odt-ltr-term">c:</bdi>\<bdi dir="ltr" class="odt-ltr-term">temp</bdi>\<bdi dir="ltr" class="odt-ltr-term">pam-aspnet</bdi>\<bdi dir="ltr" class="odt-ltr-term">pam-v1-adonet</bdi>] للمشروع.
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044A000001734FDEDD4D.png" width="549" height="185" style="display:inline-block; margin:4px;width:14.526cm;height:4.907cm;" class="odt-zoomable" data-zoom-src="images/100000000000044A000001734FDEDD4D.png" /></td></tr></table>
+
+<ul>
+  <li>في [5]، مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Web Developer</bdi>
+  </li>
+  <li>في [6]، خصائص المشروع (انقر بزر الماوس الأيمن على المشروع / خصائص / التطبيق). 
+  </li>
+  <li>في [7]، اسم التجميع الذي سيتم إنشاؤه عند بناء المشروع
+  </li>
+  <li>في [8]، مساحة الاسم الافتراضية التي نريد استخدامها لفئات المشروع. تم إنشاء فئة [_Default] المحددة في ملفات [<bdi dir="ltr" class="odt-ltr-term">Default.aspx.cs</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Default.aspx.designer.cs</bdi>] في مساحة الاسم [<bdi dir="ltr" class="odt-ltr-term">pam_v1_adonet</bdi>]، المشتقة من اسم المشروع. يمكنك تغيير مساحة الاسم هذه مباشرةً في كود هذين الملفين:
+  </li>
+</ul>
+
+<p>[<bdi dir="ltr" class="odt-ltr-term">Default.aspx.cs</bdi>]</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> <span style="font-weight:bold;color:#ff0000">pam_v1</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">_Default</span> : System.Web.UI.<span style="color:#2b91af">Page</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>[<bdi dir="ltr" class="odt-ltr-term">Default.aspx.designer.cs</bdi>]</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">//------------------------------------------------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// &lt;auto-generated&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//      This code was generated by a tool.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//      Runtime version :2.0.50727.3603</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//      Changes made to this file may result in incorrect behavior and will be lost if</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//      the code is regenerated.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// &lt;/auto-generated&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">//------------------------------------------------------------------------------</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> <span style="font-weight:bold;color:#ff0000">pam_v1</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">_Default</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">.........</span></span>
+</code></pre></div>
+
+<p>يجب أيضًا تعديل ترميز ملف [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB000000A0CB7852B2.png" width="164" height="112" style="display:inline-block; margin:4px;width:4.35cm;height:2.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000A0CB7852B2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;</span><span style="font-weight:bold;color:#ff0000">pam_v1</span><span style="color:#0000ff">._Default&quot;</span> %&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+</code></pre></div>
+
+<p>تشير السمة <em><bdi dir="ltr" class="odt-ltr-term">Inherits</bdi></em> أعلاه إلى الفئة المحددة في ملفات [<bdi dir="ltr" class="odt-ltr-term">Default.aspx.cs</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Default.aspx.designer.cs</bdi>]. ويُستخدم هناك مساحة الاسم <em><bdi dir="ltr" class="odt-ltr-term">pam</bdi>_v1</em>.</p>
+<p><a id="formulaire-v1"></a>
+<a id="pam-v3-default-aspx11"></a></p>
+<h3 id="421-defaultaspx">4.2.1. <span style="color: #4f81bd"><strong>نموذج [</strong> <strong><bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]</strong></span></h3>
+<p>المظهر المرئي للنموذج [<a id="pam-v3-default-aspx1"></a> <bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>] هو كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036F0000041B98506F69.png" width="440" height="526" style="display:inline-block; margin:4px;width:11.629cm;height:13.905cm;" class="odt-zoomable" data-zoom-src="images/100000000000036F0000041B98506F69.png" /></td></tr></table>
+
+<p>المكونات هي كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>رقم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النوع</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الاسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">قائمة منسدلة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">EmployeeComboBox</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يحتوي على قائمة بأسماء الموظفين</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مربع النص</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مربع النص <bdi dir="ltr" class="odt-ltr-term">Hours</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عدد ساعات العمل – العدد الفعلي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>3
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مربع نص</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مربع النص</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عدد أيام العمل – عدد صحيح</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>4
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">زر</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">ButtonSalary</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">حساب الراتب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>5
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مربع النص</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مربع نص الخطأ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رسالة معلومات للمستخدم</div><div style="margin:0 0 0.5em 0"><i><bdi dir="ltr" class="odt-ltr-term">ReadOnly</bdi>=<bdi dir="ltr" class="odt-ltr-term">true</bdi></i>، <i><bdi dir="ltr" class="odt-ltr-term">TextMode</bdi>=<bdi dir="ltr" class="odt-ltr-term">MultiLine</bdi></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>6
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اسم التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اسم الموظف المحدد في (1)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>7
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الاسم الأول</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الاسم الأول للموظف المحدد في (1)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>8
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">LabelAddress</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">العنوان</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>9
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الملصق</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">المدينة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">المدينة</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>10
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الملصق</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الرمز البريدي</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الرمز البريدي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>11
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الملصق</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فهرس التسميات</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فهرس</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>12
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تسمية <bdi dir="ltr" class="odt-ltr-term">CSGRDS</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معدل مساهمة <bdi dir="ltr" class="odt-ltr-term">CSGRDS</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>13
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تسمية <bdi dir="ltr" class="odt-ltr-term">CSGD</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معدل مساهمة <bdi dir="ltr" class="odt-ltr-term">CSGD</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>14
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التصنيف</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تسمية التقاعد</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معدل الاشتراك في صندوق التقاعد</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>15
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تسمية<bdi dir="ltr" class="odt-ltr-term">SS</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معدل اشتراكات الضمان الاجتماعي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>16
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">LabelSH</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الأجر الأساسي بالساعة للمؤشر المشار إليه في (11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>17
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية <bdi dir="ltr" class="odt-ltr-term">EJ</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">بدل المعيشة اليومي للمؤشر المشار إليه في (11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>18
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">LabelRJ</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">بدل الوجبات اليومي للمؤشر المشار إليه في (11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>19
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">LabelVacation</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معدل بدل الإجازة المدفوعة الذي يطبق على الراتب الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>20
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">LabelSB</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مبلغ الراتب الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>21
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية<bdi dir="ltr" class="odt-ltr-term">CS</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مبلغ اشتراكات الضمان الاجتماعي الواجب دفعها</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>22
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية<bdi dir="ltr" class="odt-ltr-term">IE</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مبلغ إعانة رعاية الطفل</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>23
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية<bdi dir="ltr" class="odt-ltr-term">IR</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مبلغ بدل الوجبات للطفل في الرعاية</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>24
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">التسمية</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">LabelSN</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الراتب الصافي الذي سيُدفع للموظف</div></td></tr></table>
+
+<p>يحتوي النموذج أيضًا على حاويتين [<bdi dir="ltr" class="odt-ltr-term">Panel</bdi>]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>PanelErrors
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يحتوي على (5) مكونات <i><bdi dir="ltr" class="odt-ltr-term">TextBoxError</bdi></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>PanelSalary
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يحتوي على المكونات من (6) إلى (24)</div></td></tr></table>
+
+<p>يمكن إظهار مكون [<bdi dir="ltr" class="odt-ltr-term">Panel</bdi>] أو إخفاؤه برمجياً باستخدام خاصيته المنطقية <em>[<bdi dir="ltr" class="odt-ltr-term">Panel</bdi>].<bdi dir="ltr" class="odt-ltr-term">Visible</bdi></em>.</p>
+<h3 id="422">4.2.2. <span style="color: #4f81bd">التحقق من صحة المدخلات</span></h3>
+<p>لحساب الراتب، يقوم المستخدم بما يلي:</p>
+<ul>
+  <li>يختار موظفًا في [1]
+  </li>
+  <li>يدخل عدد ساعات العمل في [2]. يمكن أن يكون هذا الرقم عشريًا، مثل 2.5 لـ 2 ساعة و 30 دقيقة.
+  </li>
+  <li>يدخل عدد أيام العمل في [3]. هذا الرقم هو عدد صحيح.
+  </li>
+  <li>يحسب الراتب باستخدام الزر [4]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035D000001191D426465.png" width="431" height="141" style="display:inline-block; margin:4px;width:11.391cm;height:3.718cm;" class="odt-zoomable" data-zoom-src="images/100000000000035D000001191D426465.png" /></td></tr></table>
+
+<p>عندما يدخل المستخدم بيانات غير صحيحة في [2] و[3]، يتم التحقق من صحتها بمجرد أن ينتقل المستخدم بين حقول الإدخال. وبالتالي، تم التقاط لقطة الشاشة أدناه قبل أن ينقر المستخدم على زر [الراتب]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A100000117863BBD44.png" width="465" height="140" style="display:inline-block; margin:4px;width:12.291cm;height:3.692cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A100000117863BBD44.png" /></td></tr></table>
+
+<p>هناك شرطان ضروريان للسلوك الموصوف أعلاه:</p>
+<ul>
+  <li>يجب أن تكون خاصية <i><bdi dir="ltr" class="odt-ltr-term">EnableClientScript</bdi></i> لمكونات التحقق من الصحة مضبوطة على <bdi dir="ltr" class="odt-ltr-term">true:</bdi>
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D20000007F5CA4D367.png" width="147" height="89" style="display:inline-block; margin:4px;width:3.889cm;height:2.351cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D20000007F5CA4D367.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>يجب أن يكون المتصفح الذي يعرض الصفحة قادرًا على تنفيذ كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحة <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> 
+  </li>
+</ul>
+
+<p>إذا لم يتحقق متصفح العميل من صحة البيانات بنفسه، فلن يتم التحقق من صحة البيانات إلا عندما يقوم المتصفح بإرسال إدخالات النموذج إلى الخادم. وعندها، فإن الكود الموجود على الخادم الذي يعالج طلب المتصفح هو الذي سيتحقق من صحة البيانات. لاحظ أنه يجب إجراء هذا التحقق دائمًا، حتى إذا كانت الصفحة المعروضة في متصفح العميل تحتوي على كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> يقوم بنفس التحقق. وذلك لأن الخادم لا يمكنه التأكد من أن طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> الذي يتلقاه يأتي فعليًا من تلك الصفحة، وبالتالي أن البيانات قد تم التحقق من صحتها.</p>
+<p>فيما يلي قائمة المدققين:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>رقم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النوع</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الاسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>25
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RequiredFieldValidator</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RequiredFieldValidatorHours</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتحقق من أن الحقل [2] [<bdi dir="ltr" class="odt-ltr-term">TextBoxHeures</bdi>] ليس فارغًا</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>26
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RangeValidator</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RangeValidatorHours</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتحقق من أن الحقل [2] [<bdi dir="ltr" class="odt-ltr-term">TextBoxHours</bdi>] هو عدد حقيقي في النطاق [0, 200]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>27
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RequiredFieldValidator</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RequiredFieldValidatorDays</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتحقق من أن الحقل [3] [<bdi dir="ltr" class="odt-ltr-term">TextBoxDays</bdi>] ليس فارغًا</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>28
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RangeValidator</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">RangeValidatorDays</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتحقق من أن الحقل [3] [<bdi dir="ltr" class="odt-ltr-term">TextBoxDays</bdi>] هو عدد صحيح في النطاق [0,31]</div></td></tr></table>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: قم بإنشاء صفحة [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]. أولاً، ضع الحاويتين [<bdi dir="ltr" class="odt-ltr-term">PanelErrors</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">PanelSalary</bdi>] بحيث يمكنك بعد ذلك وضع المكونات التي من المفترض أن تحتوي عليها.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="423">4.2.3. <span style="color: #4f81bd"><strong>كيانات التطبيق</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017D000001A5B73A4907.png" width="191" height="211" style="display:inline-block; margin:4px;width:5.041cm;height:5.57cm;" class="odt-zoomable" data-zoom-src="images/100000000000017D000001A5B73A4907.png" /></td></tr></table>
+
+<p>بمجرد قراءتها، سيتم تخزين الصفوف من جداول [<bdi dir="ltr" class="odt-ltr-term">contributions</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">employees</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">allowances</bdi>] في كائنات من النوع [<bdi dir="ltr" class="odt-ltr-term">Contributions</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Allowances</bdi>] المحددة على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Pam.Entites</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Cotisations</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // automatic properties</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> CsgRds { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> Csgd { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> Secu { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> Retraite { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // manufacturers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> Cotisations()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> Cotisations(<span style="color:#0000ff">double</span> csgRds, <span style="color:#0000ff">double</span> csgd, <span style="color:#0000ff">double</span> secu, <span style="color:#0000ff">double</span> retraite)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      CsgRds = csgRds;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Csgd = csgd;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Secu = secu;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Retraite = retraite;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // ToString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">override</span> <span style="color:#0000ff">string</span> ToString()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;[{0},{1},{2},{3}]&quot;</span>, CsgRds, Csgd, Secu, Retraite);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Pam.Entites</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Employe</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // automatic properties</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> SS { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Nom { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Prenom { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">string</span> Adresse { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">string</span> Ville { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">string</span> CodePostal { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">int</span> Indice { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // manufacturers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> Employe()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> Employe(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">string</span> nom, <span style="color:#0000ff">string</span> prenom, <span style="color:#0000ff">string</span> adresse, <span style="color:#0000ff">string</span> codePostal, <span style="color:#0000ff">string</span> ville, <span style="color:#0000ff">int</span> indice)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      SS = ss;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Nom = nom;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Prenom = prenom;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Adresse = adresse;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      CodePostal = codePostal;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Ville = ville;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Indice = indice;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // ToString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">override</span> <span style="color:#0000ff">string</span> ToString()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;[{0},{1},{2},{3},{4},{5},{6}]&quot;</span>, SS, Nom, Prenom, Adresse, Ville, CodePostal, Indice);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> Pam.Entites</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Indemnites</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // automatic properties</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">int</span> Indice { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> BaseHeure { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> EntretienJour { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> RepasJour { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">double</span> IndemnitesCP { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // manufacturers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> Indemnites()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> Indemnites(<span style="color:#0000ff">int</span> indice, <span style="color:#0000ff">double</span> baseHeure, <span style="color:#0000ff">double</span> entretienJour, <span style="color:#0000ff">double</span> repasJour, <span style="color:#0000ff">double</span> indemnitesCP)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      Indice = indice;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      BaseHeure = baseHeure;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      EntretienJour = entretienJour;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      RepasJour = repasJour;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      IndemnitesCP = indemnitesCP;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // identity</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">override</span> <span style="color:#0000ff">string</span> ToString()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;[{0}, {1}, {2}, {3}, {4}]&quot;</span>, Indice, BaseHeure, EntretienJour, RepasJour, IndemnitesCP);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<h3 id="424">4.2.4. <span style="color: #4f81bd">تكوين التطبيق</span></h3>
+<p>سيكون ملف [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>] الذي يقوم بتكوين التطبيق كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">name</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">dbpamSqlServer2005</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">connectionString</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">Data Source=.\SQLEXPRESS;AttachDbFilename=C:\data\...\dbpam.mdf;User Id=sa;Password=msde;Connect Timeout=30;</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">providerName</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">System.Data.SqlClient</span>&quot;<span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">appSettings</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">key</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">selectEmploye</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">value</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">select NOM,PRENOM,ADRESSE,VILLE,CODEPOSTAL,INDICE from EMPLOYES where SS=@SS</span>&quot;<span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">key</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">selectEmployes</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">value</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">select PRENOM, NOM, SS from EMPLOYES</span>&quot;<span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">key</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">selectCotisations</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">value</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">select CSGRDS,CSGD,SECU,RETRAITE from COTISATIONS</span>&quot;<span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">add</span><span style="color:#0000ff"> </span><span style="color:#ff0000">key</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">SelectIndemnites</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">value</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">select INDICE,BASEHEURE,ENTRETIENJOUR,REPASJOUR,INDEMNITESCP from INDEMNITES</span>&quot;<span style="color:#0000ff">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;/</span><span style="color:#a31515">appSettings</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">  &lt;</span><span style="color:#a31515">system.web</span><span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">&lt;!-- </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            Définissez compilation debug=&quot;true&quot; pour insérer des symboles </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            de débogage dans la page compilée. Comme ceci </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            affecte les performances, définissez cette valeur à true uniquement </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            lors du développement.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">        &lt;</span><span style="color:#a31515">compilation</span><span style="color:#0000ff"> </span><span style="color:#ff0000">debug</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">false</span>&quot;<span style="color:#0000ff">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 9: يحدد سلسلة الاتصال بقاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">SQL Server</bdi>
+  </li>
+  <li>الأسطر 13-16: تحدد استعلامات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي يستخدمها التطبيق لتجنب ترميزها بشكل ثابت في الكود.
+  </li>
+  <li>السطر 13: يتم تحديد معلمات استعلام <bdi dir="ltr" class="odt-ltr-term">SQL.</bdi> وترمز معلمات الاستعلام الخاصة بـ <bdi dir="ltr" class="odt-ltr-term">SQL Server.</bdi>
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>المهمة</strong>: أدخل هذه المعلمات في ملف [<bdi dir="ltr" class="odt-ltr-term">Web.config</bdi>]. سيتم تعديل السطر 9 ليتناسب مع المسار الفعلي لقاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpam.mdf</bdi>].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="425">4.2.5. <span style="color: #4f81bd">تهيئة التطبيق</span></h3>
+<p>يتم تهيئة تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>]. وهو منظم على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005860000025018FECFE7.png" width="680" height="285" style="display:inline-block; margin:4px;width:17.997cm;height:7.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000005860000025018FECFE7.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، أضف عنصرًا جديدًا إلى المشروع
+  </li>
+  <li>في [2]، أضف فئة التطبيق العامة، والتي تسمى [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>] بشكل افتراضي [3]
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BC0000019AB982E5E9.png" width="478" height="205" style="display:inline-block; margin:4px;width:12.647cm;height:5.424cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BC0000019AB982E5E9.png" /></td></tr></table>
+
+<ul>
+  <li>في [4]، ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>] والفئة المرتبطة به [<bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>]
+  </li>
+  <li>في [5]، اعرض ترميز [<bdi dir="ltr" class="odt-ltr-term">Global.asax</bdi>]
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Application</span> <span style="color:#ff0000">Codebehind</span><span style="color:#0000ff">=&quot;Global.asax.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;pam_v1.Global&quot;</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> %&gt;</span></span>
+</code></pre></div>
+
+<p>يتم تعريف فئة [<bdi dir="ltr" class="odt-ltr-term">pam</bdi>_v1.<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] في ملف [<bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>]. ولأغراضنا، سيتم تعريفها على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Collections.Generic;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Configuration;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Data.SqlClient;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Entites;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // --- static application data ---</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Employe</span>[] Employes;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Cotisations</span> Cotisations;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Dictionary</span>&lt;<span style="color:#0000ff">int</span>, <span style="color:#2b91af">Indemnites</span>&gt; Indemnites = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Dictionary</span>&lt;<span style="color:#0000ff">int</span>, <span style="color:#2b91af">Indemnites</span>&gt;();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">string</span> Msg = <span style="color:#0000ff">string</span>.Empty;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">bool</span> Erreur = <span style="color:#0000ff">false</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">string</span> ConnectionString = <span style="color:#0000ff">null</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // application startup</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // connection</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ConnectionString = ...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">SqlConnection</span> connexion = <span style="color:#0000ff">new</span> <span style="color:#2b91af">SqlConnection</span>(ConnectionString))</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          connexion.Open();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // retrieve the list of employees and place it in the static array [Employees]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // contribution rates are retrieved from the static variable [Contributions]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // retrieve allowances from the static dictionary [Allowances]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // we succeeded</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          Msg = <span style="color:#a31515">&quot;Base chargée...&quot;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // we note the error</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Msg = <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite lors de l&#x27;accès à la base de données : {0}&quot;</span>, ex);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Erreur = <span style="color:#0000ff">true</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 20: يتم تنفيذ الأسلوب [<bdi dir="ltr" class="odt-ltr-term">Application_Start</bdi>] عند بدء تشغيل تطبيق الويب. ويتم تنفيذه مرة واحدة فقط.
+  </li>
+  <li>الأسطر 12-17: الحقول العامة <b>والثابتة </b>للفئة. يتم مشاركة الحقل الثابت بين جميع مثيلات الفئة. وبالتالي، إذا تم إنشاء مثيلات متعددة لفئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>]، فإنها جميعًا تشترك في نفس الحقل الثابت [<bdi dir="ltr" class="odt-ltr-term">Employees</bdi>]، الذي يمكن الوصول إليه عبر المرجع [<bdi dir="ltr" class="odt-ltr-term">Global.Employees</bdi>]، أي <i>[<bdi dir="ltr" class="odt-ltr-term">ClassName</bdi>].<bdi dir="ltr" class="odt-ltr-term">StaticField</bdi></i>. [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] هو اسم فئة. وبالتالي فهو نوع بيانات. هذا الاسم تعسفي. تستمد الفئة دائمًا من [<bdi dir="ltr" class="odt-ltr-term">System.Web.HttpApplication</bdi>].
+  </li>
+</ul>
+
+<p>لنعد إلى فئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] الخاصة بنا. قد يتساءل المرء عما إذا كان من الضروري إعلان حقولها <strong>على أنها ثابتة</strong>. في الواقع، يبدو أنه في بعض الحالات، قد تكون هناك مثيلات متعددة لفئة [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>]، مما يبرر جعل الحقول التي يجب مشاركتها بين جميع هذه المثيلات ثابتة.</p>
+<p>هناك طريقة أخرى لمشاركة بيانات نطاق &quot;التطبيق&quot; بين الصفحات المختلفة لتطبيق ويب. وبالتالي، يمكن تخزين مصفوفة <bdi dir="ltr" class="odt-ltr-term">Employees</bdi> في الإجراء <em><bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start</em> على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">            Application.Add(<span style="color:#a31515">&quot;employes&quot;,E</span>mployes);</span></span>
+</code></pre></div>
+
+<p>بشكل افتراضي، يمثل [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] في أي تطبيق <bdi dir="ltr" class="odt-ltr-term">ASP.NET</bdi> مرجعًا إلى مثيل للفئة المحددة في [<bdi dir="ltr" class="odt-ltr-term">Global.asax.cs</bdi>]. <em><bdi dir="ltr" class="odt-ltr-term">Application</bdi></em> عبارة عن حاوية قادرة على تخزين كائنات من أي نوع. يمكن بعد ذلك استرداد المصفوفة <em><bdi dir="ltr" class="odt-ltr-term">Employees</bdi></em> في كود أي صفحة في تطبيق الويب على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">            Employe[] employes=Application.Get[<span style="color:#a31515">&quot;employes&quot;] as E</span>mploye[];</span></span>
+</code></pre></div>
+
+<p>نظرًا لأن حاوية <em><bdi dir="ltr" class="odt-ltr-term">Application</bdi></em> تخزن كائنات من أي نوع، فإننا نسترد نوع <em><bdi dir="ltr" class="odt-ltr-term">Object</bdi></em> الذي يجب تحويله بعد ذلك. هذه الطريقة قابلة للاستخدام دائمًا، ولكن مشاركة البيانات عبر الحقول الثابتة المكتوبة من كائن [<bdi dir="ltr" class="odt-ltr-term">Global</bdi>] تتجنب التحويل وتسمح للمترجم بإجراء فحوصات النوع التي تساعد المطور. هذه هي الطريقة التي سيتم استخدامها هنا.</p>
+<p>البيانات التي يشاركها جميع المستخدمين هي كما يلي:</p>
+<ul>
+  <li>السطر 12: مصفوفة كائنات [<bdi dir="ltr" class="odt-ltr-term">Employee</bdi>] التي ستخزن القائمة المبسطة (<bdi dir="ltr" class="odt-ltr-term">SSN</bdi>، <bdi dir="ltr" class="odt-ltr-term">LAST_NAME</bdi>، <bdi dir="ltr" class="odt-ltr-term">FIRST_NAME</bdi>) لجميع الموظفين
+  </li>
+  <li>السطر 13: الكائن من النوع [<bdi dir="ltr" class="odt-ltr-term">Contributions</bdi>] الذي سيخزن معدلات المساهمة
+  </li>
+  <li>السطر 14: القاموس الذي سيخزن البدلات المرتبطة بمؤشرات الموظفين المختلفة. سيتم فهرسته حسب مؤشر الموظف، وستكون قيمه من النوع [<bdi dir="ltr" class="odt-ltr-term">Allowances</bdi>]
+  </li>
+  <li>السطر 15: رسالة تشير إلى ما إذا كانت عملية التهيئة قد اكتملت بنجاح أم بحدوث خطأ
+  </li>
+  <li>السطر 16: قيمة منطقية تشير إلى ما إذا كانت عملية التهيئة قد انتهت بخطأ أم لا
+  </li>
+  <li>السطر 17: سلسلة اتصال قاعدة البيانات.
+  </li>
+</ul>
+
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال</strong>: أكمل الكود الخاص بفئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>_Start].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h2 id="43-defaultaspx">4.3. <span style="color: #4f81bd">أحداث نموذج [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]</span></h2>
+<p><a id="pageload-aspnet-v31"></a></p>
+<h3 id="431-p-age_load">4.3.1. <span style="color: #4f81bd"><strong>الإجراء [<bdi dir="ltr" class="odt-ltr-term">P</bdi></strong> <strong><bdi dir="ltr" class="odt-ltr-term">age</bdi>_Load]</strong></span></h3>
+<p>عند تحميل النموذج [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]، فإنه يسترد أسماء الموظفين من المصفوفة [<bdi dir="ltr" class="odt-ltr-term">Global.Employees</bdi>] (السطر 12) ويملأ القائمة المنسدلة [1] بها:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003670000014F6B0C9BE4.png" width="436" height="168" style="display:inline-block; margin:4px;width:11.523cm;height:4.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000003670000014F6B0C9BE4.png" /></td></tr></table>
+
+<ul>
+  <li>تم ملء القائمة المنسدلة [1]
+  </li>
+  <li>يشير مربع النص [5] إلى أن قراءة قاعدة البيانات تمت بشكل صحيح
+  </li>
+</ul>
+
+<p>إذا حدثت أخطاء في التهيئة عند بدء تشغيل التطبيق، فإن مربع النص [5] يشير إلى ذلك:</p>
+<p><img src="images/10000000000002A3000001354E334A5C.png" width="472" height="216" style="width:12.501cm;height:5.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A3000001354E334A5C.png" /></p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال</strong>: اكتب الإجراء [<bdi dir="ltr" class="odt-ltr-term">Page</bdi>_Load] لصفحة الويب [<bdi dir="ltr" class="odt-ltr-term">Default.aspx</bdi>]، والذي يضمن، عند تنفيذه عند بدء تشغيل التطبيق، السلوك الموصوف أعلاه.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="432">4.3.2. <span style="color: #4f81bd">حساب الراتب</span></h3>
+<p>يؤدي النقر على الزر [4] إلى تشغيل المعالج:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> ButtonSalaire_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
+</code></pre></div>
+
+<p>يبدأ هذا المعالج بالتحقق من صحة الإدخالات التي تمت في [2] و[3]. إذا كان أي منهما غير صحيح، يتم الإبلاغ عن الخطأ كما هو موضح سابقًا. بمجرد التحقق من صحة الإدخالات في [2] و[3]، يجب على التطبيق عرض بيانات إضافية عن المستخدم المحدد في [1] بالإضافة إلى راتبه (انظر لقطة الشاشة في القسم<a href="#formulaire-version1"><u><span style="color: #0563c1"> 4.1</span></u></a>).</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>السؤال</strong>: اكتب كود الإجراء [<bdi dir="ltr" class="odt-ltr-term">ButtonSalaire</bdi>_Click].</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

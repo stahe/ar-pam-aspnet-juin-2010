@@ -1,0 +1,1236 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-pam-aspnet-juin-2010/drs-ll.html">
+      
+      
+        <link rel="prev" href="mqdm-sry-l-aspnet.html">
+      
+      
+        <link rel="next" href="tbyq-simupaie---ldr-1-mn---aspnet.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>3. دراسة الحالة - إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-header__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. دراسة الحالة
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" class="md-nav__button md-logo" aria-label="إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    إنشاء تطبيق ويب ثلاثي المستويات باستخدام ASP.NET 2.0 و C# و Spring.Net و NHibernate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-pam-aspnet-juin-2010" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-sry-l-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. مقدمة سريعة إلى ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. دراسة الحالة
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="drs-ll.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. دراسة الحالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. قاعدة البيانات
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. طريقة حساب راتب مقدم رعاية الأطفال
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-adonet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. تذكيرات ADO.NET
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-1-mn---aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطبيق [SimuPaie] – الإصدار 1 من – ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-2---ajax--aspnet-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق [SimuPaie] – الإصدار 2 – AJAX / ASP.NET 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm-l-nhibernate-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. مقدمة إلى NHibernate ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---dr-3-mn---bny-thlthy-lbqt-m-nhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق [SimuPaie] – إصدار 3 من – بنية ثلاثية الطبقات مع NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-4---aspnet--r-mtdd--f-wd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تطبيق [SimuPaie] – الإصدار 4 – ASP.NET / عرض متعدد / صفحة واحدة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-5---aspnet--khdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق [SimuPaie] – الإصدار 5 – ASP.NET / خدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-6---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق [SimuPaie] – الإصدار 6 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-7-mn---aspnet--r-mtdd--ft-mtdd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق [SimuPaie] – الإصدار 7 من – ASP.NET / عرض متعدد / صفحات متعددة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-8---myl-aspnet-lkhdm-wyb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق [SimuPaie] – الإصدار 8 – عميل ASP.NET لخدمة ويب
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-9---tkml-springnhibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق [SimuPaie] – الإصدار 9 – تكامل Spring/NHibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-simupaie---ldr-10---myl-flex-lkhdm-wyb-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق [SimuPaie] – الإصدار 10 – عميل Flex لخدمة ويب ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="etude-de-cas"></a></p>
+<h1 id="3">3. <span style="color: #365f91">دراسة الحالة</span></h1>
+<p>نريد كتابة تطبيق .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> يسمح للمستخدم بمحاكاة حسابات الرواتب لمقدمي خدمات رعاية الأطفال في جمعية &quot;<bdi dir="ltr" class="odt-ltr-term">Maison de la petite enfance</bdi>&quot; في إحدى البلديات. سنركز على تنظيم كود .<bdi dir="ltr" class="odt-ltr-term">NET</bdi> الخاص بالتطبيق بقدر ما سنركز على الكود نفسه.</p>
+<p><a id="refheadingtoc744714255346799"></a>
+<a id="bd"></a></p>
+<h2 id="31">3.1. <span style="color: #4f81bd"><strong>قاعدة البيانات</strong></span></h2>
+<p>يتم تخزين البيانات الثابتة اللازمة لإنشاء كشف الراتب في قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">SQL Server Express</bdi> باسم <strong><bdi dir="ltr" class="odt-ltr-term">dbpam</bdi></strong> (<bdi dir="ltr" class="odt-ltr-term">pam</bdi> = <bdi dir="ltr" class="odt-ltr-term">Paie Assistante Maternelle</bdi>). لهذه القاعدة بيانات مسؤول باسم <strong><bdi dir="ltr" class="odt-ltr-term">sa</bdi></strong> وكلمة مرور <strong><bdi dir="ltr" class="odt-ltr-term">msde</bdi></strong>.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BB000000B34902BDD9.png" width="150" height="143" style="display:inline-block; margin:4px;width:3.96cm;height:3.791cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BB000000B34902BDD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>تحتوي قاعدة البيانات على ثلاثة جداول، هي <strong><bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi></strong> و <strong><bdi dir="ltr" class="odt-ltr-term">CONTRIBUTIONS</bdi></strong> و <strong><bdi dir="ltr" class="odt-ltr-term">ALLOWANCES</bdi>،</strong> بالهيكل التالي:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">Table <span style="font-weight:bold">EMPLOYES</span> : rassemble des informations sur les différentes assistantes maternelles</span></span>
+</code></pre></div>
+
+<p><strong>الهيكل</strong>:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C80000009466CD2327.png" width="160" height="118" style="display:inline-block; margin:4px;width:4.23cm;height:3.129cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C80000009466CD2327.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SS
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رقم الضمان الاجتماعي للموظف - المفتاح الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>NAME
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اللقب</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>الاسم الأول
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الاسم الأول</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>العنوان
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوانهم</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>المدينة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مدينته/مدينتها</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>الرمز البريدي
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الرمز البريدي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>INDEX
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فهرس المعالجة الخاص به - مفتاح خارجي في حقل [<bdi dir="ltr" class="odt-ltr-term">INDICE</bdi>] في جدول [<bdi dir="ltr" class="odt-ltr-term">INDEMNITES</bdi>]</div></td></tr></table></td></tr></table>
+
+<p>ويمكن أن يكون نصه كما يلي:</p>
+<p><img src="images/10000000000001EB0000003DA63DA382.png" width="393" height="49" style="width:10.389cm;height:1.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EB0000003DA63DA382.png" /></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">Table <span style="font-weight:bold">COTISATIONS</span> : rassemble les taux des cotisations sociales prélevées sur le salaire</span></span>
+</code></pre></div>
+
+<p><strong>الهيكل</strong>:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007C600000200975BAB44.png" width="680" height="175" style="display:inline-block; margin:4px;width:17.997cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C600000200975BAB44.png" /></td></tr></table>
+
+<p>يمكن أن يكون محتواه كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001690000002C2FBA0563.png" width="289" height="35" style="display:inline-block; margin:4px;width:7.639cm;height:0.931cm;" class="odt-zoomable" data-zoom-src="images/10000000000001690000002C2FBA0563.png" /></td></tr></table>
+
+<p>معدلات اشتراكات الضمان الاجتماعي مستقلة عن الموظف. يحتوي الجدول السابق على صف واحد فقط.</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">Table <span style="font-weight:bold">INDEMNITES</span> : rassemble les différentes indemnités dépendant de l&#x27;indice de l&#x27;employé</span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C900000076FBDB18D6.png" width="161" height="94" style="display:inline-block; margin:4px;width:4.249cm;height:2.494cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C900000076FBDB18D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>INDEX
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مؤشر الراتب - المفتاح الأساسي</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ساعة الأساس
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">صافي الأجر بالساعة باليورو</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>الصيانة اليومية
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">البدل اليومي باليورو لكل يوم من أيام الاستعداد</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>وجبة يومية
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">بدل الوجبات باليورو لكل يوم من أيام الرعاية</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>أجر الإجازة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">بدل الإجازة المدفوعة. وهي نسبة مئوية تُطبق على الراتب الأساسي.</div></td></tr></table></td></tr></table>
+
+<p>ويمكن أن يكون نصه كما يلي:</p>
+<p><img src="images/100000000000017600000040A8082BF8.png" width="299" height="51" style="width:7.92cm;height:1.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017600000040A8082BF8.png" /></p>
+<p>يرجى ملاحظة أن البدلات قد تختلف من مقدم رعاية أطفال إلى آخر. فهي مرتبطة بمقدم رعاية أطفال معين من خلال درجة الراتب الخاصة بذلك المقدم. وبالتالي، <em>فإن السيدة ماري جوفينال،</em> التي تبلغ درجة راتبها 2 (جدول الموظفين)، تحصل على أجر ساعي قدره 2.1 يورو (جدول التعويضات).</p>
+<p>العلاقات بين الجداول الثلاثة هي كما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000025F0000019D9AFFDD0F.png" width="304" height="207" style="display:inline-block; margin:4px;width:8.031cm;height:5.465cm;" class="odt-zoomable" data-zoom-src="images/100000000000025F0000019D9AFFDD0F.png" /></td></tr></table>
+
+<p>توجد علاقة مفتاح خارجي بين عمود <bdi dir="ltr" class="odt-ltr-term">EMPLOYEES</bdi>(<bdi dir="ltr" class="odt-ltr-term">INDEX</bdi>) وعمود <bdi dir="ltr" class="odt-ltr-term">ALLOWANCES</bdi>(<bdi dir="ltr" class="odt-ltr-term">INDEX</bdi>).</p>
+<p>تقوم قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>] التي تم إنشاؤها بهذه الطريقة بإنشاء ملفين في مجلد <bdi dir="ltr" class="odt-ltr-term">SQL Server Express:</bdi></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B5000001489DF09928.png" width="603" height="164" style="display:inline-block; margin:4px;width:15.942cm;height:4.339cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000001489DF09928.png" /></td></tr></table>
+
+<p><a id="attachsqlserver"></a>يمكن نقل الملفين [<bdi dir="ltr" class="odt-ltr-term">dbpam.mdf</bdi>، <bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>_log.<bdi dir="ltr" class="odt-ltr-term">ldf</bdi>] إلى جهاز آخر وإعادة ربطهما بنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">SQL Server Express</bdi> الخاص بذلك الجهاز. وإليك كيفية القيام بذلك:</p>
+<ul>
+  <li>يتم نسخ ملفات قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>] إلى مجلد
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014300000064013168B4.png" width="259" height="80" style="display:inline-block; margin:4px;width:6.84cm;height:2.118cm;" class="odt-zoomable" data-zoom-src="images/100000000000014300000064013168B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>قم بتشغيل <bdi dir="ltr" class="odt-ltr-term">SQL Server Express</bdi>
+  </li>
+  <li>باستخدام عميل <bdi dir="ltr" class="odt-ltr-term">SQL Server Management Studio Express</bdi>، قم بإرفاق ملف [<bdi dir="ltr" class="odt-ltr-term">dbpam.mdf</bdi>] بالقاعدة البيانات:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005D300000237840989AF.png" width="680" height="259" style="display:inline-block; margin:4px;width:17.997cm;height:6.844cm;" class="odt-zoomable" data-zoom-src="images/10000000000005D300000237840989AF.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005BB00000241AD2AB5A6.png" width="680" height="268" style="display:inline-block; margin:4px;width:17.997cm;height:7.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BB00000241AD2AB5A6.png" /></td></tr></table>
+
+<ol>
+  <li>انقر بزر الماوس الأيمن على [قواعد البيانات] / إرفاق
+  </li>
+  <li>حدد ملف [<bdi dir="ltr" class="odt-ltr-term">dbpam.mdf</bdi>] باستخدام زر [إضافة] (غير معروض)
+  </li>
+  <li>سيؤدي الملف المرفق إلى إنشاء قاعدة بيانات يجب ألا تكون موجودة بالفعل. هنا، في حقل [إرفاق كـ]، قمنا بتسمية قاعدة البيانات الجديدة [<bdi dir="ltr" class="odt-ltr-term">dbpam2</bdi>].
+  </li>
+  <li>يمكنك رؤية قاعدة البيانات الجديدة وجداولها
+  </li>
+</ol>
+
+<p>هذه التقنية لإرفاق قاعدة بيانات مفيدة لنقل قاعدة بيانات من جهاز كمبيوتر إلى آخر، وسنستخدمها من حين لآخر هنا.</p>
+<p><a id="reglesmetier"></a>
+<a id="calculsalaire"></a></p>
+<h2 id="32">3.2. <span style="color: #4f81bd">طريقة حساب راتب مقدم رعاية الأطفال</span></h2>
+<p>سنعرض الآن طريقة حساب الراتب الشهري لمقدمي رعاية الأطفال. وكمثال على ذلك، سنستخدم راتب السيدة ماري جوفينال، التي عملت 150 ساعة على مدار 20 يومًا خلال فترة الدفع.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتم أخذ العوامل التالية في الاعتبار:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">[<span style="background-color:#ffcc99">TOTALHOURS</span>]: إجمالي</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> ساعات العمل في</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> الشهر</span></span>
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">[<span style="background-color:#ffcc99">TOTALDAYS</span>]: إجمالي عدد الأيام</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> العمل في الشهر</span></span>
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[TOTALHOURS]=150
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>[TOTALDAYS] = 20
+</code></pre></div>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتم حساب الراتب الأساسي لمقدم رعاية الأطفال باستخدام الصيغة التالية:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[الراتب الأساسي]=([إجمالي الساعات]*
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[HOURLYRATE])*(1+
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>[CPALLOWANCE]/100)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[الراتب الأساسي]=(150*[2.1])*(1+0.15)= 362.25
+</code></pre></div>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يجب خصم عدد من اشتراكات الضمان الاجتماعي من هذا الراتب الأساسي:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">الاشتراك الاجتماعي العام</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> و</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> لسداد الديون</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> : <span style="background-color:#ffcc99">[BASESALARY]*[CSGRDS/100]</span></span></span>
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">المبلغ القابل للخصم</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> المبلغ القابل للخصم:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> <span style="background-color:#ffcc99">[الراتب الأساسي]*[CSGD/100]</span></span></span>
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">الضمان الاجتماعي، الأرامل،</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> والشيخوخة:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> <span style="background-color:#ffcc99">[الراتب الأساسي]*[SECU/100]</span></span></span>
+</code></pre></div>
+<div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>المعاش التكميلي +
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>صندوق التقاعد العام + تأمين البطالة:
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>[الراتب الأساسي]*[المعاش التقاعدي/100]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>CSGRDS: 12.64
+</code></pre></div>
+</div>
+<div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>CSGD: 22.28
+</code></pre></div>
+</div>
+<div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>الضمان الاجتماعي: 34.02
+</code></pre></div>
+</div>
+<div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>المعاش التقاعدي: 28.55
+</code></pre></div>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">إجمالي اشتراكات الضمان الاجتماعي:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>[SOCIALCONTRIBUTIONS] = [SALARY
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>EBASE]*(CSGRDS+CSGD+SECU+RETR
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>[SOCIALCONTRIBUTIONS]=97.48
+</code></pre></div>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">بالإضافة إلى ذلك، يحق لمقدمة رعاية الأطفال الحصول على بدل معيشة يومي وبدل وجبات عن كل يوم عمل. وبناءً على ذلك، تتلقى البدلات التالية:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>[Compensation] = [TOTAL_DAYS] * (EN
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>بدل المعيشة اليومي + بدل الوجبات اليومي)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>[البدلات]=104
+</code></pre></div>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">في النهاية، يكون الراتب الصافي الذي سيُدفع لمربية الأطفال كما يلي:</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>[الراتب الأساسي] -
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>[اشتراكات الضمان الاجتماعي]+
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>[البدلات]
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>[الراتب الصافي]=368.77
+</code></pre></div>
+</div></td></tr></table>
+
+<p><a id="refheadingtoc744694255346799"></a></p>
+<h2 id="33-adonet">3.3. <span style="color: #4f81bd">تذكيرات <bdi dir="ltr" class="odt-ltr-term">ADO.NET</bdi></span></h2>
+<p>يتطلب تطبيق حساب الرواتب معلومات من قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpam</bdi>]. وستكون بنيته على النحو التالي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C0000016F17902B39.png" width="678" height="183" style="display:inline-block; margin:4px;width:17.939cm;height:4.854cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000016F17902B39.png" /></td></tr></table>
+
+<ul>
+  <li>في [1]، يقوم المستخدم بإرسال طلب
+  </li>
+  <li>في [2]، يقوم تطبيق الرواتب بمعالجته.
+  </li>
+  <li>قد يحتاج بعد ذلك إلى بيانات من قاعدة البيانات. ثم يرسل استعلامًا إلى موفر <bdi dir="ltr" class="odt-ltr-term">ADO.NET</bdi> لنظام إدارة قواعد البيانات المستخدم [4].
+  </li>
+  <li>يقوم المزود بالوصول إلى قاعدة البيانات [5] وإرجاع النتائج إلى مزود <bdi dir="ltr" class="odt-ltr-term">ADO.NET</bdi>، الذي يقوم بدوره بإعادة تمريرها إلى التطبيق
+  </li>
+  <li>يقوم التطبيق بمعالجة هذه النتائج وإنشاء استجابة [5] للمستخدم
+  </li>
+</ul>
+
+<p>سنستعرض الآن الواجهات الرئيسية التي يوفرها مزود <bdi dir="ltr" class="odt-ltr-term">ADO.NET</bdi> لعملائه [3].</p>
+<p>في الوضع <strong>المتصل</strong>، يقوم التطبيق بما يلي:</p>
+<ol>
+  <li>يفتح اتصالاً بمصدر البيانات
+  </li>
+  <li>يعمل مع مصدر البيانات في وضع القراءة/الكتابة
+  </li>
+  <li>يغلق الاتصال
+  </li>
+</ol>
+
+<p>تشارك ثلاث واجهات <bdi dir="ltr" class="odt-ltr-term">ADO.NET</bdi> بشكل أساسي في هذه العمليات:</p>
+<ul>
+  <li><b><bdi dir="ltr" class="odt-ltr-term">IDbConnection</bdi>، </b>التي تغلف خصائص وأساليب الاتصال.
+  </li>
+  <li><b><bdi dir="ltr" class="odt-ltr-term">IDbCommand</bdi>، </b>التي تغلف خصائص وأساليب أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي تم تنفيذه.
+  </li>
+  <li><b><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi>، </b>التي تغلف خصائص وأساليب نتيجة عبارة <bdi dir="ltr" class="odt-ltr-term">SQL SELECT.</bdi>
+  </li>
+</ul>
+
+<p><u><strong>واجهة <bdi dir="ltr" class="odt-ltr-term">IDbConnection</bdi></strong></u></p>
+<p>لإدارة الاتصال بقاعدة البيانات. ومن بين الأساليب (<strong><bdi dir="ltr" class="odt-ltr-term">M</bdi>)</strong> والخصائص (<strong><bdi dir="ltr" class="odt-ltr-term">P</bdi>)</strong> لهذه الواجهة ما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الاسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النوع</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ConnectionString
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>سلسلة اتصال</b> قاعدة البيانات. تحدد جميع المعلمات المطلوبة لإنشاء اتصال بقاعدة بيانات معينة.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>فتح
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يفتح الاتصال بقاعدة البيانات المحددة بواسطة <i><bdi dir="ltr" class="odt-ltr-term">ConnectionString</bdi></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>إغلاق
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يغلق الاتصال</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>BeginTransaction
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يبدأ معاملة.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>الحالة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">حالة الاتصال: <i><bdi dir="ltr" class="odt-ltr-term">ConnectionState.</bdi></i><bdi dir="ltr" class="odt-ltr-term">Clos</bdi><i><bdi dir="ltr" class="odt-ltr-term">ed</bdi></i>، <i> <bdi dir="ltr" class="odt-ltr-term">ConnectionState.</bdi></i><bdi dir="ltr" class="odt-ltr-term">Open</bdi>، <i> <bdi dir="ltr" class="odt-ltr-term">ConnectionState.</bdi></i><bdi dir="ltr" class="odt-ltr-term">Connecting</bdi>، <i> <bdi dir="ltr" class="odt-ltr-term">ConnectionState.</bdi></i><bdi dir="ltr" class="odt-ltr-term">Executing</bdi>، <i> <bdi dir="ltr" class="odt-ltr-term">ConnectionState.</bdi></i><bdi dir="ltr" class="odt-ltr-term">Fetching</bdi>، <i> <bdi dir="ltr" class="odt-ltr-term">ConnectionState.Broken</bdi></i></div></td></tr></table>
+
+<p>إذا كانت <em><bdi dir="ltr" class="odt-ltr-term">Connection</bdi></em> فئة تنفذ واجهة <em><bdi dir="ltr" class="odt-ltr-term">IDbConnection</bdi></em>، فيمكن فتح الاتصال على النحو التالي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>IDbConnection connexion=new Connection();
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a>connexion.ConnectionString=...;
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a>connexion.Open();
+</code></pre></div></td></tr></table></div>
+<p><u><strong>واجهة <bdi dir="ltr" class="odt-ltr-term">IDbCommand</bdi></strong></u></p>
+<p>لتنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> أو إجراء مخزن. ومن بين الأساليب <strong><bdi dir="ltr" class="odt-ltr-term">M</bdi></strong> والخصائص <strong><bdi dir="ltr" class="odt-ltr-term">P</bdi></strong> لهذه الواجهة ما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الاسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النوع</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>نوع الأمر
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يحدد ما يجب تنفيذه -  يأخذ قيمه من قائمة:</div><div style="margin:0 0 0.5em 0">- <i><bdi dir="ltr" class="odt-ltr-term">CommandType.Text</bdi></i>: ينفذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المحددة في الخاصية <i><bdi dir="ltr" class="odt-ltr-term">CommandText</bdi></i>. هذه هي القيمة الافتراضية.</div><div style="margin:0 0 0.5em 0">- <i><bdi dir="ltr" class="odt-ltr-term">CommandType.StoredProcedure</bdi></i>: ينفذ إجراءً مخزّنًا في قاعدة البيانات</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>CommandText
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- نص عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المطلوب تنفيذها إذا كان <bdi dir="ltr" class="odt-ltr-term">CommandType</bdi>= <i><bdi dir="ltr" class="odt-ltr-term">CommandType.Text</bdi></i></div><div style="margin:0 0 0.5em 0">- اسم الإجراء المخزن المراد تنفيذه إذا كان <bdi dir="ltr" class="odt-ltr-term">CommandType</bdi>= <i><bdi dir="ltr" class="odt-ltr-term">CommandType.StoredProcedure</bdi></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Connection
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">اتصال <i><bdi dir="ltr" class="odt-ltr-term">IDbConnection</bdi></i> المراد استخدامه لتنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>المعاملة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معاملة <i><bdi dir="ltr" class="odt-ltr-term">IDbTransaction</bdi> </i>التي سيتم تنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> فيها</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>المعلمات
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">قائمة المعلمات لعبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المعلمة. تحتوي العبارة `<i><bdi dir="ltr" class="odt-ltr-term">update articles set price</bdi>=<bdi dir="ltr" class="odt-ltr-term">price</bdi>*<bdi dir="ltr" class="odt-ltr-term">1.1 where id</bdi>=@<bdi dir="ltr" class="odt-ltr-term">id</bdi>` </i>على المعلمة `@<bdi dir="ltr" class="odt-ltr-term">id</bdi>`.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ExecuteReader
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لتنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> <i>من نوع <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi></i>. يعيد هذا كائن <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi> </i>يمثل نتيجة <i>عبارة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>ExecuteNonQuery
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لتنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> <i><bdi dir="ltr" class="odt-ltr-term">Update</bdi> أو <bdi dir="ltr" class="odt-ltr-term">Insert</bdi> أو <bdi dir="ltr" class="odt-ltr-term">Delete</bdi></i>. يتم إرجاع عدد الصفوف المتأثرة بالعملية (المحدثة أو المضافة أو المحذوفة).</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>ExecuteScalar
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لتنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> <i><bdi dir="ltr" class="odt-ltr-term">Select</bdi> </i>التي تُرجع نتيجة واحدة، مثل: <i><bdi dir="ltr" class="odt-ltr-term">select count</bdi>(*) <bdi dir="ltr" class="odt-ltr-term">from articles</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>CreateParameter
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لإنشاء معلمات <i><bdi dir="ltr" class="odt-ltr-term">IDbParameter</bdi> </i>لعبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> المعلمة.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Prepare
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتيح لك تحسين تنفيذ استعلام معلم عندما يتم تنفيذه عدة مرات بمعلمات مختلفة.</div></td></tr></table>
+
+<p>إذا كانت <em><bdi dir="ltr" class="odt-ltr-term">Command</bdi></em> فئة تنفذ واجهة <bdi dir="ltr" class="odt-ltr-term">IDbCommand</bdi>، فسيتخذ تنفيذ عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> بدون معاملة الشكل التالي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-42-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-42-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-42-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-42-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-42-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-42-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-42-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-42-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-42-10">10</a></span>
+<span class="normal"><a href="#__codelineno-42-11">11</a></span>
+<span class="normal"><a href="#__codelineno-42-12">12</a></span>
+<span class="normal"><a href="#__codelineno-42-13">13</a></span>
+<span class="normal"><a href="#__codelineno-42-14">14</a></span>
+<span class="normal"><a href="#__codelineno-42-15">15</a></span>
+<span class="normal"><a href="#__codelineno-42-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="o">//</span><span class="w"> </span><span class="n">ouverture</span><span class="w"> </span><span class="n">connexion</span><span class="w"> </span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="n">connexion</span><span class="o">=</span><span class="p">...</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3"></a><span class="n">connexion</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4"></a><span class="o">//</span><span class="w"> </span><span class="n">préparation</span><span class="w"> </span><span class="n">commande</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">commande</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6"></a><span class="n">commande</span><span class="p">.</span><span class="k">Connection</span><span class="o">=</span><span class="n">connexion</span><span class="p">;</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7"></a><span class="o">//</span><span class="w"> </span><span class="n">exécution</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="k">select</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8"></a><span class="n">commande</span><span class="p">.</span><span class="n">CommandText</span><span class="o">=</span><span class="ss">&quot;select ...&quot;</span><span class="p">;</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9"></a><span class="n">IDbDataReader</span><span class="w"> </span><span class="n">reader</span><span class="o">=</span><span class="n">commande</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10"></a><span class="p">...</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11"></a><span class="o">//</span><span class="w"> </span><span class="n">exécution</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="k">update</span><span class="p">,</span><span class="w"> </span><span class="k">insert</span><span class="p">,</span><span class="w"> </span><span class="k">delete</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12"></a><span class="n">commande</span><span class="p">.</span><span class="n">CommandText</span><span class="o">=</span><span class="ss">&quot;insert ...&quot;</span><span class="p">;</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13"></a><span class="nb">int</span><span class="w"> </span><span class="n">nbLignesInsérées</span><span class="o">=</span><span class="n">commande</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14"></a><span class="p">...</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15"></a><span class="o">//</span><span class="w"> </span><span class="n">fermeture</span><span class="w"> </span><span class="n">connexion</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16"></a><span class="n">connexion</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+<p><u><strong>واجهة <bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></strong></u></p>
+<p>تُستخدم لتغليف نتائج عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> <em><bdi dir="ltr" class="odt-ltr-term">Select</bdi></em>. يمثل كائن <em><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></em> جدولاً يحتوي على صفوف وأعمدة، يتم معالجتها بالتسلسل: أولاً الصف الأول، ثم الثاني، وهكذا. ومن بين الأساليب (<strong><bdi dir="ltr" class="odt-ltr-term">M</bdi>)</strong> والخصائص (<strong><bdi dir="ltr" class="odt-ltr-term">P</bdi>)</strong> لهذه الواجهة ما يلي:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الاسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>النوع</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>FieldCount
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عدد الأعمدة في جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>GetName
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تُرجع<i> الدالة <bdi dir="ltr" class="odt-ltr-term">GetName</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>) </i>اسم العمود <bdi dir="ltr" class="odt-ltr-term">i</bdi> في جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>العنصر
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">P</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يمثل<i> <bdi dir="ltr" class="odt-ltr-term">Item</bdi>[<bdi dir="ltr" class="odt-ltr-term">i</bdi>] </i>العمود رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi> في الصف الحالي في جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>قراءة
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">ينتقل إلى الصف التالي في جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></i>. يُرجع <i><bdi dir="ltr" class="odt-ltr-term">True</bdi> </i>إذا تمت قراءة الصف بنجاح، وإلا يُرجع <i><bdi dir="ltr" class="odt-ltr-term">False</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>إغلاق
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يغلق جدول<i> <bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>GetBoolean
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><bdi dir="ltr" class="odt-ltr-term">GetBoolean</bdi></i>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>): تُرجع القيمة المنطقية للعمود <bdi dir="ltr" class="odt-ltr-term">i</bdi> في الصف الحالي من جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></i>. تتضمن الطرق المماثلة الأخرى: <bdi dir="ltr" class="odt-ltr-term">GetDateTime</bdi>، <bdi dir="ltr" class="odt-ltr-term">GetDecimal</bdi>، <bdi dir="ltr" class="odt-ltr-term">Get</bdi><i><bdi dir="ltr" class="odt-ltr-term">Double</bdi></i>، <bdi dir="ltr" class="odt-ltr-term">GetFloat</bdi>، <i><bdi dir="ltr" class="odt-ltr-term">GetInt16</bdi></i>، <bdi dir="ltr" class="odt-ltr-term">GetInt32</bdi>، <i><bdi dir="ltr" class="odt-ltr-term">GetInt64</bdi></i>، <i><bdi dir="ltr" class="odt-ltr-term">GetString</bdi></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>Getvalue
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><bdi dir="ltr" class="odt-ltr-term">Getvalue</bdi></i>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>): تُرجع قيمة العمود <bdi dir="ltr" class="odt-ltr-term">i</bdi> في الصف الحالي من جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi> </i>كنوع<i> كائن</i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>IsDBNull
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">M</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تُرجع<i> <bdi dir="ltr" class="odt-ltr-term">IsDBNull</bdi>(<bdi dir="ltr" class="odt-ltr-term">i</bdi>) القيمة <bdi dir="ltr" class="odt-ltr-term">True</bdi> </i>إذا كان العمود <bdi dir="ltr" class="odt-ltr-term">i</bdi> في الصف الحالي في جدول <i><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi> </i>لا يحتوي على قيمة، وهو ما يمثله القيمة <bdi dir="ltr" class="odt-ltr-term">SQL NULL.</bdi></div></td></tr></table>
+
+<p>غالبًا ما يبدو استخدام كائن <em><bdi dir="ltr" class="odt-ltr-term">IDataReader</bdi></em> كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-51-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-51-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-51-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-51-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-51-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-51-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-51-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-51-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-51-10">10</a></span>
+<span class="normal"><a href="#__codelineno-51-11">11</a></span>
+<span class="normal"><a href="#__codelineno-51-12">12</a></span>
+<span class="normal"><a href="#__codelineno-51-13">13</a></span>
+<span class="normal"><a href="#__codelineno-51-14">14</a></span>
+<span class="normal"><a href="#__codelineno-51-15">15</a></span>
+<span class="normal"><a href="#__codelineno-51-16">16</a></span>
+<span class="normal"><a href="#__codelineno-51-17">17</a></span>
+<span class="normal"><a href="#__codelineno-51-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="o">//</span><span class="w"> </span><span class="n">ouverture</span><span class="w"> </span><span class="n">connexion</span><span class="w"> </span>
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="n">IDbConnection</span><span class="w"> </span><span class="n">connexion</span><span class="o">=</span><span class="p">...</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="n">connexion</span><span class="p">.</span><span class="k">Open</span><span class="p">();</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4"></a><span class="o">//</span><span class="w"> </span><span class="n">préparation</span><span class="w"> </span><span class="n">commande</span>
+<a id="__codelineno-51-5" name="__codelineno-51-5"></a><span class="n">IDbCommand</span><span class="w"> </span><span class="n">commande</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Command</span><span class="p">();</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6"></a><span class="n">commande</span><span class="p">.</span><span class="k">Connection</span><span class="o">=</span><span class="n">connexion</span><span class="p">;</span>
+<a id="__codelineno-51-7" name="__codelineno-51-7"></a><span class="o">//</span><span class="w"> </span><span class="n">exécution</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="k">select</span>
+<a id="__codelineno-51-8" name="__codelineno-51-8"></a><span class="n">commande</span><span class="p">.</span><span class="n">CommandText</span><span class="o">=</span><span class="ss">&quot;select ...&quot;</span><span class="p">;</span>
+<a id="__codelineno-51-9" name="__codelineno-51-9"></a><span class="n">IDataReader</span><span class="w"> </span><span class="n">reader</span><span class="o">=</span><span class="n">commande</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<a id="__codelineno-51-10" name="__codelineno-51-10"></a><span class="o">//</span><span class="w"> </span><span class="n">exploitation</span><span class="w"> </span><span class="n">résultats</span>
+<a id="__codelineno-51-11" name="__codelineno-51-11"></a><span class="n">while</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="k">Read</span><span class="p">())</span><span class="err">{</span>
+<a id="__codelineno-51-12" name="__codelineno-51-12"></a><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">exploiter</span><span class="w"> </span><span class="n">ligne</span><span class="w"> </span><span class="n">courante</span>
+<a id="__codelineno-51-13" name="__codelineno-51-13"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-51-14" name="__codelineno-51-14"></a><span class="err">}</span>
+<a id="__codelineno-51-15" name="__codelineno-51-15"></a><span class="o">//</span><span class="w"> </span><span class="n">fermeture</span><span class="w"> </span><span class="n">reader</span>
+<a id="__codelineno-51-16" name="__codelineno-51-16"></a><span class="n">reader</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
+<a id="__codelineno-51-17" name="__codelineno-51-17"></a><span class="o">//</span><span class="w"> </span><span class="n">fermeture</span><span class="w"> </span><span class="n">connexion</span>
+<a id="__codelineno-51-18" name="__codelineno-51-18"></a><span class="n">connexion</span><span class="p">.</span><span class="k">Close</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-Commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
